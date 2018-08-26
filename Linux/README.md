@@ -261,7 +261,8 @@ When we look at Python, later in the course, we’ll write some (safer) programs
 ## Getting Help
 
 There are lots of places that you can get help, but you should consider these sources first:
-1. The applications help menu.
+
+1\. The applications help menu.
 If you are running a command line application, usually (but not always) adding -h after the name will print a help menu. For example, one of the commands that we are going to use later is called bowtie2. You can access the help menu by typing:
 
 ```
@@ -284,18 +285,19 @@ metabat -h | less
 ```
 
 and
+
 ```
 metabat -h 2>&1 | less
 ```
 
-2. Man pages.
+2\. Man pages.
 
 Most applications come with a detailed manual that is already installed on your computer. For example, to see the manual for less, the application we use above, type:
 man less
 
 you can try man for any application, most have manual pages, but not all.
 
-3. Google searches
+3\. Google searches
 
 Google for any application with “tutorial” or “how-to” after the name and you will usually find a helpful description of what is wrong. The Stack [Overflow website](https://www.stackoverflow.com/) is particularly useful for linux help.
 
