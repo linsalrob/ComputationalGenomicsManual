@@ -3,7 +3,8 @@
 ## Introduction to Linux
 
 <img align="right" src="images/image8.png">
-Most computational biologists use either [Apple Mac’s](http://www.apple.com/) or [Linux](http://www.linux.org/) machines. There are a couple of reasons for this:
+
+Most computational biologists use either [Apple Macs](http://www.apple.com/) or [Linux](http://www.linux.org/) machines. There are a couple of reasons for this:
 * Much of the software is free
 * Many of the tools require a command line to use
 * Many of the tools require large compute resources, either a cluster or lots of memory
@@ -138,7 +139,7 @@ Now start a program on the client:
 	 	 	
 We start by entering the main information, your username (mine is robe) and the IP address of your computer (in the example here, my IP address is 129.114.17.72).
 
-![start a program2](iamges/image5.png)
+![start a program2](images/image5.png)
 
 
 Leave extra settings as the default
