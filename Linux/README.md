@@ -297,7 +297,7 @@ you can try man for any application, most have manual pages, but not all.
 
 3. Google searches
 
-Google for any application with “tutorial” or “how-to” after the name and you will usually find a helpful description of what is wrong. The website https://www.stackoverflow.com/ is particularly useful for linux help.
+Google for any application with “tutorial” or “how-to” after the name and you will usually find a helpful description of what is wrong. The Stack [Overflow website](https://www.stackoverflow.com/) is particularly useful for linux help.
 
 
 
