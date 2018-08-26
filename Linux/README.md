@@ -25,8 +25,8 @@ The way that the keys work is that when you open a new connection to the server,
 
 
 Once I have made the keys, I end up with two files:
-1. The *private* key: This is private and secret and you should never share it with anyone or put it anywhere that anyone else can see it. You put this on your laptop and leave it there.
-2. The *public* key: You put this one on the server that you want to access.
+1. The **private** key: This is private and secret and you should never share it with anyone or put it anywhere that anyone else can see it. You put this on your laptop and leave it there.
+2. The **public** key: You put this one on the server that you want to access.
 
 Now when I try and access the server, my computer opens up the secret private key, reads the contents, and calculates the public key based on the private key. It sends that public key and says this is what I have, do you accept it. The server compares the public key with what it has in its file of public keys, and either lets you in, or not! 
 
@@ -50,20 +50,28 @@ You don’t need to do anything to use them, they will be used by ssh by default
 Download [PuTTY](https://www.putty.org/). Note: For PuTTY, there are some hacked versions of PuTTY floating around the internet and you don’t want to inadvertently download one of those as it may give the bad guys access to your machine. There are also versions with advertisements, and other crap added on. I always start at [https://www.putty.org/](https://www.putty.org/) and go from there. Do not Google for it, just go direct to the website and click the download link. 
 
 You want either the 32-bit or 64-bit MSI Windows Installer, depending on whether your computer has 32- or 64-bits.
-<img align="center" src="images/image16.png">
+
+![32 or 64 bits](images/image16.png)
 
 Note sure how many bits? This is from the PuTTY FAQ:
+
 ![how many bits](images/image7.png)
 
 Once you have downloaded PuTTY, you want to open the application called PuTTYgen. This will open a screen like the one shown below:
+
 ![putty gen](images/image11.png)
 
 Click the Generate button and create some randomness:
 
+![randomness generator](images/image14.png)
 
 
 This will create the key for you.
-MAKE SURE YOU SAVE THE KEYS!
+
+![the key](images/image2.png)
+
+**MAKE SURE YOU SAVE THE KEYS!**
+
 Save the public key as, for example, key.pub, and the private key as, for example, key.ppk.
 We will use them later!
 To use the keys, right click on the private key, and choose Load into Pageant
