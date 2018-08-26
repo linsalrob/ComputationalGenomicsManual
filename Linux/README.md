@@ -10,7 +10,7 @@ Most computational biologists use either [Apple Mac’s](http://www.apple.com/) 
 
 It is probably the last reason that dominates many of the discussions: many of the software tools you will want to use require more resources than your laptop or desktop machine can provide. You can definitely run the BLAST suite of programs on your laptop, but for large data sets like a whole metagenome, you probably want to run that on a server so that you can go and do other things while the program is running.
 
-<img align="left" src="images/image19.png">
+<img align="left" src="images/image19.jpg">
 Most servers that you will access run the operating system linux, or a similar variant of the Unix operating system. Linux was started in 1991 as a PhD project by Linus Torvalds, and the initial release was not very powerful, however Linus released his software using an open source license that allows anyone to use and modify the source code, either commercially or not. This meant that other developers could pick up on his work, and several groups and companies developed operating systems based on the linux kernel (the piece that does all the work). RedHat has had the most success in the so-called enterprise sphere (selling servers to companies), and because RedHat’s Fedora software is built on open-source software, it also releases all of its changes and updates. There is a free version of RedHat’s operating system, called CentOS, that many servers use (especially those in academic settings!). CentOS is designed with performance in mind, and is designed to be run on servers that are very rarely rebooted. Therefore, only essential system changes are made between releases of the operating system. Another flavor of Linux is called Debian (after founder Ian Murdock and his then-girlfriend Debra) developed some elegant mechanisms to keep the software up-to-date. Again, Debian was built on free software, and a company (Canonical) built a smooth graphical user interface, and easy, graphical installation system, and released the software as Ubuntu. There are many connections between Ubuntu, Debian, CentOS, and Fedora, and most users can’t really tell which operating system they are using – they are all canonically called Linux!
 
 The reason that we are using Linux for the course is because it is open and free, there is lots of software available for it, and it will help you become familiar with the servers you will doubtless use for high-performance computing. In addition, we can provide you with a server that you can start and it already has everything installed for you!
@@ -25,8 +25,8 @@ The way that the keys work is that when you open a new connection to the server,
 
 
 Once I have made the keys, I end up with two files:
-1. The private key: This is private and secret and you should never share it with anyone or put it anywhere that anyone else can see it. You put this on your laptop and leave it there.
-2. The public key: You put this one on the server that you want to access.
+1. The *private* key: This is private and secret and you should never share it with anyone or put it anywhere that anyone else can see it. You put this on your laptop and leave it there.
+2. The *public* key: You put this one on the server that you want to access.
 
 Now when I try and access the server, my computer opens up the secret private key, reads the contents, and calculates the public key based on the private key. It sends that public key and says this is what I have, do you accept it. The server compares the public key with what it has in its file of public keys, and either lets you in, or not! 
 
@@ -50,10 +50,13 @@ You don’t need to do anything to use them, they will be used by ssh by default
 Download [PuTTY](https://www.putty.org/). Note: For PuTTY, there are some hacked versions of PuTTY floating around the internet and you don’t want to inadvertently download one of those as it may give the bad guys access to your machine. There are also versions with advertisements, and other crap added on. I always start at [https://www.putty.org/](https://www.putty.org/) and go from there. Do not Google for it, just go direct to the website and click the download link. 
 
 You want either the 32-bit or 64-bit MSI Windows Installer, depending on whether your computer has 32- or 64-bits.
+<img align="center" src="images/image16.png">
 
 Note sure how many bits? This is from the PuTTY FAQ:
+![how many bits](images/image7.png)
 
 Once you have downloaded PuTTY, you want to open the application called PuTTYgen. This will open a screen like the one shown below:
+![putty gen](images/image11.png)
 
 Click the Generate button and create some randomness:
 
