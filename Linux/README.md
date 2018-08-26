@@ -82,7 +82,7 @@ Pageant is the PuTTY key agent, and several programs can access the keys from th
 ### Accessing Your Linux Server – Windows
 #### Accessing Your Server via PuTTY
 
-<img align="left" src="images/image3.png">
+![accessing the server](images/image3.png)
 
 To access your server using PuTTY, load the private key into Pageant as shown above and then start PuTTY. Enter the IP address of your computer and click Open. On the next screen, where it says Login as: enter your username. You will be logged into your server and you can continue with the course.
 
@@ -133,134 +133,168 @@ Next, we are going to install VcXsrv for windows. Go to this link, and [download
 
 Now start a program on the client:
 
+![start a program on the client](images/image4.png)
+
 	 	 	
 We start by entering the main information, your username (mine is robe) and the IP address of your computer (in the example here, my IP address is 129.114.17.72).
 
+![start a program2](iamges/image5.png)
+
+
 Leave extra settings as the default
+
+![default extra settings](images/image9.png)
  	
 Click Finish, and OK on the next screens, and after a few seconds you will be logged in. The screen will look something like this:
 
+![VCXsrv running](images/image17.png)
 
 
 
 
 
-Using Linux
+# Using Linux
 
+<img align="left" src="images/image15.png">
 Linux has many of the same tools that you already use in MacOS or Windows. For example, there is an office suite of applications including LibreOffice Writer (a replacement for MS Word), LibreOffice Calc (a replacement for MS Excel), and LibreOffice Impress (a replacement for MS PowerPoint). There are calculators and games.
-However, the real strength in using Linux comes from using the command line, as we will do during the course. Using the command line means you can work from anywhere, and you are not wasting computing effort checking email and watching movies. You can access super computers and work on remote machines around the world. You can even do it from your cellphone. It is faster and more efficient way of working. Here we’ll take a tour around the command line to get you started – or to act as a refresher. 
+However, the real strength in using Linux comes from using the command line, as we will do during the course. Using the command line means you can work from anywhere, and you are not wasting computing effort checking email and watching movies. You can access super computers and work on remote machines around the world. You can even do it from your cellphone (e.g. [connectbot for Android](https://play.google.com/store/apps/details?id=org.connectbot&hl=en) or [Terminus for iPhone](https://itunes.apple.com/us/app/termius/id549039908?mt=8). It is faster and more efficient way of working. Here we’ll take a tour around the command line to get you started – or to act as a refresher. 
 
-To move around in the command line, you type commands and press return. There is a cheat-sheet of common commands on the next page.
-
-
+To move around in the command line, you type commands and press return. There is a cheat-sheet of common commands below.
 
 
 
+## Linux exercises for practice working with the command line
 
-
-
-
-Linux exercises for practice working with the command line
 Here are some exercises that you can try:
-List the files in the directory.
-Copy one file to another file
-Look at the content of one file from the top
-Look at the content of one file from the bottom
-Check if two files are identical.
-Delete a file
-Make a test directory
-Move some files to your new directory
-Remove test directory (and the files)
-Make five new directories one inside the other like level1/level2/level3/level4/level5 in one command.
-Move a file to the innermost directory.
-Copy a file to your home directory
-Search for a word in a file
+* List the files in the directory.
+* Copy one file to another file
+* Look at the content of one file from the top
+* Look at the content of one file from the bottom
+* Check if two files are identical.
+* Delete a file
+* Make a test directory
+* Move some files to your new directory
+* Remove test directory (and the files)
+* Make five new directories one inside the other like level1/level2/level3/level4/level5 in one command.
+* Move a file to the innermost directory.
+* Copy a file to your home directory
+* Search for a word in a file
 
 
+## Linux cheat sheet
+Command | Meaning
+--- | ---
+`cd directory [.. - ~]` | Change directory [to the parent directory, the last directory you were in, or your home directory]
+`mkdir directory` | Make directory
+`mv filepath1 filepath2` | Move file from filepath1 to location at filepath2
+`cp filepath1 filepath2` | Copy file from filepath1 to location at filepath2
+`pwd` | Show current directory
+`rm` | remove a file (once removed, it is gone!)
+`ls directory` | List contents of directory (leave directory blank for current)
+`ls -l directory` | List contents of directory in long-listing format (leave directory blank for current)
+`cat file` | Print the entire contents of a file
+`head file` | Print out first 10 lines of file
+`tail file` | Print out last 10 lines of file
+`less file` | View file in Terminal. Use arrows to browse. Press q to quit.
+`df -h` | Show disk space usage information
+`wc -l file` | Display the number of lines in the file.
+`diff file1 file2` | Display the differences between file1 and file2
+`grep word file` | Search for word in file
+`sort ` | Sort the input
+`uniq file` | Look for duplicate words in the file
+`cut -f 1 file` | Split the contents of a file, e.g. if it is in columns
+`xargs -n 1 command` | Use each entry as a parameter to pass to command
 
-Linux cheat sheet
-cd directory [.. - ~]
-Change directory [to the parent directory, the last directory you were in, or your home directory]
-mkdir directory
-Make directory
-mv filepath1 filepath2
-Move file from filepath1 to location at filepath2
-cp filepath1 filepath2
-Copy file from filepath1 to location at filepath2
-pwd
-Show current directory
-rm
-remove a file (once removed, it is gone!)
-ls directory
-   	
-List contents of directory (leave directory blank for current)
-ls -l directory
-List contents of directory in long-listing format (leave directory blank for current)
-cat file
-Print the entire contents of a file
-head file
-Print out first 10 lines of file
-tail file
-Print out last 10 lines of file
-less file
-View file in Terminal. Use arrows to browse. Press q to quit.
-df -h
-Show disk space usage information
-wc -l file
-Display the number of lines in the file.
-diff file1 file2
-Display the differences between file1 and file2
-grep word file
-Search for word in file
-sort 
-Sort the input
-uniq file
-Look for duplicate words in the file
-cut -f 1 file
-Split the contents of a file, e.g. if it is in columns
-xargs -n 1 command
-Use each entry as a parameter to pass to command
+### Pipes
 
-Pipes
 One of the strengths of unix is the ability to pipe commands together. You can take the output of one command, and use it as the input to another command. This means that you can join arbitrary things together to generate new results. This is one of the reasons that unix is so popular among data analysts. The method for doing this is called piping, and we use the vertical line symbol to pipe the input “|”.
-For example, to sort the lines in a file we can combine two commands, cat and  sort. The first command prints the entire contents of a file and the second sorts the lines on the input. For example, if we have a file called poem.txt, we can sort the lines using this command:
+
+For example, to sort the lines in a file we can combine two commands, `cat` and  `sort`. The first command prints the entire contents of a file and the second sorts the lines on the input. For example, if we have a file called poem.txt, we can sort the lines using this command:
+
+```
 cat poem.txt | sort 
-You can sort things either alphabetically or numerically by adding a -n to the command line. There is another command, uniq, that looks for duplicated lines, and has an option -c to count the duplicates, and a command cut that allows you to print one column of a file. We can tie all these commands together to sort the contents of a file, count recurrent lines, and sort them numerically to generate a list of lines in the file. For example, if we have a text file containing subsystems in metagenomes, we can split the list into a specific column using a tab as a separator (the shortcut for a tab is ‘\t’), sort those lines, identify and count duplicates, and then sort the output numerically.
+```
+
+You can sort things either alphabetically or numerically by adding a `-n` to the command line. 
+
+There is another command, `uniq`, that looks for duplicated lines, and has an option `-c` to count the duplicates, and a command cut that allows you to print one column of a file. We can tie all these commands together to sort the contents of a file, count recurrent lines, and sort them numerically to generate a list of lines in the file. For example, if we have a text file containing subsystems in metagenomes, we can split the list into a specific column using a tab as a separator (the shortcut for a tab is ‘\t’), sort those lines, identify and count duplicates, and then sort the output numerically.
+
+```
 cut -f 2 -d$’\t’ subsystems.txt | sort | uniq -c | sort -nr | less
-stdout and stderr
+```
+
+### stdout and stderr
 
 Linux machines have two “output streams”, places where they print things. One is designed for normal output and is called “stdout” (standard output), and the other is designed to print error messages and is called “stderr”. 
+
 Normally, both of these print to the screen, however we can redirect one or both of them to print to a file.
+
 To redirect stdout, we use a greater than sign (“>”). For example, we can take the output from the command above and write it to the file subsystem_counts.txt:
+
+```
 cut -f 2 -d$’\t’ subsystems.txt | sort | uniq -c | sort -nr > subsystem_counts.txt
-Warning: This will overwrite any existing file called subsystem_counts.txt and you will loose all the content.
+```
+
+**Warning**: This will overwrite any existing file called subsystem_counts.txt and you will loose all the content.
 
 
-Counting fasta sequences
+## Counting fasta sequences
+
 One of the challenges that we often face with bioinformatics is to count the number of sequences in a fasta file. You might be tempted to use a command like this:
+
+```
 grep -c > dna.fna
+```
+
 but remember the stdout section above! This will overwrite the file called dna.fna with an empty file and you will loose your DNA sequences!
+
 If you want to do that, you can “escape” the greater than sign. That means it is not really recognized at a redirection of stdout.
+
+```
 grep -c \> dna.fna
+```
+
 When we look at Python, later in the course, we’ll write some (safer) programs for counting fasta sequences.
-Getting Help
+
+## Getting Help
+
 There are lots of places that you can get help, but you should consider these sources first:
 1. The applications help menu.
 If you are running a command line application, usually (but not always) adding -h after the name will print a help menu. For example, one of the commands that we are going to use later is called bowtie2. You can access the help menu by typing:
+
+```
 bowtie2 -h 
+```
+
 Notice, however, that prints a lot of information and the top part goes off the top of the screen. We can control that by piping it to one of the commands that we have already seen, less:
+
+```
 bowtie2 -h | less
+```
+
 This will paginate the output, press space to see the next page or q to quit.
 Sometimes developers write the help pages to standard error. This is generally bad practice, but they do it any way. As we saw above, there are two outputs on linux (and all machines), one for error codes and one for normal output. You can join those two outputs so that they appear in the same place with this weird construct: 2>&1. Therefore you can redirect the output from the standard error (stderr) to standard output (stdout).
+
 For example, compare the output of asking help from metabat using these two approaches:
+
+```
 metabat -h | less
+```
+
 and
+```
 metabat -h 2>&1 | less
+```
+
 2. Man pages.
+
 Most applications come with a detailed manual that is already installed on your computer. For example, to see the manual for less, the application we use above, type:
 man less
+
 you can try man for any application, most have manual pages, but not all.
+
 3. Google searches
+
 Google for any application with “tutorial” or “how-to” after the name and you will usually find a helpful description of what is wrong. The website https://www.stackoverflow.com/ is particularly useful for linux help.
 
 
