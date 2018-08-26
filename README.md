@@ -18,4 +18,7 @@ Companion videos that accompany this class are available on You Tube on [Rob's Y
 
 Some of the images used in this manual are currently copyright other people. As noted above, Rob and friends wrote this manual over many years and added the images and cartoons to lighten the manual. We are in the process of identifying the copyright holders and/or identifying images that are not copyrighted. If your rights have been infringed upon, if you would like to provide an indemnification, or if you would like to provide a non-copyrighted image, please contact Rob.
 
+# Copyright
+
+This manual is Copyright Robert A. Edwards.
 
