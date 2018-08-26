@@ -74,50 +74,61 @@ This will create the key for you.
 
 Save the public key as, for example, key.pub, and the private key as, for example, key.ppk.
 We will use them later!
-To use the keys, right click on the private key, and choose Load into Pageant
+
+<img align="right" src="images/image10.png">
+**To use the keys**, right click on the private key, and choose Load into Pageant
 Pageant is the PuTTY key agent, and several programs can access the keys from there.
 
-Accessing Your Linux Server – Windows
-Download PuTTY
-If you skipped the download part above, here it is again:
-Download PuTTY. Note: For PuTTY, there are some hacked versions of PuTTY floating around the internet and you don’t want to inadvertently download one of those as it may give the bad guys access to your machine. There are also versions with advertisements, and other crap added on. I always start at https://www.putty.org/ and go from there. Do not Google for it, just go direct to the website and click the download link. 
-You want either the 32-bit or 64-bit MSI Windows Installer, depending on whether your computer has 32- or 64-bits.
+### Accessing Your Linux Server – Windows
+#### Accessing Your Server via PuTTY
 
-Note sure how many bits? This is from the PuTTY FAQ:
-Accessing Your Server via PuTTY
+<img align="left" src="images/image3.png">
+
 To access your server using PuTTY, load the private key into Pageant as shown above and then start PuTTY. Enter the IP address of your computer and click Open. On the next screen, where it says Login as: enter your username. You will be logged into your server and you can continue with the course.
 
 
 Once you log in you should see a screen like this:
 
+![logged in](images/image6.png)
 
 
 
-Putting and Retrieving Files using Filezilla
+## Putting and Retrieving Files using Filezilla
+
 To get files onto and off of the server, you should probably use FileZilla on Windows.
-Start by heading to https://filezilla-project.org/ and click on the download link for the client:
+Start by heading to [the filezilla website](https://filezilla-project.org/) and click on the download link for the client:
+
+![download filezilla](images/image13.png)
 
 On the next screen, just choose the regular (free) FileZilla.
 Install filezilla using the default options, and then open it.
 In the boxes at the top, enter your IP address, username, and password. In this example my IP address was 54.206.35.210. Enter port 22 as we will use secure copying, and then click Quickconnect.
 
+![filezilla quickconnect](images/image20.png)
+
 
 You will be asked a couple of questions that you can agree to. You probably want to save the passwords. I don’t worry about a master password, but if you are accessing sensitive information you should.
 
+![remember passwords?](images/image12.png)
 
 and we want to remember the server so we don’t get asked each time:
 
+![remember server?](images/image1.png)
 
 And then you can drag and drop files from the left side which is your local computer and the right side which is the server:
 	 	 	
+![split screen filezilla view](images/image18.png)
 
 
+### Accessing Your Server via VcXsrv
 
-Accessing Your Server via VcXsrv
-[Note: You only need to do this if you want to run things under x-windows]
+*[Note: You only need to do this if you want to run things under x-windows]*
+
 We will also want to access your server using an X11 emulator (don’t worry what that means, basically it means we can use Google Chrome on the server!)
 Before we start, make sure to right click on your private key and choose Load into Pageant.
-Next, we are going to install VcXsrv for windows. Go to this link, and download the latest version. Click and run the installer that downloads: https://sourceforge.net/projects/vcxsrv/files/latest/download
+Next, we are going to install VcXsrv for windows. Go to this link, and [download the latest version](https://sourceforge.net/projects/vcxsrv/files/latest/download). Click and run the installer that downloads: 
+
+![installer](images/image21.png)
 
 
 Now start a program on the client:
