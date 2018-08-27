@@ -12,8 +12,8 @@ Companion videos that accompany this class are available on You Tube on [Rob's Y
 
 # Chapter Index
 
-1 [Linux](Linux/)
-2 [Sequencing Overview](Sequencing/)
+1. [Linux](Linux/)
+2. [Sequencing Overview](Sequencing/)
 
 # About Copyright Information
 
