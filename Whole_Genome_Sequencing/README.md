@@ -4,7 +4,7 @@ Before we begin, some thought experiments:
 
 *Thought experiment*: How big are genomes of phages, Bacteria, Archaea, Eukarya?<sup>[1](#footnote1)</sup>
 
-*Thought experiment*: Suppose that you want to sequence the genome of a bacteria that is 1,000,000 bp and you are using a sequencing technology that reads 1,000 bp at a time. What is the least number of reads you could use to sequence that genome?<a name="footnote2">2</a>
+*Thought experiment*: Suppose that you want to sequence the genome of a bacteria that is 1,000,000 bp and you are using a sequencing technology that reads 1,000 bp at a time. What is the least number of reads you could use to sequence that genome?<sup>[2](#footnote2)</sup>
 
 A long time ago, when sequencing was expensive, these two questions kept people awake. For example, Lander and Waterman published a paper [describing the number of clones that need to be mapped (sequenced)](https://www.ncbi.nlm.nih.gov/pubmed/3294162) to achieve representative coverage of the genome. Part of this theoretical paper is to discuss how many clones would be needed to cover the whole genome. In those days, the clones were broken down into smaller fragments, and so on and so on, and then the fewest possible fragments sequenced. Because the order of those clones was known (from genetics and restriction mapping), it was easy to put them back together.
 
@@ -24,7 +24,7 @@ There are now over 300,000 complete genomes in the GOLD database! *Read the last
 
 Also, at the time of writing this (September, 2018), [PATRIC](http://patricbrc.org) reported [177,395 bacterial genomes](https://www.patricbrc.org/view/Taxonomy/2) in their database.
 
-*Thought experiment*: Back in the 1990s, we had a few tens of genomes. In the late-1990s we were betting on whether we would reach 100 complete genomes. What happened? Why do we now have hundreds of thousands of genomes?<a name="footnote3">3</a>
+*Thought experiment*: Back in the 1990s, we had a few tens of genomes. In the late-1990s we were betting on whether we would reach 100 complete genomes. What happened? Why do we now have hundreds of thousands of genomes?<sup>[3](#footnote3)</sup>
 
 ## How do we sequence a genome?
 
@@ -40,12 +40,16 @@ Once the DNA has been sheared to an appropriate size (*what size would be approp
 
 Finally, the DNA with the adapters can be sequenced using the Illlumina [HiSeq](https://www.illumina.com/systems/sequencing-platforms/hiseq-2500.html) which generates about 1 Terabase of reads. Each run generates about 300 million reads, and each read can be upto 250 bp in total, reading 125 bp from each end of the read. The HiSeq takes about 6 days to run (read more about the [HiSeq specifications](https://www.illumina.com/systems/sequencing-platforms/hiseq-2500/specifications.html)). Alternately, you can use the Illumina [MiSeq](https://www.illumina.com/systems/sequencing-platforms/miseq.html) that generates about 15 GB of sequence, which comes from about 25 million 300 bp reads from each end and takes about 56 hours to run (read more about the [MiSeq specifications](https://www.illumina.com/systems/sequencing-platforms/miseq/specifications.html)).
 
-*Though experiment*: How much sequencing do you need for a bacterial genome?<a name="footnote4">4</a>
+*Though experiment*: How much sequencing do you need for a bacterial genome?<sup>[4](#footnote4)</sup>
 
 Instead of using the Illumina systems, more and more genomes are being sequenced using the [PacBio SMRT sequencing](https://www.pacb.com/smrt-science/smrt-sequencing/) and the [Oxford Nanopore Minion](https://nanoporetech.com/products/minion) DNA sequencer. The advantage of these two technologies is that they both produce much longer reads - in the range of 10-40 kbp versus 100-300 bp for the Illumina, which makes downstream assembly and processing much more straightforward.
 
 ---
 <sup><a name="footnote1">1</a></sup> Answer: on average, phages are 50kb, Bacteria and Archaea are 2 Mb, and Eukarya are 2GB
-<sup>[2](#footnote2)</sup> Answer: Of course, if you knew exactly the order of the reads, you could sequence 1,000 reads and sequence the whole genome.
-<sup>[3](#footnote3)</sup> Answer: First, [the cost of sequencing](Sequencing#cost-of-dna-sequencing) dropped drastically, and second, we realized the amazing amount of information we can get from hundreds of genomes.
-<sup>[4](#footnote4)</sup> Answer: The average bacterial genome is about 2,000,000 bp, and for good assembly with Illumina data you need about 100x coverage, so you need about 0.2 Gbp (200,000,000 bp) of sequence data. Therefore, you can sequence a lot of genomes on a HiSeq! However, assembly is much better with long read systems like the Minion or PacBio.
+
+<sup><a name="footnote2">2</a></sup> Answer: Of course, if you knew exactly the order of the reads, you could sequence 1,000 reads and sequence the whole genome.
+
+<sup><a name="footnote3">3</a></sup> Answer: First, [the cost of sequencing](Sequencing#cost-of-dna-sequencing) dropped drastically, and second, we realized the amazing amount of information we can get from hundreds of genomes.
+
+<sup><a name="footnote4">4</a></sup> Answer: The average bacterial genome is about 2,000,000 bp, and for good assembly with Illumina data you need about 100x coverage, so you need about 0.2 Gbp (200,000,000 bp) of sequence data. Therefore, you can sequence a lot of genomes on a HiSeq! However, assembly is much better with long read systems like the Minion or PacBio.
+
