@@ -49,7 +49,7 @@ Instead of using the Illumina systems, more and more genomes are being sequenced
 
 <sup><a name="footnote2">2</a></sup> Answer: Of course, if you knew exactly the order of the reads, you could sequence 1,000 reads and sequence the whole genome.
 
-<sup><a name="footnote3">3</a></sup> Answer: First, [the cost of sequencing](Sequencing#cost-of-dna-sequencing) dropped drastically, and second, we realized the amazing amount of information we can get from hundreds of genomes.
+<sup><a name="footnote3">3</a></sup> Answer: First, [the cost of sequencing](../Sequencing#cost-of-dna-sequencing) dropped drastically, and second, we realized the amazing amount of information we can get from hundreds of genomes.
 
 <sup><a name="footnote4">4</a></sup> Answer: The average bacterial genome is about 2,000,000 bp, and for good assembly with Illumina data you need about 100x coverage, so you need about 0.2 Gbp (200,000,000 bp) of sequence data. Therefore, you can sequence a lot of genomes on a HiSeq! However, assembly is much better with long read systems like the Minion or PacBio.
 
