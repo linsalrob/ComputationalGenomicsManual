@@ -6,6 +6,8 @@ Robs manual for the computational genomics and bioinformatics class
 
 Rob, Liz Dinsdale, Tom Jeffries, Bruno Gomez-Gil, and several other colleagues and friends have been teaching genomics and metagenomics for a long time. They have written this manual over the course of several years, and in a variety of formats. Rob moved it to markdown using GitHub in Fall 2018 as part of his computational genomics class.
 
+You can view this manual online at https://linsalrob.github.io/ComputationalGenomicsManual/.
+
 # Companion Videos
 
 Companion videos that accompany this class are available on You Tube on [Rob's YouTube Playlist](https://www.youtube.com/playlist?list=PLpPXw4zFa0uLMHwSZ7DMeLGjIUgo1IBbn).
@@ -14,6 +16,7 @@ Companion videos that accompany this class are available on You Tube on [Rob's Y
 
 1. [Linux](Linux/)
 2. [Sequencing Overview](Sequencing/)
+3. [Whole Genome Sequencing](Whole_Genome_Sequencing)
 
 # About Copyright Information
 
@@ -23,3 +26,6 @@ Some of the images used in this manual are currently copyright other people. As 
 
 This manual is Copyright Robert A. Edwards.
 
+# Citation
+
+If you wish to cite this manual, please cite: *Edwards, R. 2018. Computational Genomics. https://linsalrob.github.io/ComputationalGenomicsManual/. Accessed [today's date]*
