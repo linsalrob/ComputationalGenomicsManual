@@ -20,7 +20,7 @@ and this translates into a growth in the number of complete microbial genomes re
 
 [![Growth in genomes per year](images/GenomesOnlineGrowth.png)](https://gold.jgi.doe.gov/statistics)
 
-There are now over 300,000 complete genomes in the GOLD database! *Read the last version of their paper [Supratim Mukherjee; Dimitri Stamatis; Jon Bertsch; Galina Ovchinnikova; Olena Verezemska; Michelle Isbandi; Alex D. Thomas; Rida Ali; Kaushal Sharma; Nikos C. Kyrpides; T. B. K. Reddy. Genomes OnLine Database (GOLD) v.6: data updates and feature enhancements Nucl. Acids Res. (2016); doi: 10.1093/nar/gkw992](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5210664/)*
+There are now over 300,000 complete genomes in the GOLD database! *Read the last version of their paper [Genomes OnLine Database (GOLD) v.6: data updates and feature enhancements Nucl. Acids Res. (2016); doi: 10.1093/nar/gkw992](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5210664/)*
 
 Also, at the time of writing this (September, 2018), [PATRIC](http://patricbrc.org) reported [177,395 bacterial genomes](https://www.patricbrc.org/view/Taxonomy/2) in their database.
 
