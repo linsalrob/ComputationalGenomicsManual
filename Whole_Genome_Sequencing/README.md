@@ -2,7 +2,7 @@
 
 Before we begin, some thought experiments:
 
-*Thought experiment*: How big are genomes of phages, Bacteria, Archaea, Eukarya?<sup><a name="footnote1">1</a></sup>
+*Thought experiment*: How big are genomes of phages, Bacteria, Archaea, Eukarya?<sup>[1](#footnote1)</sup>
 
 *Thought experiment*: Suppose that you want to sequence the genome of a bacteria that is 1,000,000 bp and you are using a sequencing technology that reads 1,000 bp at a time. What is the least number of reads you could use to sequence that genome?<a name="footnote2">2</a>
 
@@ -45,7 +45,7 @@ Finally, the DNA with the adapters can be sequenced using the Illlumina [HiSeq](
 Instead of using the Illumina systems, more and more genomes are being sequenced using the [PacBio SMRT sequencing](https://www.pacb.com/smrt-science/smrt-sequencing/) and the [Oxford Nanopore Minion](https://nanoporetech.com/products/minion) DNA sequencer. The advantage of these two technologies is that they both produce much longer reads - in the range of 10-40 kbp versus 100-300 bp for the Illumina, which makes downstream assembly and processing much more straightforward.
 
 ---
-<sup>[1](#footnote1)</sup> Answer: on average, phages are 50kb, Bacteria and Archaea are 2 Mb, and Eukarya are 2GB
+<sup><a name="footnote1">1</a></sup> Answer: on average, phages are 50kb, Bacteria and Archaea are 2 Mb, and Eukarya are 2GB
 <sup>[2](#footnote2)</sup> Answer: Of course, if you knew exactly the order of the reads, you could sequence 1,000 reads and sequence the whole genome.
 <sup>[3](#footnote3)</sup> Answer: First, [the cost of sequencing](Sequencing#cost-of-dna-sequencing) dropped drastically, and second, we realized the amazing amount of information we can get from hundreds of genomes.
 <sup>[4](#footnote4)</sup> Answer: The average bacterial genome is about 2,000,000 bp, and for good assembly with Illumina data you need about 100x coverage, so you need about 0.2 Gbp (200,000,000 bp) of sequence data. Therefore, you can sequence a lot of genomes on a HiSeq! However, assembly is much better with long read systems like the Minion or PacBio.
