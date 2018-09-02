@@ -52,3 +52,14 @@ For example:
 * Nanopore &em; long sequences (kbp to mbp); minimal chemistry and sample prep; cheap; lower accuracy (currently ~90%); fast
 
 
+# Cost of DNA sequencing
+
+Over the years, the cost of DNA sequencing has dropped dramatically! In the 1980's the argument was that it would be cost-effective to sequence the human genome when the price of DNA sequencing was about 0.5&#162; per base pair. Nowadays the cost of sequencing is about 1.2&#162; per **mega**base pair - so about 0.0000012&#162; per base pair! You can find out more about the cost of DNA sequencing from the [NIH website that tracks the cost](https://www.genome.gov/sequencingcostsdata/). 
+
+## Why has sequencing become so cheap?
+
+The main reason is because of the introduction of new sequencing technology, especially that driven by the Illumina sequencer. As shown in this Figure from the Ph.D. thesis of Dr. Genivaldo Silva: [Who Is There and What Are They Doing? An Agile and Computationally Efficient Framework for Genome Discovery and Annotation from Metagenomic Big Data](https://sdsu-primo.hosted.exlibrisgroup.com/primo-explore/fulldisplay?docid=01CALS_ALMA71478140820002901&context=L&vid=01CALS_SDL&search_scope=EVERYTHING&tab=everything&lang=en_US), the cost of DNA sequencing has taken a dramatic drop with each new technological innovation!
+
+![Growth of the SRA and cost of DNA sequencing](images/GrowthSRA_SeqCost.png)
+
+
