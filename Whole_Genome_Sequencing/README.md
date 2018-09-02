@@ -2,7 +2,7 @@
 
 Before we begin, some thought experiments:
 
-*Thought experiment*: How big are genomes of phages, Bacteria, Archaea, Eukarya?<a name="footnote1">1</a>
+*Thought experiment*: How big are genomes of phages, Bacteria, Archaea, Eukarya?<sup><a name="footnote1">1</a></sup>
 
 *Thought experiment*: Suppose that you want to sequence the genome of a bacteria that is 1,000,000 bp and you are using a sequencing technology that reads 1,000 bp at a time. What is the least number of reads you could use to sequence that genome?<a name="footnote2">2</a>
 
