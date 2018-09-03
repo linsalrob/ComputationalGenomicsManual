@@ -32,7 +32,21 @@ Also, at the time of writing this (September, 2018), [PATRIC](http://patricbrc.o
 
 For a standard microbial genome, we start by extracting the DNA from a culture. There are lots of kits and approaches to do this that are standardized and give high yields of clean, and largely high molecular weight DNA (i.e. the DNA strands are long and largely unbroken). For example, [ThermoFisher](http://www.thermofisher.com/us/en/home/life-science/dna-rna-purification-analysis/genomic-dna-extraction/) and [Qiagen](https://www.qiagen.com/us/shop/sample-technologies/dna) both make excellent DNA extraction kits (as do other companies too!). 
 
-Once the DNA has been isolated, we fractionate it to make smaller fragments. There are several ways to do this, but two of the most popular are using the [Covaris](https://covaris.com/instruments/) ultrasonicator or the [Illumina Nextera tagmentation](https://www.illumina.com/content/dam/illumina-marketing/documents/products/technotes/nextera-xt-troubleshooting-technical-note.pdf) protocol. The former uses sonication to physically break the DNA, while the latter uses an enzyme to integrate a transposon into the DNA.
+Once the DNA has been isolated, we fractionate it to make smaller fragments. There are several ways to do this, but two of the most popular are using the [Covaris](https://covaris.com/instruments/) ultrasonicator or the [Illumina Nextera tagmentation](https://www.illumina.com/content/dam/illumina-marketing/documents/products/technotes/nextera-xt-troubleshooting-technical-note.pdf) protocol. The former uses sonication to physically break the DNA, while the latter uses an enzyme to integrate a transposon into the DNA as shown below:
+
+![how tagmentation works](images/tagmentation.png)
+
+For a successful library prep, the tagmentation approach requires the DNA to be cleaved by two different (but very similar) transposons. How do they achieve this? 
+
+The transposon is based on Tn*5*, and is synthesized *in vitro*. Next, the monomeric Tn*5* is mixed with two different oligos that have different indexes, Illumina typically uses the *N5-* and *N7-* indexes while 454 sequencing used *A* and *B* primers. The monomeric transposase is dimerized in a buffer containing MgCl<sub>2</sub>, and since the monomors are equimolar there are three possible outcomes for the dimers:
+1. Both members of the dimer have the *A* or *N7-* tag. This should happen 25% of the time
+2. Both members of the dimer have the *B* or *N5-* tag. This should happen 25% of the time
+3. One member of the dimer has the A or *N7-* tag and one member has the *B* or *N5-* tag, and this should happen 50% of the time.
+
+After the DNA has been cleaved, a few rounds of PCR are used (called [*suppression PCR*](http://www.nature.com/app_notes/nmeth/2009/091011/full/nmeth.f.272.html)) to enrich for only those DNA molecules that contain boh *N7-* and *N5-* (or *A* and *B* in the case of 454). That DNA is the input into your sequencing run. 
+
+See this [seqanswers thread](http://seqanswers.com/forums/archive/index.php/t-50155.html) for a more detailed discussion about how tagmentation works.
+
 
 *Thought experiment*: What are the advantages and disadvantages of each of these approaches?
 
