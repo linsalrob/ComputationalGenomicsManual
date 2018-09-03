@@ -2,7 +2,7 @@
 
 In the early days of DNA sequencing, we used polyacrylamide gels to separate DNA fragments based on size. These fragments move through the gel, propelled by an electric current (DNA is negatively charged), and the larger fragments get retarded by the gel while the smaller fragments move through faster.
 
-![from crAssphage](/home/redwards/GitHubs/ComputationalGenomicsManual/Sequencing/images/SangerCrassphage.png  "A Sanger sequence trace")
+![from crAssphage](../Sequencing/images/SangerCrassphage.png  "A Sanger sequence trace")
 
 Size separation is not a binary process – there is overlap between closely related fragments, and you can change the amount of overlap by altering the composition of the gel, making it thicker, which increases resolution at a cost of a smaller region of the sequence being separated, or making it thinner which decreases resolution but allows a larger region to be visualized.
 
