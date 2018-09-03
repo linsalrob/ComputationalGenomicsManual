@@ -47,6 +47,10 @@ This Pacific Biosciences YouTube video shows you more detail about how the seque
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=WMZmG00uhwU" target="_blank"><img src="http://img.youtube.com/vi/WMZmG00uhwU/0.jpg" alt="PacBio Sequencing" border="10" /></a>
 
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WMZmG00uhwU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ![Minion Sequencing](images/image1.png)
 
 The **Oxford Nanopore Minion** uses a nano-scale hole that can be used to electrophorically drive a biological molecule through and measure the change in current as the biological molecule passes through the pore (Metzker, 2010). The hole is made by a protein punching a hole in a membrane (biological nanopore) or a hole punched through a solid product (solid state nanopores).  As the DNA flows through the pore the difference is size of the nucleotides changes the ionic charge flowing through the pore. The difference in charge is measured and related to the size of the nucleotide. The DNA sample does not need amplification; the greater the amount of DNA, the greater number and length of DNA sequences that are obtained, however. The library preparation requires minimal fragmentation and there are a couple of different approaches. In the 1D approach, only one of the strands is read without  the ligation of two adaptors. An alternative is the 2D approach, in which the first adaptor is bound with a propriety motor enzyme and a molecular tether. The second adaptor is a hairpin oligonucleotide bound by a second motor (Reuter, Spacek & Snyder, 2015). The hairpin loop allows for both sides of the double stranded to be sequenced. The speed at which unbound DNA moved through the pore provides for rapid sequencing, but this was an initial problem for obtaining an accurate measurement (Branton et al., 2008). The accuracy has increased and the minion has 510 nanopores from which to process DNA and fast library preparation times. The length of sequences is up to several hundred base pairs. The speed and ease of the sequencer will allow for sequencing almost anywhere in the field.
