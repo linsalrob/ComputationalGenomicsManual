@@ -177,6 +177,10 @@ This command takes a bowtie2 indexed file (`crassphage.bt2`) and two read files 
 
 Notice that we don't save the intermediate sam file - we create it on the fly and pass it straight into the conversion to binary format.
 
+### Viewing BAM files
+
+The best BAM file viewer that we routinely use is the unfortunately named [Tablet](https://ics.hutton.ac.uk/tablet/) from the James Hutton Institute. (The naming is unfortunate as it is not easy to find!). If you use this be sure to check out their references describing Tablet [Using Tablet for visual exploration of second-generation sequencing data](https://www.ncbi.nlm.nih.gov/pubmed/22445902) and [Tablet: Visualizing Next-Generation Sequence Assemblies and Mappings](https://www.ncbi.nlm.nih.gov/pubmed/26519411).
+
 ### More information about SAM and BAM files
 
 You can find a lot more information about SAM and BAM files at [htslib.org](http://www.htslib.org/doc/), the site of samtools and associated software. samtools and all required dependencies are already installed in our Amazon Web Image.
