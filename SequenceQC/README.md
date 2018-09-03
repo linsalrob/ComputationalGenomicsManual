@@ -10,7 +10,7 @@ This leads to a problem, however. How certain are you about the base that you ha
 
 To overcome this problem, people sequenced the same gene many times, starting at different places, and in both directions. This allowed them to build models of the accuracy of base callers under different circumstances. The best software to do this was called [phred](http://www.phrap.org/phred) and their  quality score is based on the formula:
 
-Q = -10 log<sub>10<sub>(P<sub>e</sub>)
+Q = -10 log<sub>10</sub>(P<sub>e</sub>)
 
 Where Q is the quality score, and P<sub>e</sub> is the probability of error in the base call. Quality scores range from 0 to 99, although 99 is usually used to mean that you have artificially inserted a sequence at that position (e.g. through manually editing the sequence). 
 
@@ -98,6 +98,7 @@ To filter the sequences to remove any sequence with an N, and to generate two fi
 prinseq-lite.pl -verbose -fastq Algae_12.fastq -ns_max_n 0 -out_good seqs_no_ns -out_bad seqs_with_ns
 ```
 
+***
 
 <sup><a name="footnote1">1</a></sup> Answer: Garbage in, gargbage out. Withouth doing QC you are working on sequences that are just errors from the machines and are meaningless!
 
