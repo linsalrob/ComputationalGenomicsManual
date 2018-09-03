@@ -14,7 +14,7 @@ The characters after the ‘>’ and up until the first white space are consider
 
 As we discussed in the [sequencing section](../Sequencing), when you are sequencing, you need to keep track of the quality scores that estimate the [error rate](../Sequencing#errors-in-dna-sequencing). For Sanger sequencing and with some of the early high-throughput approaches, a separate file called a quality file was used. That has the quality scores separated by spaces, one quality per base. There should be the same number of bases as there are quality scores!
 
-![fasta quality file to keep the quality scores](/home/redwards/GitHubs/ComputationalGenomicsManual/SequenceFileFormats/images/crAssphageQuality.png  "The Qual File")
+![fasta quality file to keep the quality scores](images/crAssphageQuality.png  "The Qual File")
 
 ##fastq format 
 
@@ -24,7 +24,7 @@ The solution that was settled upon was to combine the sequences and quality scor
 
 However, instead of storing the numbers as digits, like in the quality file above, we choose to store the numbers as single characters! This means that every quality score is exactly as long as the sequence that it refers to, as there is a single character per quality score.  To convert the numbers to characters, we use the [Unicode tables](https://en.wikipedia.org/wiki/Unicode). These tables (a part of which is shown here), have a decimal number to represent every character of the alphabet, including the extended alphabet from different languages, and now emoji, too. 
 
-![Unicode Tables](/home/redwards/GitHubs/ComputationalGenomicsManual/SequenceFileFormats/images/ascii.png  "Unicode Tables")
+![Unicode Tables](images/ascii.png  "Unicode Tables")
 
 However, notice in the table above that the first 31 numbers include all the keys on your keyboard like backspace, tab, and delete, and #32 is a space, which is not so useful if we want to store them in a file one character per line (how would *you* store a backspace?). Therefore, to convert a phred score to a fastq score, we **add 33** to the number and use the character from this table. Some examples are shown in the table below.
 
@@ -40,7 +40,7 @@ The other changes that was made compared to fasta files were to ensure that fast
 
 First, fastq files have four lines for each entry, and second, instead of using the greater-than sign (“>”) to delimit the ID, fastq files use an @ sign and a + sign. The order of the file is shown in the box below.
 
-![fastq file format](/home/redwards/GitHubs/ComputationalGenomicsManual/SequenceFileFormats/images/fastq.png  "fastq file format")
+![fastq file format](images/fastq.png  "fastq file format")
 
 The first line for each sequence begins with an @ sign and has the sequence ID, up to the first white space, and as with fasta files, after the space can have additional optional information. The second line has just the DNA sequence, with nothing else, and the sequence must be on one line (without new lines). The third line begins with a + sign, and optionally also includes the sequence ID (but does not need to), and the fourth and final line has the representation of the quality scores without any spaces.
 
