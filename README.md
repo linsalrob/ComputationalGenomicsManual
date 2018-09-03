@@ -16,7 +16,9 @@ Companion videos that accompany this class are available on You Tube on [Rob's Y
 
 1. [Linux](Linux/)
 2. [Sequencing Overview](Sequencing/)
-3. [Whole Genome Sequencing](Whole_Genome_Sequencing)
+3. [Sequence File Formats](SequenceFileFormats/)
+4. [Sequence Quality Control](SequenceQC/)
+5. [Whole Genome Sequencing](Whole_Genome_Sequencing)
 
 # About Copyright Information
 
