@@ -92,4 +92,34 @@ Illumina | substitutions | 0.1 %
 
 However, in many cases the final error is significantly better than that reported here because, for example, both Nanopore and PacBio can sequence the same molecule several times, and then reduce their effective error rate. With Pac Bio SMRT sequencing the DNA molecule does not get released from the polymerase. Nanopore 2D-sequencing was designed to reduce the error rate by reading the DNA strand in the one direction, around a loop, and then reading the same molecule back again.
 
+However, for downstream analyses we need to estimate the error rates of the DNA sequences. Essentially every technology does this the same way.
 
+*Thought Experiment*: Lets say you start with a well known sequence like &Phi;X174 which was sequenced back in 1978 (by [Fred Sanger, of Sanger sequencing!](https://www.ncbi.nlm.nih.gov/pubmed/731693)), how would you estimate the error rate of a new sequencing technology?<sup>[1](#footnote1)</sup>
+
+One of the first base callers to build error models of sequences was called [Phred](http://www.phrap.com/phred/), developed by Phil Green and Brent Ewing. They developed the notion of a *phred score* for each base of the sequence. The phred score is the logarithm of the base-calling error probabilities:
+
+![phred score from wikipedia](https://wikimedia.org/api/rest_v1/media/math/render/svg/4bf1e60a0c90edd9ec883d812daef63fc4386d18)
+
+Such that, for example:
+
+* Phred 10: 1 x 10<sup>1</sup> chance that the base is wrong
+* Phred 20: 1 x 10<sup>2</sup> chance that the base is wrong
+* Phred 30: 1 x 10<sup>3</sup> chance that the base is wrong
+* Phred 40: 1 x 10<sup>4</sup> chance that the base is wrong
+
+Alternatively:
+
+Phred Quality Score | Probability of an incorrect base call | Base calling accuracy
+--- | --- | ---
+10 | 1 in 10 | 90%
+20 | 1 in 100 | 99%
+30 | 1 in 1000 | 99.9%
+40 | 1 in 10,000 | 99.99%
+50 | 1 in 100,000 | 99.999%
+60 | 1 in 1,000,000 | 99.9999%
+
+
+
+
+
+<sup><a name="footnote1">1</a></sup> Answer: You repeatedly sequence the same molecule over and over again, and each time you basecall the sequences you can build a model of your error distribution. In reality, you don't only use &Phi;X174, but you sequence several different genomes, each with different characteristics (e.g. repetative elements, %GC, etc) to build robust error models of different sequences.
