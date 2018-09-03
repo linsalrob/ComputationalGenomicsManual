@@ -98,9 +98,10 @@ However, for downstream analyses we need to estimate the error rates of the DNA 
 
 One of the first base callers to build error models of sequences was called [Phred](http://www.phrap.com/phred/), developed by Phil Green and Brent Ewing. They developed the notion of a *phred score* for each base of the sequence. The phred score is the logarithm of the base-calling error probabilities:
 
-![phred score from wikipedia](https://wikimedia.org/api/rest_v1/media/math/render/svg/4bf1e60a0c90edd9ec883d812daef63fc4386d18)
+Q = -10 log<sub>10<sub>(P<sub>e</sub>)
 
-Such that, for example:
+Where Q is the quality score, and P<sub>e</sub> is the probability of error in the base call. Quality scores range from 0 to 99, although 99 is usually used to mean that you have artificially inserted a sequence at that position (e.g. through manually editing the sequence). The meaning of quality scores are shown in the two tables below.
+
 
 * Phred 10: 1 x 10<sup>1</sup> chance that the base is wrong
 * Phred 20: 1 x 10<sup>2</sup> chance that the base is wrong
@@ -119,6 +120,9 @@ Phred Quality Score | Probability of an incorrect base call | Base calling accur
 60 | 1 in 1,000,000 | 99.9999%
 
 
+Thus, if you see a quality score of 40, you can be very sure that the sequence is correct, while a quality score of 10 should have you worried about the quality. 
+
+Nowadays, however, the sequencing is a lot more accurate. As shown above, Illumina sequencing is accurate on the per base calling problem (although it has issues with template switching during sequencing). Minion sequencing and PacBio sequencing are both getting more accurate, and their errors tend to be less predictable and more stochastic. However, they both use phred scores to justify the quality of their sequences.
 
 
 
