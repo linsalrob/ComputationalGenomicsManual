@@ -75,3 +75,21 @@ The main reason is because of the introduction of new sequencing technology, esp
 ![Growth of the SRA and cost of DNA sequencing](images/GrowthSRA_SeqCost.png)
 
 
+# Errors in DNA sequencing
+
+Each of the sequencing technologies is susceptible to different error rates. They are summarized in the table below:
+
+| Sequencing Technology | Primary Errors |  Error Rate
+ --- | --- | ---
+Capillary Sanger Sequencing | substitutions | 0.1 %
+454 FLX | Indel | 1 %
+PacBio SMRT | CG deletions | 13 %
+Oxford Nanopore | deletions | 7 %
+Ion Torrent | indels | 1 %
+Illumina | substitutions | 0.1 %
+
+(Sources [molecular ecologist](http://www.molecularecologist.com/next-gen-table-3c-2014/), [Ross *et al*](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2013-14-5-r51), [Glenn](https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1755-0998.2011.03024.x), [Weirather *et al*](https://f1000research.com/articles/6-100/v2) and personal experience!)
+
+However, in many cases the final error is significantly better than that reported here because, for example, both Nanopore and PacBio can sequence the same molecule several times, and then reduce their effective error rate. With Pac Bio SMRT sequencing the DNA molecule does not get released from the polymerase. Nanopore 2D-sequencing was designed to reduce the error rate by reading the DNA strand in the one direction, around a loop, and then reading the same molecule back again.
+
+
