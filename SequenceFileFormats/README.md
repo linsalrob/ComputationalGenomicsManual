@@ -16,7 +16,7 @@ As we discussed in the [sequencing section](../Sequencing), when you are sequenc
 
 ![fasta quality file to keep the quality scores](images/crAssphageQuality.png  "The Qual File")
 
-##fastq format 
+## fastq format 
 
 However, as sequencing became more popular, and the amount of sequences increased, this became an increasingly unsustainable way of keeping the data. First, for every sequence, you need two files, a quality scores file and a DNA sequence file. That means you are likely to loose one of those files somewhere along the way (i have lost many of them!). Second, it is not easy to ensure that every sequence has a quality score associated with it, and every base in every sequence has a quality score associated with it! 
 
