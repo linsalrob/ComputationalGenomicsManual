@@ -12,7 +12,7 @@ Originally a file format was needed to handle DNA sequences that was straight fo
 
 The characters after the ‘>’ and up until the first white space are considered the identifier for the sequence and should be unique within the file (i.e. you should not have two different sequences with the same identifier). The information after the first space is optional and can be a description of the sequence, some semi-structured data, like in the third example where it shows the organism and the function of the protein, or anything you would like. Remember that we discussed non-redundant databases in the [databases section](../Databases)? In most non-redundant databases, the sequence starts with a unique ID, and then contains a list of all of the IDs that contribute to that sequence.
 
-As we discussed in the [sequencing section](../Sequencing), when you are sequencing, you need to keep track of the quality scores that estimate the [error rate](../Sequencing#errors-in-dna-sequencing). For Sanger sequencing and with some of the early high-throughput approaches, a separate file called a quality file was used. That has the quality scores separated by spaces, one quality per base. There should be the same number of bases as there are quality scores!
+As we discussed in the [sequencing section](../Sequencing), when you are sequencing, you need to keep track of the quality scores that estimate the [error rate](../Sequencing/README.md#errors-in-dna-sequencing). For Sanger sequencing and with some of the early high-throughput approaches, a separate file called a quality file was used. That has the quality scores separated by spaces, one quality per base. There should be the same number of bases as there are quality scores!
 
 ![fasta quality file to keep the quality scores](images/crAssphageQuality.png  "The Qual File")
 
@@ -62,7 +62,7 @@ We also have two command line versions included on the Amazon Web Services image
 fastq2fasta Algae_12.fastq  Algae_12.fasta
 ```
 
-Note, however, if your file is compressed, for example with GZIP, you need to uncompress it first. You can do this on the fly using a pipe (see the section on pipes above) like this:
+Note, however, if your file is compressed, for example with GZIP, you need to uncompress it first. You can do this on the fly using a [pipe](../Linux/README.md#pipes) like this:
 
 ```
 gunzip -c Algae_12.fastq.gz | fastq2fasta - Algae_12.fasta
@@ -83,7 +83,7 @@ done
 ```
 
 
-The first line in this loop reads the file name of every file in the `fastq/` directory. The second line makes a new variable called `FA` that replaces `fastq.gz` with `fasta`. The third line just prints the file names so you can see what we are working on, the fourth line uncompresses the fastq file but prints the uncompressed version out, and uses a pipe to pass that inforamtion to `fastq2fasta` which reads from `STDIN` (that’s what the `-` sign means) and writes the output to `$FA`.
+The first line in this loop reads the file name of every file in the `fastq/` directory. The second line makes a new variable called `FA` that replaces `fastq.gz` with `fasta`. The third line just prints the file names so you can see what we are working on, the fourth line uncompresses the fastq file but prints the uncompressed version out, and uses a [pipe](../Linux/README.md#pipes) to pass that inforamtion to `fastq2fasta` which reads from `STDIN` (that’s what the `-` sign means) and writes the output to `$FA`.
 
 Other options to convert from fastq to fasta include the brilliant [seqtk](https://github.com/lh3/seqtk) toolkit that is also included on the Amazon Web Image for the course.
 
