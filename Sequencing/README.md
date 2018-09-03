@@ -43,13 +43,10 @@ The sequencing of the human genome in 2001 changed forever the DNA sequencing pr
 
 The **Pacific Biosciences** SMRT sequencer immobilizes a DNA polymerase onto a solid surface and single DNA template is bound to the polymerase. The binding of a single molecule allows for longer sequences to be sequenced. The sequencing is real time as the process does not stop to cleave the fluorophore. Pacific Biosciences uses Phi 29 polymerase, which is highly processive, and allows for resequencing of a single circular molecule. Phospholinked hexaphosphate nucleotides are incorporated into the growing DNA molecule within a small viewing range within the zero-mode waveguide detectors. The detectors are illuminated from the bottom, for 20-30 nm into the detector, making it an extremely small microscope. The fluorescent pulse is detected upon binding; while the DNA strand is within the range of the detector and then it is cleaved and diffuses away from the detector area. The process does not require continual flushing and washing. The resequencing increases accuracy of the platform (Eid et al., 2009).
 
-This Pacific Biosciences YouTube video shows you more detail about how the sequencing works:
+This Pacific Biosciences YouTube video shows you more detail about how the sequencing works (click the picture to go to YouTube):
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=WMZmG00uhwU" target="_blank"><img src="http://img.youtube.com/vi/WMZmG00uhwU/0.jpg" alt="PacBio Sequencing" border="10" /></a>
 
-
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/WMZmG00uhwU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ![Minion Sequencing](images/image1.png)
 
