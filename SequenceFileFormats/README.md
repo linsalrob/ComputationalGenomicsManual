@@ -87,11 +87,13 @@ The first line in this loop reads the file name of every file in the `fastq/` di
 
 Other options to convert from fastq to fasta include the brilliant [seqtk](https://github.com/lh3/seqtk) toolkit that is also included on the Amazon Web Image for the course.
 
-## BAM/SAM 
+## BAM and SAM format
 
 With the advent of large sequencing projects like the human genome sequencing efforts, a lot of bioinformatics focus shifted from *de novo* assembly and annotation of genome sequences to mapping and characterizing *differences between genomes*.
 
 *Thought experiment*: Why do we want to look at the differences between human genomes rather than perform *de novo* annotations?<sup>[2](#footnote2)</sup>
+
+### SAM format 
 
 The Sequence Alignment/Mapping format (SAM) format was first described by [Li *et al*](https://www.ncbi.nlm.nih.gov/pubmed/19505943) and has rapidly become one of the leading file formats.
 
@@ -159,6 +161,25 @@ Thus the CIGAR string 2M1D3M means there are two matches, 1 deletion in the refe
 
 [Here are some more example CIGAR strings](https://jef.works/blog/2017/03/28/CIGAR-strings-for-dummies/)
 
+### BAM format
+
+BAM format is merely a binary representation of SAM format. That means that it is very quick for computers to read and parse BAM files, but that you basically can't view them without a bam viewer.
+
+When we create sequence alignments, we often just skip the creation of the SAM format file altogether, and just make a binary BAM file, using [Linux pipes](../Linux/README.md#pipes) as we have seen before.
+
+For example, this is a common command that we will use:
+
+```
+bowtie2 -p 6 -q --no-unal -x crassphage.bt2 -1 reads.r1.fastq -2 reads.r2.fastq | samtools view -bS - | samtools sort - outputdir/crassphage.reads.bam
+```
+
+This command takes a bowtie2 indexed file (`crassphage.bt2`) and two read files (`reads.r1.fastq` and `reads.r2.fastq`) and uses `bowtie2` to compare the reads to the crassphage reference. Then we convert the output to BAM format using the `-bS` option to samtools view, and finally sort the reads in the bam file (which makes indexing and accessing the data much quicker).
+
+Notice that we don't save the intermediate sam file - we create it on the fly and pass it straight into the conversion to binary format.
+
+### More information about SAM and BAM files
+
+You can find a lot more information about SAM and BAM files at [htslib.org](http://www.htslib.org/doc/), the site of samtools and associated software. samtools and all required dependencies are already installed in our Amazon Web Image.
 
 ## DDBJ/EMBL/Genbank Format
 
