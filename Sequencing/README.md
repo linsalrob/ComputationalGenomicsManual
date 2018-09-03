@@ -13,7 +13,13 @@ Two-time nobel Laureate [Dr. Fred Sanger](https://en.wikipedia.org/wiki/Frederic
 <img align="left" src="images/sanger_seq.png">
 Each band represents a bunch of DNA fragments that have been terminated at the same place. Since there are four ddNTPs &em; ddGTP, ddCTP, ddTTP, and ddATP &em; you can read off the sequence of the strands. Initially, the DNA was separated on large polyacrylamide gels, but a big improvement was the introduction of thin tubes containing the polyacrylamide gels. Associated with that, the introduction of fluorescently labeled nucleotides allowed the terminated fragments to be read automatically. This is the technology that was used to sequence the first version of the human genome.
 
+Sanger sequencing is still used today. It has two advantages that none of the modern sequencing approaches can match: 
+1. Longer sequence length. Typically Sanger sequences will be 700+ bases of usable sequence and can approach 1kb.
+2. Low throughput. Somewhat unexpectedly, the low throughput of Sanger sequencing is an advantage if, for example, you want to sequence a single clone.
 
+Sanger sequencing is largely used to sequence one, or a few, clones. For example, this chromatogram comes from a [global survey of a phage](https://github.com/linsalrob/crAssphage/) called crAssphage that was performed by PCR amplifying a region of the crAssphage genome and then sequencing those PCR products using Sanger sequencing technology.
+
+![crAssphage sequence](images/SangerCrassphage.png)
 
 
 # High throughput DNA sequencing technologies
