@@ -16,11 +16,11 @@ Companion videos that accompany this class are available on You Tube on [Rob's Y
 
 Chapter | Contents  | HTML  | PDF   
 --- | --- | --- | ---
-1. | Linux [HTML](Linux/) | [PDF](Linux/Linux.pdf)
-2. | Sequencing Overview | [HTML](Sequencing/) | [PDF](Sequencing/Sequencing.pdf)
-3. | Sequence File Formats | [HTML](SequenceFileFormats/) | [PDF](SequenceFileFormats/SequenceFileFormats.pdf)
-4. | Sequence Quality Control | [HTML](SequenceQC/) | [PDF](SequenceQC/SequenceQC.pdf)
-5. | Whole Genome Sequencing | [HTML](Whole_Genome_Sequencing) | [PDF](Whole_Genome_Sequencing/Whole_Genome_Sequencing.pdf)
+1\. | Linux [HTML](Linux/) | [PDF](Linux/Linux.pdf)
+2\. | Sequencing Overview | [HTML](Sequencing/) | [PDF](Sequencing/Sequencing.pdf)
+3\. | Sequence File Formats | [HTML](SequenceFileFormats/) | [PDF](SequenceFileFormats/SequenceFileFormats.pdf)
+4\. | Sequence Quality Control | [HTML](SequenceQC/) | [PDF](SequenceQC/SequenceQC.pdf)
+5\. | Whole Genome Sequencing | [HTML](Whole_Genome_Sequencing) | [PDF](Whole_Genome_Sequencing/Whole_Genome_Sequencing.pdf)
 
 # Creating PDFs
 
