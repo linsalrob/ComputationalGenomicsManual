@@ -110,8 +110,9 @@ Where Q is the quality score, and P<sub>e</sub> is the probability of error in t
 
 Alternatively:
 
+
 Phred Quality Score | Probability of an incorrect base call | Base calling accuracy
---- | --- | ---
+:------: | :------: | :------:
 10 | 1 in 10 | 90%
 20 | 1 in 100 | 99%
 30 | 1 in 1000 | 99.9%
