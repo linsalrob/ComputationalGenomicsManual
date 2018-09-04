@@ -112,7 +112,7 @@ Alternatively:
 
 
 Phred Quality Score | Probability of an incorrect base call | Base calling accuracy
-:------: | :------: | :------:
+:--- | :----- | :-----
 10 | 1 in 10 | 90%
 20 | 1 in 100 | 99%
 30 | 1 in 1000 | 99.9%
