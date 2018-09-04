@@ -11,7 +11,7 @@ Taxonomy, one of the oldest endeavors of the biologist, is changing from charact
 <img align="right" src="https://en.wikipedia.org/wiki/File:Frederick_Sanger2.jpg">
 Two-time nobel Laureate [Dr. Fred Sanger](https://en.wikipedia.org/wiki/Frederick_Sanger) developed this sequencing technology in 1977. The approach uses terminators, dideoxynucleotide triphosphates (ddNTPs), that terminate DNA extension during replication and do not allow the strand to be synthesized further. Thus, every time a ddNTP is added to the growing DNA strand, synthesis stops and the fragement can not be made any longer. Initially we used radioactivity to identify the DNA fragments, as shown in this figure.
 <img align="left" src="images/sanger_seq.png">
-Each band represents a bunch of DNA fragments that have been terminated at the same place. Since there are four ddNTPs &em; ddGTP, ddCTP, ddTTP, and ddATP &em; you can read off the sequence of the strands. Initially, the DNA was separated on large polyacrylamide gels, but a big improvement was the introduction of thin tubes containing the polyacrylamide gels. Associated with that, the introduction of fluorescently labeled nucleotides allowed the terminated fragments to be read automatically. This is the technology that was used to sequence the first version of the human genome.
+Each band represents a bunch of DNA fragments that have been terminated at the same place. Since there are four ddNTPs &mdash; ddGTP, ddCTP, ddTTP, and ddATP &mdash; you can read off the sequence of the strands. Initially, the DNA was separated on large polyacrylamide gels, but a big improvement was the introduction of thin tubes containing the polyacrylamide gels. Associated with that, the introduction of fluorescently labeled nucleotides allowed the terminated fragments to be read automatically. This is the technology that was used to sequence the first version of the human genome.
 
 Sanger sequencing is still used today. It has two advantages that none of the modern sequencing approaches can match: 
 1. Longer sequence length. Typically Sanger sequences will be 700+ bases of usable sequence and can approach 1kb.
@@ -57,11 +57,11 @@ The **Oxford Nanopore Minion** uses a nano-scale hole that can be used to electr
 Each of the sequencing technologies has advantages and disadvantages.
 
 For example:
-* Illumina &em; accurate sequencing; short reads (150+ bp); billions of sequences; long run time
-* 454 &em; susceptible to homopolymeric errors, long reads (500+ bp); millions of sequences; 8 hour run
-* Ion torrent &em; longer reads (500+ bp); millions of sequences; mate-pair libraries; fast 2 hr run
-* Pac Bio &em; very long sequences (kbp to mbp); single molecule sequencing; DNA often falls off the polymerase; expensive
-* Nanopore &em; long sequences (kbp to mbp); minimal chemistry and sample prep; cheap; lower accuracy (currently ~90%); fast
+* Illumina &mdash; accurate sequencing; short reads (150+ bp); billions of sequences; long run time
+* 454 &mdash; susceptible to homopolymeric errors, long reads (500+ bp); millions of sequences; 8 hour run
+* Ion torrent &mdash; longer reads (500+ bp); millions of sequences; mate-pair libraries; fast 2 hr run
+* Pac Bio &mdash; very long sequences (kbp to mbp); single molecule sequencing; DNA often falls off the polymerase; expensive
+* Nanopore &mdash; long sequences (kbp to mbp); minimal chemistry and sample prep; cheap; lower accuracy (currently ~90%); fast
 
 
 # Cost of DNA sequencing
