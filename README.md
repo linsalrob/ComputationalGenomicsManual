@@ -14,7 +14,7 @@ Companion videos that accompany this class are available on You Tube on [Rob's Y
 
 # Chapter Index
 
-   |   |   |   
+Chapter | Contents  | HTML  | PDF   
 --- | --- | --- | ---
 1. | Linux [HTML](Linux/) | [PDF](Linux/Linux.pdf)
 2. | Sequencing Overview | [HTML](Sequencing/) | [PDF](Sequencing/Sequencing.pdf)
