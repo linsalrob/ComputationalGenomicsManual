@@ -16,30 +16,13 @@ Companion videos that accompany this class are available on You Tube on [Rob's Y
 
 Chapter | Contents  | HTML  | PDF   
 --- | --- | --- | ---
-1\. | Linux [HTML](Linux/) | [PDF](Linux/Linux.pdf)
+1\. | Linux | [HTML](Linux/) | [PDF](Linux/Linux.pdf)
 2\. | Sequencing Overview | [HTML](Sequencing/) | [PDF](Sequencing/Sequencing.pdf)
 3\. | Sequence File Formats | [HTML](SequenceFileFormats/) | [PDF](SequenceFileFormats/SequenceFileFormats.pdf)
 4\. | Sequence Quality Control | [HTML](SequenceQC/) | [PDF](SequenceQC/SequenceQC.pdf)
 5\. | Whole Genome Sequencing | [HTML](Whole_Genome_Sequencing) | [PDF](Whole_Genome_Sequencing/Whole_Genome_Sequencing.pdf)
 
-# Creating PDFs
-
-In each directory we include PDFs of the current state of the README. These are made with pandoc, and you can recreate the PDF at any time using the command (of course, chaning FILE to the appropriate name):
-
-```
-pandoc README.md -f markdown --latex-engine=xelatex --columns 100 --smart -s -o FILE.pdf
-```
-
-or for all directories:
-
-```
-for DIR in $(find -maxdepth 1 -type d | sed -e 's/.\/\..*//; s/^\.$//; s/\.\///'); do
-	echo $DIR
-	cd $DIR
-	pandoc README.md -f markdown --latex-engine=xelatex --columns 100 --smart -s -o $DIR.pdf
-	cd ../
-done
-```
+Note: The PDFs are automatically created from the markdown, and loose some of the images and links. You should probably use the HTML version most of the time.
 
 # About Copyright Information
 
