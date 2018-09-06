@@ -70,7 +70,13 @@ gunzip -c Algae_12.fastq.gz | fastq2fasta - Algae_12.fasta
 
 This command unzips the compressed file and prints the output to standard out. Then it reads the output from standard output and converts it to fasta and saves that in the new file `Algae_12.fasta`. 
 
-However, that command does not convert the quality scores as well, and so if you want those you might want to use `prinseq-lite.pl`
+You can also use the awesome [seqtk library](https://github.com/lh3/seqtk) from Heng Li. The command to convert fastq to fasta is:
+
+```
+seqtk seq -A Algae_12.fastq.gz > Algae_12.fasta
+```
+
+However, these commands do not convert the quality scores as well, and so if you want those you might want to use `prinseq-lite.pl`
 
 If you want to convert several files from fastq to fasta, and they are gzipped, we can do that in a loop, like this:
 
