@@ -12,7 +12,7 @@ In 1995, a [breakthrough paper was published in Science](http://science.sciencem
 
 This breakthrough really unleashed the genomics era, and opened the door for genome sequencing including the data that we are going to discuss here!
 
-As we will discuss in the [databases](../Databases/) class, the NCBI GenBank database is a central repository for all the microbial genomes. In their [release notes](ftp://ftp.ncbi.nih.gov/refseq/release/release-statistics/bacteria.acc_taxid_growth.txt) they summarize the growth in the number of bases over the last few years:
+As we discussed in the [databases](../Databases/) class, the NCBI GenBank database is a central repository for all the microbial genomes. In their [release notes](ftp://ftp.ncbi.nih.gov/refseq/release/release-statistics/bacteria.acc_taxid_growth.txt) they summarize the growth in the number of bases over the last few years:
 
 ![Growth in GenBank over the last years](images/GenBankGrowth.png)
 
@@ -30,33 +30,8 @@ Also, at the time of writing this (September, 2018), [PATRIC](http://patricbrc.o
 
 ![Genomics and Modeling](images/GenomicsAndModeling.png)
 
-For a standard microbial genome, we start by extracting the DNA from a culture. There are lots of kits and approaches to do this that are standardized and give high yields of clean, and largely high molecular weight DNA (i.e. the DNA strands are long and largely unbroken). For example, [ThermoFisher](http://www.thermofisher.com/us/en/home/life-science/dna-rna-purification-analysis/genomic-dna-extraction/) and [Qiagen](https://www.qiagen.com/us/shop/sample-technologies/dna) both make excellent DNA extraction kits (as do other companies too!). 
-
-Once the DNA has been isolated, we fractionate it to make smaller fragments. There are several ways to do this, but two of the most popular are using the [Covaris](https://covaris.com/instruments/) ultrasonicator or the [Illumina Nextera tagmentation](https://www.illumina.com/content/dam/illumina-marketing/documents/products/technotes/nextera-xt-troubleshooting-technical-note.pdf) protocol. The former uses sonication to physically break the DNA, while the latter uses an enzyme to integrate a transposon into the DNA as shown below:
-
-![how tagmentation works](images/tagmentation.png)
-
-For a successful library prep, the tagmentation approach requires the DNA to be cleaved by two different (but very similar) transposons. How do they achieve this? 
-
-The transposon is based on Tn*5*, and is synthesized *in vitro*. Next, the monomeric Tn*5* is mixed with two different oligos that have different indexes, Illumina typically uses the *N5-* and *N7-* indexes while 454 sequencing used *A* and *B* primers. The monomeric transposase is dimerized in a buffer containing MgCl<sub>2</sub>, and since the monomors are equimolar there are three possible outcomes for the dimers:
-1. Both members of the dimer have the *A* or *N7-* tag. This should happen 25% of the time
-2. Both members of the dimer have the *B* or *N5-* tag. This should happen 25% of the time
-3. One member of the dimer has the A or *N7-* tag and one member has the *B* or *N5-* tag, and this should happen 50% of the time.
-
-After the DNA has been cleaved, a few rounds of PCR are used (called [*suppression PCR*](http://www.nature.com/app_notes/nmeth/2009/091011/full/nmeth.f.272.html)) to enrich for only those DNA molecules that contain boh *N7-* and *N5-* (or *A* and *B* in the case of 454). That DNA is the input into your sequencing run. 
-
-See this [seqanswers thread](http://seqanswers.com/forums/archive/index.php/t-50155.html) for a more detailed discussion about how tagmentation works.
-
-
-*Thought experiment*: What are the advantages and disadvantages of each of these approaches?
-
-Once the DNA has been sheared to an appropriate size (*what size would be appropriate?*), adapters are added to the ends of the DNA. A common approach is the [Swift Biosciences 2S](https://swiftbiosci.com/wp-content/uploads/2016/11/16-1117_SellSheet-2S-Family-v4-hires_no-crops.pdf) DNA library kits.
-
-Finally, the DNA with the adapters can be sequenced using the Illlumina [HiSeq](https://www.illumina.com/systems/sequencing-platforms/hiseq-2500.html) which generates about 1 Terabase of reads. Each run generates about 300 million reads, and each read can be upto 250 bp in total, reading 125 bp from each end of the read. The HiSeq takes about 6 days to run (read more about the [HiSeq specifications](https://www.illumina.com/systems/sequencing-platforms/hiseq-2500/specifications.html)). Alternately, you can use the Illumina [MiSeq](https://www.illumina.com/systems/sequencing-platforms/miseq.html) that generates about 15 GB of sequence, which comes from about 25 million 300 bp reads from each end and takes about 56 hours to run (read more about the [MiSeq specifications](https://www.illumina.com/systems/sequencing-platforms/miseq/specifications.html)).
-
 *Though experiment*: How much sequencing do you need for a bacterial genome?<sup>[4](#footnote4)</sup>
 
-Instead of using the Illumina systems, more and more genomes are being sequenced using the [PacBio SMRT sequencing](https://www.pacb.com/smrt-science/smrt-sequencing/) and the [Oxford Nanopore Minion](https://nanoporetech.com/products/minion) DNA sequencer. The advantage of these two technologies is that they both produce much longer reads - in the range of 10-40 kbp versus 100-300 bp for the Illumina, which makes downstream assembly and processing much more straightforward.
 
 ---
 <sup><a name="footnote1">1</a></sup> Answer: on average, phages are 50kb, Bacteria and Archaea are 2 Mb, and Eukarya are 2GB
