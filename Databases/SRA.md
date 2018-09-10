@@ -1,6 +1,12 @@
 # The Sequence Read Archive (SRA)
 
-The [sequence read archive](https://www.ncbi.nlm.nih.gov/sra/) (SRA) was started in ~2009 to handle the wealth of next generation sequencing data that was being deposited at NCBI. Many people needed a repository of data that was more flexible than the traditional [GenBank](https://www.ncbi.nlm.nih.gov/genbank/) archive. SRA houses raw data in binary files, and provides a tool kit to extract that data into `fastq` files.
+The [sequence read archive](https://www.ncbi.nlm.nih.gov/sra/) (SRA) was started in ~2009 to handle the wealth of next generation sequencing data that was being deposited at NCBI. Many people needed a repository of data that was more flexible than the traditional [GenBank](https://www.ncbi.nlm.nih.gov/genbank/) archive. 
+
+The SRA has [grown at an enormous rate](https://www.ncbi.nlm.nih.gov/sra/docs/sragrowth/), and now houses almost 20 Petabytes of data:
+
+![GRowth of the SRA](https://www.ncbi.nlm.nih.gov/Traces/sra/i/g.png)
+
+SRA houses raw data in binary files, and provides a tool kit to extract that data into `fastq` files.
 
  Nowadays, the Sequence Read Archive (SRA) stores raw sequence data from "next-generation" sequencing technologies including Illumina, 454, IonTorrent, Complete Genomics, PacBio and OxfordNanopore.
  
