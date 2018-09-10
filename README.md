@@ -20,7 +20,10 @@ Chapter | Contents  | HTML  | PDF
 2\. | Sequencing Overview | [HTML](Sequencing/) | [PDF](Sequencing/Sequencing.pdf)
 3\. | Sequence File Formats | [HTML](SequenceFileFormats/) | [PDF](SequenceFileFormats/SequenceFileFormats.pdf)
 4\. | Sequence Quality Control | [HTML](SequenceQC/) | [PDF](SequenceQC/SequenceQC.pdf)
-5\. | Whole Genome Sequencing | [HTML](Whole_Genome_Sequencing) | [PDF](Whole_Genome_Sequencing/Whole_Genome_Sequencing.pdf)
+5\. | Databases | [HTML](Databases/) | [PDF](Databases/Databases.pdf)
+5a. | - NCBI Edirect | [HTML](Databases/NCBI_EDirect.md) | [PDF](Databases/NCBI_EDirect.pdf)
+5b. | - NCBI SRA | [HTML](Databases/SRA.md) | [PDF](Databases/SRA.pdf)
+6\. | Whole Genome Sequencing | [HTML](Whole_Genome_Sequencing) | [PDF](Whole_Genome_Sequencing/Whole_Genome_Sequencing.pdf)
 
 Note: The PDFs are automatically created from the markdown, and loose some of the images and links. You should probably use the HTML version most of the time.
 
