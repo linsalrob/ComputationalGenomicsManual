@@ -23,7 +23,7 @@ Chapter | Contents  | HTML  | PDF
 5\. | Databases | [HTML](Databases/) | [PDF](Databases/Databases.pdf)
 5a. | - NCBI Edirect | [HTML](Databases/NCBI_EDirect.md) | [PDF](Databases/NCBI_EDirect.pdf)
 5b. | - NCBI SRA | [HTML](Databases/SRA.md) | [PDF](Databases/SRA.pdf)
-6\. | Whole Genome Sequencing | [HTML](Whole_Genome_Sequencing) | [PDF](Whole_Genome_Sequencing/Whole_Genome_Sequencing.pdf)
+6\. | Genome Sequencing Overview | [HTML](Genome_Sequencing_Overview) | [PDF](Genome_Sequencing_Overview/Genome_Sequencing_Overview.pdf)
 
 Note: The PDFs are automatically created from the markdown, and loose some of the images and links. You should probably use the HTML version most of the time.
 
