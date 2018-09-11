@@ -21,7 +21,7 @@ Chapter | Contents  | HTML  | PDF
 3\. | Sequence File Formats | [HTML](SequenceFileFormats/) | [PDF](SequenceFileFormats/SequenceFileFormats.pdf)
 4\. | Sequence Quality Control | [HTML](SequenceQC/) | [PDF](SequenceQC/SequenceQC.pdf)
 5\. | Databases | [HTML](Databases/) | [PDF](Databases/Databases.pdf)
-5a. | - NCBI Edirect | [HTML](Databases/NCBI_EDirect.md) | [PDF](Databases/NCBI_EDirect.pdf)
+5a. | - NCBI Edirect | [HTML](Databases/NCBI_Edirect.md) | [PDF](Databases/NCBI_Edirect.pdf)
 5b. | - NCBI SRA | [HTML](Databases/SRA.md) | [PDF](Databases/SRA.pdf)
 6\. | Genome Sequencing Overview | [HTML](Genome_Sequencing_Overview) | [PDF](Genome_Sequencing_Overview/Genome_Sequencing_Overview.pdf)
 
