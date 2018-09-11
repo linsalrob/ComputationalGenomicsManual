@@ -25,6 +25,14 @@ Chapter | Contents  | HTML  | PDF
 5b. | - NCBI SRA | [HTML](Databases/SRA.md) | [PDF](Databases/SRA.pdf)
 6\. | Genome Sequencing Overview | [HTML](Genome_Sequencing_Overview) | [PDF](Genome_Sequencing_Overview/Genome_Sequencing_Overview.pdf)
 
+
+# Assignments. 
+
+At the moment the assignments are live and so solutions are not shown. They will eventually be included so you can work through the examples.
+
+* [Assignment 1](Assignments/Assignment1/) is to familiarize yourself with NCBI EDirect.
+
+
 Note: The PDFs are automatically created from the markdown, and loose some of the images and links. You should probably use the HTML version most of the time.
 
 # About Copyright Information

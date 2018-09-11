@@ -49,7 +49,11 @@ As an alternative to searching through the website, we can also access the data 
 
 Once you have downloaded the SQLlite database you can access it with your favorite programming tools. Almost all languages have an SQLlite connector, and there is also the stand alone program called [SQLlite](https://sqlite.org/download.html) that will allow you to search the data.
 
-Before we begin searching, however, you need to understand the relationships between the tables first, and this is not clear from first principles! We made a spreadsheet that has the first ~100 entries from the SRA metadata each for all the tables in the database. This shows you the column organization – each tab has the name of the SQL table that you will access – and each sheet has the entities for that table as the column headers. You can download the spreadsheet for [Microsoft Excel](https://edwards.sdsu.edu/research/wp-content/uploads/2015/12/SRAMetadataExample.xls) or [Libre Office](https://edwards.sdsu.edu/research/wp-content/uploads/2015/12/SRAMetadataExample.ods). 
+Before we begin searching, however, you need to understand the relationships between the tables first, and this is not clear from first principles! 
+
+You can find a complete list of the attributes for each of the [tables in the SRA on our website](https://edwards.sdsu.edu/research/sra-attributes/).
+
+We made a spreadsheet that has the first ~100 entries from the SRA metadata each for all the tables in the database. This shows you the column organization – each tab has the name of the SQL table that you will access – and each sheet has the entities for that table as the column headers. You can download the spreadsheet for [Microsoft Excel](https://edwards.sdsu.edu/research/wp-content/uploads/2015/12/SRAMetadataExample.xls) or [Libre Office](https://edwards.sdsu.edu/research/wp-content/uploads/2015/12/SRAMetadataExample.ods). 
 
 
 ## Finding metagenomes in the SRA
