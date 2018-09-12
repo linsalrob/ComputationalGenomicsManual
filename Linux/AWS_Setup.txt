@@ -1,0 +1,436 @@
+
+##################################################################
+#                                                                #
+#                      Basic System Installation                 #
+#                                                                #
+##################################################################
+
+
+yum -y install epel-release
+yum-config-manager --enable epel
+yum update
+
+yum -y install gcc gcc-c++ libgcc ncurses ncurses-devel zlib-devel bzip2-devel xz-devel git  freetype.x86_64 freetype-devel.x86_64 libpng.x86_64 libpng-devel.x86_64 lapack.x86_64 lapack-devel.x86_64 gsl-devel.x86_64 gsl.x86_64 atlas.x86_64 atlas-devel.x86_64 boost  mesa-libGL-devel.x86_64 mesa-libGLU.x86_64 mesa-libGL.x86_64 mesa-libGLU-devel.x86_64 gmp.x86_64 gmp-devel.x86_64 libxslt-devel.x86_64 libxslt.x86_64 libxml2.x86_64 libxml2-devel.x86_64  libattr-devel perl-CPAN perl-IO-Socket-SSL perl-Net-SSLeay.x86_64   numpy tbb  tbb-devel cmake perl-Time-Piece perl-XML-Simple perl-Digest-MD5 git java perl-CPAN perl-Module-Build  gnuplot ghostscript   libcurl-devel boost-devel pigz  perl-LWP-Protocol-https 
+
+# these will likely fail on Amazon AMI
+yum install glpk.x86_64 glpk-devel.x86_64 scons  hdf5-devel ncftp perl-Bundle-LWP.noarch 
+
+# install R
+amazon-linux-extras install R3.4 vim
+
+## Note: as of the time of writing, AWS had Python 3.7 which is really buggy and some things (like numpy) don't compile on. Therefore, we want to ensure we add python3.6 instead of python 3.7
+
+amazon-linux-extras install python3
+yum install python3-devel --disablerepo amzn2-core
+
+
+
+### This will require some manual input
+
+# make sure we can set things up automatically
+perl -MCPAN -e shell
+
+perl -MCPAN -e 'my $c = "CPAN::HandleConfig"; $c->load(doit => 1, autoconfig => 1); $c->edit(prerequisites_policy => "follow"); $c->edit(build_requires_install_policy => "yes"); $c->commit'
+
+#install bioperl 
+cpan -i Bio::Perl 
+
+
+##################################################################
+#                                                                #
+#                      Automatic Installation                    #
+#                                                                #
+##################################################################
+
+# This should not require any manual input. See the manual section
+# at the end
+
+pip-2.7 install numpy matplotlib scipy cython h5py checkm ete3 pysam cherrypy bottle scikit-learn  lxml beautifulsoup4 scikit-learn pandas statsmodels MUSiCC biopython bottle checkm fishtaco numpy  python_libsbml requests ipykernel gffutils metagenomics-focus superfocus biom-format
+
+pip-3 install numpy matplotlib scipy cython virtualenv h5py checkm ete3 cherrypy bottle scikit-learn  lxml beautifulsoup4 scikit-learn pandas statsmodels MUSiCC biopython bottle 
+
+pip-3 install checkm fishtaco numpy python_libsbml requests ipykernel jupyter gffutils metagenomics-focus superfocus pysam numpy matplotlib scipy
+
+
+
+
+
+# Install this software:
+
+
+
+## fasttree: 
+mkdir -p /usr/local/genome/fasttree
+cd /usr/local/genome/fasttree
+wget http://www.microbesonline.org/fasttree/FastTreeDbl
+ln -s FastTreeDbl fasttree
+echo "export PATH=\$PATH:$PWD" > /etc/profile.d/fasttree.sh
+
+## bionj: 
+mkdir /usr/local/genome/bionj
+cd /usr/local/genome/bionj
+curl -Lo bionj.c http://www.atgc-montpellier.fr/download/sources/bionj/BIONJ.c
+gcc -o BIONJ bionj.c
+echo "export PATH=\$PATH:$PWD" > /etc/profile.d/bionj.sh
+
+## canu
+cd /usr/local/genome
+git clone https://github.com/marbl/canu.git
+cd canu/src
+make
+cd ../Linux-amd64/bin/
+echo "export PATH=\$PATH:$PWD" > /etc/profile.d/canu.sh
+
+## edirect
+cd /usr/local/genome
+perl -MNet::FTP -e \
+    '$ftp = new Net::FTP("ftp.ncbi.nlm.nih.gov", Passive => 1);
+     $ftp->login; $ftp->binary;
+     $ftp->get("/entrez/entrezdirect/edirect.tar.gz");'
+gunzip -c edirect.tar.gz | tar xf -
+rm -f edirect.tar.gz
+./edirect/setup.sh
+echo "export PATH=\$PATH:/usr/local/genome/edirect" > /etc/profile.d/edirect.sh
+
+# fastq-pair 
+cd /usr/local/genome
+git clone https://github.com/linsalrob/fastq-pair
+cd fastq-pair
+mkdir bin && cd bin
+gcc ../*.c -o fastq_pair
+echo "export PATH=\$PATH:$PWD" > /etc/profile.d/fastqpair.sh
+
+
+# fastq2fasta
+mkdir -p /usr/local/genome/fastq2fasta
+cd /usr/local/genome/fastq2fasta
+wget https://raw.githubusercontent.com/linsalrob/EdwardsLab/master/bin/fastq2fasta.cpp
+c++ -o fastq2fasta fastq2fasta.cpp 
+rm -f fastq2fasta.cpp 
+echo "export PATH=\$PATH:$PWD" > /etc/profile.d/fastqfasta.sh
+
+# fastqc:
+mkdir /usr/local/genome/fastqc
+cd /usr/local/genome/fastqc
+curl -Lo fastqc.zip https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.7.zip
+unzip fastqc.zip 
+cd FastQC/
+chmod 755 fastqc
+echo "export PATH=\$PATH:$PWD" > /etc/profile.d/fastqc.sh
+
+# Jellyfish
+mkdir /usr/local/genome/jellyfish
+cd /usr/local/genome/jellyfish 
+curl -Lo jellyfish.tgz https://github.com/gmarcais/Jellyfish/releases/download/v2.2.10/jellyfish-2.2.10.tar.gz
+tar xf jellyfish.tgz
+cd jellyfish-2.2.10
+echo "include /usr/local/lib" >> /etc/ld.so.conf
+ldconfig
+./configure && make && make install
+
+
+# magic blast
+cd /usr/local/genome
+mkdir magic_blast
+cd magic_blast/
+curl -Lo magicblast.tgz ftp://ftp.ncbi.nlm.nih.gov/blast/executables/magicblast/LATEST/ncbi-magicblast-1.4.0-x64-linux.tar.gz
+tar xf magicblast.tgz 
+rm -f magicblast.tgz 
+ln -s ncbi-magicblast-1.4.0/ current
+cd current/bin/
+echo "export PATH=\$PATH:$PWD" > /etc/profile.d/magicblast.sh
+
+# SRA toolkit
+mkdir /usr/local/genome/sra
+cd /usr/local/genome/sra
+curl -Lo sratoolkit.tgz https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-centos_linux64.tar.gz
+tar xf sratoolkit.tgz 
+rm -f sratoolkit.tgz 
+ln -s sratoolkit.2.8.2-1-centos_linux64 current
+cd current/bin/
+echo "export PATH=\$PATH:$PWD" > /etc/profile.d/sra.sh
+
+
+# ORFM
+mkdir /usr/local/genome/orfM
+cd /usr/local/genome/orfM
+curl -Lo orfm.tgz https://github.com/wwood/OrfM/releases/download/v0.7.1/orfm-0.7.1_Linux_x86_64.tar.gz
+tar xf orfm.tgz 
+rm -f orfm.tgz 
+ln -s orfm-0.7.1_Linux_x86_64/ current
+cd current
+echo "export PATH=\$PATH:$PWD" > /etc/profile.d/orfm.sh
+
+
+# PPLACER
+mkdir /usr/local/genome/pplacer
+cd /usr/local/genome/pplacer
+wget https://github.com/matsen/pplacer/releases/download/v1.1.alpha19/pplacer-linux-v1.1.alpha19.zip
+unzip pplacer-linux-v1.1.alpha19.zip 
+rm -f pplacer-linux-v1.1.alpha19.zip 
+ln -s pplacer-Linux-v1.1.alpha19/ current
+cd current
+echo "export PATH=\$PATH:$PWD" > /etc/profile.d/pplacer.sh
+
+
+# Prinseq
+mkdir /usr/local/genome/prinseq
+cd /usr/local/genome/prinseq
+curl -Lo prinseq.tgz https://github.com/Adrian-Cantu/PRINSEQ-plus-plus/releases/download/v1.2/prinseq-plus-plus-1.2.tar.gz
+tar xf prinseq.tgz 
+rm -f prinseq.tgz 
+ln -s prinseq-plus-plus-1.2/ current
+cd current/
+./configure  && make  && make install
+
+
+
+# RAPsearch
+cd /usr/local/genome/
+git clone https://github.com/zhaoyanswill/RAPSearch2.git
+cd RAPSearch2/
+./install
+cd bin/
+echo "export PATH=\$PATH:$PWD" > /etc/profile.d/rapsearch.sh
+
+
+
+# blast
+
+mkdir /usr/local/genome/blast
+cd /usr/local/genome/blast
+curl -Lo ncbi-blast-2.7.1+-x64-linux.tar.gz ftp://ftp.ncbi.nlm.nih.gov/blast/executables/LATEST/ncbi-blast-2.7.1+-x64-linux.tar.gz
+tar xf ncbi-blast-2.7.1+-x64-linux.tar.gz 
+rm -f ncbi-blast-2.7.1+-x64-linux.tar.gz 
+ln -s ncbi-blast-2.7.1+/ current
+cd current/bin/
+echo "export PATH=\$PATH:$PWD" > /etc/profile.d/blast.sh
+
+
+
+
+## clustalw
+mkdir /usr/local/genome/clustalw
+cd /usr/local/genome/clustalw
+curl -Lo clustalw.tgz http://clustal.org/download/current/clustalw-2.1-linux-x86_64-libcppstatic.tar.gz
+tar xf clustalw.tgz 
+rm -f clustalw.tgz 
+ln -s clustalw-2.1-linux-x86_64-libcppstatic/ current
+cd current/
+ln -s clustalw2 clustalw
+echo "export PATH=\$PATH:$PWD" > /etc/profile.d/clustalw.sh
+
+
+## mafft
+mkdir /usr/local/genome/mafft
+cd /usr/local/genome/mafft
+curl -Lo mafft.rpm https://mafft.cbrc.jp/alignment/software/mafft-7.407-gcc_fc6.x86_64.rpm
+rpm -Uvh mafft.rpm 
+cd ../
+rm -rf mafft/
+
+
+# muscle
+mkdir /usr/local/genome/muscle
+cd /usr/local/genome/muscle
+curl -Lo muscle3.8.31_i86linux64.tar.gz https://www.drive5.com/muscle/downloads3.8.31/muscle3.8.31_i86linux64.tar.gz
+tar xf muscle3.8.31_i86linux64.tar.gz 
+ln -s muscle3.8.31_i86linux64 muscle
+echo "export PATH=\$PATH:$PWD" > /etc/profile.d/muscle.sh
+
+# phylip
+mkdir /usr/local/genome/phylip
+cd /usr/local/genome/phylip
+curl -Lo phylip-3.697.tar.gz  http://evolution.gs.washington.edu/phylip/download/phylip-3.697.tar.gz
+tar xf phylip-3.697.tar.gz 
+rm -f phylip-3.697.tar.gz 
+ln -s phylip-3.697 current
+cd current/src/
+mv Makefile.unx Makefile
+make install
+cd ../exe/
+echo "export PATH=\$PATH:$PWD" > /etc/profile.d/phylip.sh
+
+# samtools 
+mkdir /usr/local/genome/sam_bcf_hts
+export VERSION=1.9
+cd /usr/local/genome/sam_bcf_hts
+curl -Lo samtools-$VERSION.tar.bz2  https://github.com/samtools/samtools/releases/download/$VERSION/samtools-$VERSION.tar.bz2
+curl -Lo bcftools-$VERSION.tar.bz2 https://github.com/samtools/bcftools/releases/download/$VERSION/bcftools-$VERSION.tar.bz2
+curl -Lo htslib-$VERSION.tar.bz2 https://github.com/samtools/htslib/releases/download/$VERSION/htslib-$VERSION.tar.bz2
+tar xf htslib-$VERSION.tar.bz2 
+tar xf bcftools-$VERSION.tar.bz2 
+tar xf samtools-$VERSION.tar.bz2 
+cd htslib-$VERSION
+./configure --prefix=/usr/local/genome/sam_bcf_hts && make && make install
+cd ../bcftools-$VERSION
+./configure --prefix=/usr/local/genome/sam_bcf_hts && make && make install
+cd ../samtools-$VERSION
+./configure --prefix=/usr/local/genome/sam_bcf_hts && make && make install
+cd ..
+rm -rf bcftools-$VERSION  bcftools-$VERSION.tar.bz2 htslib-$VERSION  htslib-$VERSION.tar.bz2 samtools-$VERSION  samtools-$VERSION.tar.bz2
+cd bin/
+echo "export PATH=\$PATH:$PWD" > /etc/profile.d/samtools.sh
+export PATH=$PATH:$PWD
+
+pip3 install pysam
+
+# partie
+cd /usr/local/genome
+git clone https://github.com/linsalrob/partie.git
+
+
+# hmmer
+mkdir /usr/local/genome/hmmer
+cd /usr/local/genome/hmmer
+curl -Lo hmmer3.tgz http://eddylab.org/software/hmmer3/CURRENT/hmmer-3.1b2-linux-intel-x86_64.tar.gz
+tar xf hmmer3.tgz 
+rm -f hmmer3.tgz 
+cd hmmer-3.1b2-linux-intel-x86_64/
+./configure  && make && make install
+cd ../..
+rm -rf hmmer/
+
+
+# metaspades
+mkdir /usr/local/genome/spades
+cd /usr/local/genome/spades
+curl -Lo spades.tgz  http://cab.spbu.ru/files/release3.12.0/SPAdes-3.12.0-Linux.tar.gz
+tar xf SPspades.tgz 
+rm -f spades.tgz 
+ln -s SPAdes-3.12.0-Linux/ current
+cd current/bin/
+echo "export PATH=\$PATH:$PWD" > /etc/profile.d/spades.sh
+
+# prodigal
+cd /usr/local/genome
+git clone https://github.com/hyattpd/Prodigal.git
+cd Prodigal/
+make && make install
+cd ..
+rm -rf Prodigal/
+
+#bowtie2
+mkdir /usr/local/genome/bowtie2
+cd /usr/local/genome/bowtie2
+curl -Lo bowtie.zip https://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.3.4.2/bowtie2-2.3.4.2-linux-x86_64.zip/download
+unzip bowtie.zip
+rm -f bowtie.zip 
+ln -s bowtie2-2.3.4.2-linux-x86_64/ current
+cd current/
+echo "export PATH=\$PATH:$PWD" > /etc/profile.d/bowtie.sh
+
+#cd-hit
+cd /usr/local/genome
+git clone https://github.com/weizhongli/cdhit.git
+cd cdhit/
+make
+echo "export PATH=\$PATH:$PWD" > /etc/profile.d/cdhit.sh
+
+# gff utils
+cd /usr/local/genome
+git clone https://github.com/karkman/gff_parser.git
+cd gff_parser
+echo "PATH=\$PATH:$PWD" > /etc/profile.d/gff_parser.sh
+chmod +x /usr/local/genome/gff_parser/gff_parser.py
+
+# crAss
+cd /usr/local/genome
+mkdir crAss
+wget https://downloads.sourceforge.net/project/crass/crAss_v2.1.zip
+unzip crAss_v2.1.zip
+cd crAss_v2.1
+chmod +x crAss.pl
+echo "export PATH=\$PATH:$PWD" > /etc/profile.d/crAss.sh
+
+
+# prokka
+cd /usr/local/genome/
+git clone https://github.com/tseemann/prokka.git
+cd prokka
+cd bin
+./prokka --setupdb
+echo "export PATH=\$PATH:$PWD" > /etc/profile.d/prokka.sh
+
+
+# barrnap
+mkdir /usr/local/genome/barrnap
+cd /usr/local/genome/barrnap
+wget https://github.com/tseemann/barrnap/archive/0.8.tar.gz
+tar xf 0.8.tar.gz
+rm -f 0.8.tar.gz 
+ln -s barrnap-0.8/ current
+cd current/bin
+echo "export PATH=\$PATH:$PWD" > /etc/profile.d/barrnap.sh
+
+
+# Edwards lab
+cd /usr/local/genome
+git clone https://github.com/linsalrob/EdwardsLab.git
+cd EdwardsLab/bin
+echo "export PATH=\$PATH:$PWD" > /etc/profile.d/edwardslab.sh
+cd ..
+echo "export PYTHONPATH=\$PYTHONPATH:$PWD" >> /etc/profile.d/edwardslab.sh
+
+# Anvio
+pip-3.6 install virtualenv
+virtualenv /usr/local/virtual-envs/anvio-5.1
+source /usr/local/virtual-envs/anvio-5.1/bin/activate
+pip install numpy
+pip install scipy
+pip install cython
+pip install anvio
+
+
+exit
+
+##################################################################
+#                                                                #
+#                          Manual Installation                   #
+#                                                                #
+##################################################################
+
+
+
+# qiime2
+### NOTE: DO THIS AS THE REGULAR USER!!
+### NOTE this creates an alias qiime_activate that users can run to start qiime
+cd ~
+VERSION=2018.6
+sudo mkdir /usr/local/conda
+sudo chmod 777 /usr/local/conda
+wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh
+
+## INSTALL INTO /usr/local/conda/miniconda BUT DO NOT INSTALL COMMAND LINE TO .bashrc
+
+
+echo "export PATH=\$PATH:/usr/local/conda/miniconda/bin" | sudo tee /etc/profile.d/zconda.sh
+source /etc/profile.d/zconda.sh 
+wget https://data.qiime2.org/distro/core/qiime2-$VERSION-py35-linux-conda.yml
+conda env create -n qiime2-$VERSION --file qiime2-$VERSION-py35-linux-conda.yml
+sudo mkdir /usr/local/genome/qiime
+ echo "NOTE: Installed into /usr/local/conda/miniconda" | sudo tee /usr/local/genome/qiime/README
+echo "source activate qiime2-$VERSION"  | sudo tee /usr/local/genome/qiime/activate_qiime
+echo "alias qiime_activate='source /usr/local/genome/qiime/activate_qiime'"  | sudo tee /etc/profile.d/qiime.sh
+
+## DO THIS AS ROOT
+
+# R is installed above. Now install some libraries:
+R
+install.packages(c("rgl", "car", "heplots", "scatterplot3d", "cluster", "candisc", "tree", "bpca", "randomForest"), dependencies=TRUE);
+
+## Do THIS AS A USER
+jupyter notebook --generate-config
+perl -i -npe 's/#c.NotebookApp.ip = .*$/c.NotebookApp.ip = "*"/' ~/.jupyter/jupyter_notebook_config.py
+
+
+
+
+
+
+
+
+
+
+
