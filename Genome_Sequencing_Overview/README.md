@@ -92,7 +92,7 @@ There are several different ways of doing this, but many of them rely on measuri
 
 <sup><a name="footnote2">2</a></sup> Answer: Of course, if you knew exactly the order of the reads, you could sequence 1,000 reads and sequence the whole genome.
 
-<sup><a name="footnote4">4</a></sup> Answer: According to [this 2017 paper](https://www.ncbi.nlm.nih.gov/pubmed/28396521/) there are approximately 800 gaps remaining in the human genome!
+<sup><a name="footnote3">3</a></sup> Answer: According to [this 2017 paper](https://www.ncbi.nlm.nih.gov/pubmed/28396521/) there are approximately 800 gaps remaining in the human genome!
 
 <sup><a name="footnote4">4</a></sup> Answer: First, [the cost of sequencing](../Sequencing/README.md#cost-of-dna-sequencing) dropped drastically, and second, we realized the amazing amount of information we can get from hundreds of genomes.
 
