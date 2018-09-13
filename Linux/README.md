@@ -87,6 +87,13 @@ Pageant is the PuTTY key agent, and several programs can access the keys from th
 
 To access your server using PuTTY, load the private key into Pageant as shown above and then start PuTTY. Enter the IP address of your computer and click Open. On the next screen, where it says Login as: enter your username. You will be logged into your server and you can continue with the course.
 
+### Usernames:
+
+If you are using the standard AWS image, the username is most likely **ec2-user**. If you are using an Ubuntu AWS image the username is most likely **ubuntu**. If you are not sure, you should contact whoever made your image.
+
+### Password
+
+There should be no password because we are using [ssh keys!](#public-and-private-ssh-keys)
 
 Once you log in you should see a screen like this:
 
