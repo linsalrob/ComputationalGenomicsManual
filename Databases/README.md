@@ -61,7 +61,7 @@ With all these databases, which one should you use? It largely doesn’t matter,
 
 In this manual we talk about a lot of different tools to analyze data. These are the tools that we are familiar with, they work, and we use them a lot. 
 
-<img align="right" border="10" style="border-color:white" src="images/Mappers.png">For any given task there are a lot of tools that could answer that problem. For example, one of the tools we use a lot is bowtie2 that maps DNA sequences to references or contigs. Here is a diagram of all the tools that do the same task that have been developed over the last few years (source: https://www.ebi.ac.uk/~nf/ hts_mappers/).
+<img align="right" border="10" style="border-color:white" src="images/Mappers.png">For any given task there are a lot of tools that could answer that problem. For example, one of the tools we use a lot is bowtie2 that maps DNA sequences to references or contigs. Here is a diagram of all the tools that do the same task that have been developed over the last few years (source: [https://www.ebi.ac.uk/~nf/hts_mappers/](https://www.ebi.ac.uk/~nf/hts_mappers/)).
 
 There are lots of other tools out there, and we recommend that you try them. People often ask how to know if they should use a tool. Here are our rules of thumb:
 
