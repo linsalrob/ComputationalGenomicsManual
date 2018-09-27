@@ -28,6 +28,28 @@ We use the [St. Petersburg genome assembler, SPAdes](http://cab.spbu.ru/software
 
 For Nanopore reads we typically use the CANU assembler.
 
+## Running SPAdes
+
+SPAdes is easy to run! The basic command is 
+
+```
+spades.py
+```
+
+The program takes a couple of inputs - your `fastq` files, for example that you download from [../Databases/SRA](../Databases/SRA).
+
+If you have paired end reads, you need to add `-1` for the left pairs (the file called xxx\_1.fastq) and `-2` for the right pairs (the file called xxx\_2.fastq). Note that spades handles `gzip` compressed files, and you do not need to decompress them!
+
+If you unpaired reads, you can specify that with the `-s` flag.
+
+You also need to provide an output directory name where the results will be written using the `-o` flag.
+
+Your final command might look something like:
+
+```
+spades.py -1 fastq/ERS011900_pass_1.fastq.gz -2 fastq/ERS011900_pass_2.fastq.gz -o assembly
+```
+
 ## SPAdes output files
 
 SPAdes makes a lot of files and directories in the output, and this summarizes what those files are. Of course, more details can be found in the [SPAdes manual](http://cab.spbu.ru/files/release3.12.0/manual.html)
