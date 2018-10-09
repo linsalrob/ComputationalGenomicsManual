@@ -88,16 +88,43 @@ An open reading frame can be *any* stretch of DNA that does not contain a sequen
 
 *Thought experiment:* In the above sequences, how many open reading frames are there?
 
-## How do we identify open reading frames?
+## How do we identify genes?
+
+The simplest way to identify the open reading frames is to start by identifying the stops! Recall that there are three stop codons (TAA, TGA, TAG), that always specify a stop (if you are using genetic code 11), but there is a start codon (ATG) that could also be used as a methionine in the middle of the protein. Therefore, we start by identifying the stops, and then look backwards to see if we can find any starts. If we have a start codon, there is a good chance we may be in a protein encoding gene.
+
+The AWS instance includes a program called ORFM that has a very efficient open reading frame predictor. Note that ORFM does not test those predicted proteins to see whether they start with a methionine, and that is left as an exercise for the reader.
+
+To predict all the ORFs in your sequence, you can run ORFM:
+
+
+```bash
+mkdir orfm
+orfm -t orfm/orfm.fna assembly/scaffolds.fasta  > orfm/orfm.faa
+```
+
+Next, we look at the other strands. Is there a longer protein encoding gene that covers all, or a part, of the gene we just identified? Purely by statistics, we would expect the longer gene to be the correct one. However, note that some genes overlap at their ends - that is normal as it allows the translation machinery to slip along the transcript. A very common overlap is to have a TGA stop codon immediately preceded by an ATG start codon, so that the sequence is **ATG**A. When the ribosome gets to the TGA it stalls, stops creating that protein, backtracks a base, and starts creating the new protein. However, it is unlikely that overlap is more than a few bases on either end.
+
+As an aside, although ATG is by far the most common start codon, occasionally biology will use GTG (and even rarer it will use TTG) as a start codon. However, be aware that in these cases, the translation machinery still has to start the protein with N-formyl-Methionine, the same is if the start codon were an ATG. Some gene prediction software will correctly make this substitution for you, some will not!
+
+However, there are more advanced ways to predict genes. Many of the modern tools use hidden Markov models or interpolated Markov models for more robust predictions. Some approaches also use [traveling salesman](https://en.wikipedia.org/wiki/Travelling_salesman_problem) problem algorithms to find the shortest path through the potential genes.
+
+## Programs to identify protein-encoding genes
+
+There are many great programs for identifying open reading frames in microbial genomes. 
+
+* [Glimmer](https://ccb.jhu.edu/software/glimmer/) uses an interpolated Markov Model to identify the open reading frames.
+* [GeneMark](http://exon.gatech.edu/GeneMark/) uses hidden Markov models to identify the open reading frames.
+* [Prodigal](https://github.com/hyattpd/Prodigal) uses machine learning to identify the open reading frames.
 
 
 
 
 
 
-
-
-
+```
+mkdir prodigal
+prodigal -a prodigal/orfs.faa -d prodigal/orfs.fna -o prodigal/prodigal.out -i assembly/scaffolds.fasta
+```
 
 
 
