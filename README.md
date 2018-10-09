@@ -6,7 +6,7 @@ Robs manual for the computational genomics and bioinformatics class
 
 Rob, Liz Dinsdale, Tom Jeffries, Bruno Gomez-Gil, and several other colleagues and friends have been teaching genomics and metagenomics for a long time. They have written this manual over the course of several years, and in a variety of formats. Rob moved it to markdown using GitHub in Fall 2018 as part of his computational genomics class.
 
-You can view this manual online at https://linsalrob.github.io/ComputationalGenomicsManual/.
+You can view this [manual online](https://linsalrob.github.io/ComputationalGenomicsManual/)
 
 # Companion Videos
 
