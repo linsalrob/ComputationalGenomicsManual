@@ -26,7 +26,7 @@ Chapter | Contents  | HTML  | PDF
 6\. | Genome Sequencing Overview | [HTML](Genome_Sequencing_Overview) | [PDF](Genome_Sequencing_Overview/Genome_Sequencing_Overview.pdf)
 7\. | Sequence Assembly | [HTML](SequenceAssembly) | [PDF](SequenceAssembly/SequenceAssembly.pdf)
 8\. | ORF Calling | [HTML](ORFCalling/) | [PDF](ORFCalling/ORFCalling.pdf)
-9\. | tRNA and rRNA | [HTML](tRNA_rRNA/) | [PDF](tRNA_rRNA/tRNA_rRNA.pdf)
+9\. | tRNA and rRNA identification | [HTML](tRNA_rRNA/) | [PDF](tRNA_rRNA/tRNA_rRNA.pdf)
 
 # Assignments. 
 
