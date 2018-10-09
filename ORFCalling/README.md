@@ -84,7 +84,7 @@ Then we can read the `complementary strand` (the strand whose sequence is TACTAG
     TA CTA GTA ACT GAT AAT T                                                   (-3)
 ```
 
-An open reading frame can be *any* stretch of DNA that does not contain a sequence.
+An open reading frame can be *any* stretch of DNA that does not contain a stop codon.
 
 *Thought experiment:* In the above sequences, how many open reading frames are there?
 
