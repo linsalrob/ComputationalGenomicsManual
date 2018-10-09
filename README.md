@@ -25,6 +25,7 @@ Chapter | Contents  | HTML  | PDF
 5b. | - NCBI SRA | [HTML](Databases/SRA.md) | [PDF](Databases/SRA.pdf)
 6\. | Genome Sequencing Overview | [HTML](Genome_Sequencing_Overview) | [PDF](Genome_Sequencing_Overview/Genome_Sequencing_Overview.pdf)
 7\. | Sequence Assembly | [HTML](SequenceAssembly) | [PDF](SequenceAssembly/SequenceAssembly.pdf)
+8\. | ORF Calling | [HTML](ORFCalling/) | [PDF](ORFCalling/ORFCalling.pdf)
 
 # Assignments. 
 
