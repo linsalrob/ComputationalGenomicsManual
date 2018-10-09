@@ -116,19 +116,36 @@ There are many great programs for identifying open reading frames in microbial g
 * [GeneMark](http://exon.gatech.edu/GeneMark/) uses hidden Markov models to identify the open reading frames.
 * [Prodigal](https://github.com/hyattpd/Prodigal) uses machine learning to identify the open reading frames.
 
+The AWS image has Prodigal installed and you can use that to identify the open reading frames on your scaffolds.
 
-
-
-
+Prodigal runs in a default mode that doesn't really need a lot of parameters or input: you specify the fasta file that you want to identify the open reading frames in and the output files for you protein and DNA sequences and Prodigal does the rest:
 
 ```
 mkdir prodigal
 prodigal -a prodigal/orfs.faa -d prodigal/orfs.fna -o prodigal/prodigal.out -i assembly/scaffolds.fasta
 ```
 
+The output comes in three files:
+1. The `orfs.faa` file is a fasta file that has the amino acid sequences (the protein sequences; hence the `faa` extension). Each sequence has the contig name appended with a unique number, the start and stop of the gene, and some other information about the gene, including whether the gene is partial, the start codon (see the note above), the ribosome binding site sequence and spacer region, and the GC content of the gene.
+2. The `orfs.fna` file is the fasta file that has the nucleic acid sequences (the DNA sequences; hence the `fna` extension). The sequences have the same identifiers as the `faa` file.
+3. The `prodigal.out` file that includes the information in GenBank format (by default). The sequences have the following information:
 
-
-
+   * `id` the unique ID of the sequence based on the contig name and a number
+   * `partial` whether the gene is partial (i.e. it does not have either a start or stop codon before the beginning or end of the sequence).
+   * `start_type` the start codon (usually ATG, GTG, or TTG)
+   * `stop_type` the stop codon (usually TAA, TGA, or TAG)
+   * `rbs_motif` the ribosome binding site (e.g. "AGGA" or "GGA", etc.)
+   * `rbs_spacer` the number of bases between the start codon and the ribosome binding site motif.
+   * `gc_cont` the GC content of the gene
+   * `gc_skew` the GC skew of the gene
+   * `conf` a confidence score that represents the probability that this gene is real, i.e. 68.2% means the gene is a true positive 68.2% of the time and a false positive 31.8%.
+   * `score` the total score for this gene.
+   * `cscore` the hexamer coding portion of the score
+   * `sscore` a score for the translation initiation site for this gene; it is the sum of the following three fields.
+      * `rscore` a score for the ribosome binding sequence
+      * `uscore` a score for the sequence surrounding the start codon.
+      * `tscore` a score for the start codon (i.e. ATG vs. GTG vs. TTG vs. others).
+      * `mscore` a score for the remaining signals such as the stop codon type and leading/lagging strand bias
 
 
 
