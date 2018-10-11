@@ -11,7 +11,7 @@ We're going to copy the data across, but before we do that we need to move the p
 scp your `pem` file from your laptop to the server.
 
 ```bash
-scp ~/.ssh/id_rsa.pem ec2-user@xxx.xxx.xxx.xxx:~/.ssh/
+scp -i id_rsa.pem ~/.ssh/id_rsa.pem ec2-user@xxx.xxx.xxx.xxx:~/.ssh/
 ```
 _Note_ You need to change ~/.ssh/id_rsa.pem to the location of your `pem` file that you acknowledge that you have when you start an AWS instance. Also, you need to change `xxx.xxx.xxx.xxx` to the IP of the older server that still has your data on it.
 
