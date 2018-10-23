@@ -27,6 +27,7 @@ Chapter | Contents  | HTML  | PDF
 7\. | Sequence Assembly | [HTML](SequenceAssembly) | [PDF](SequenceAssembly/SequenceAssembly.pdf)
 8\. | ORF Calling | [HTML](ORFCalling/) | [PDF](ORFCalling/ORFCalling.pdf)
 9\. | tRNA and rRNA identification | [HTML](tRNA_rRNA/) | [PDF](tRNA_rRNA/tRNA_rRNA.pdf)
+10\. | Annotation Pipelines | [HTML](AnnotationPipelines/) | [PDF](AnnotationPipelines/AnnotationPipelines.pdf)
 
 # Assignments. 
 
