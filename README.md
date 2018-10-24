@@ -28,6 +28,10 @@ Chapter | Contents  | HTML  | PDF
 8\. | ORF Calling | [HTML](ORFCalling/) | [PDF](ORFCalling/ORFCalling.pdf)
 9\. | tRNA and rRNA identification | [HTML](tRNA_rRNA/) | [PDF](tRNA_rRNA/tRNA_rRNA.pdf)
 10\. | Annotation Pipelines | [HTML](AnnotationPipelines/) | [PDF](AnnotationPipelines/AnnotationPipelines.pdf)
+11\. | Metagenomics | [HTML](Metagenomics/) | [PDF](Metagenomics/Metagenomics.pdf)
+12\. | Cross Assembly | [HTML](CrossAssembly/) | [PDF](CrossAssembly/CrossAssembly.pdf)
+12a. | - Metabat | [HTML](CrossAssembly/Metabat.md) | [PDF](CrossAssembly/Metabat.pdf)
+12b. | - CCOM | [HTML](CrossAssembly/CCOM.md) | [PDF](CrossAssembly/CCOM.pdf)
 
 # Assignments. 
 
