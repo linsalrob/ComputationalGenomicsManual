@@ -21,10 +21,10 @@ Next, login to the older server
 ssh xxx.xxx.xxx.xxx
 ```
 
-and then scp the data to the new server
+and then scp the data to the new server. Note that you need to tell ssh where your secret `pem` file is located:
 
 ```bash
-scp -r * ec2-user@yyy.yyy.yyy.yyy:
+scp -i ~/.ssh/file.pem -r * ec2-user@yyy.yyy.yyy.yyy:
 ```
 _Note_ change `yyy.yyy.yyy.yyy` to the ip address of the new server. Also, don't forget the colon on the end of the line!
 
