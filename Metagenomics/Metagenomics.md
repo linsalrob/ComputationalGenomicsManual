@@ -1,142 +1,42 @@
 
+# Metagenomics introduction
 
-# Whole Shotgun Metagenomics preparation
+<img src="images/Staley Konopka.png" align="right" alt="Paper describing the great plate count anomaly"  title="Paper describing the great plate count anomaly" />
 
-Microbes or viruses from almost any environment can be used for the construction of a metagenome and a wider range of environments have become available as sequencing technology requires less DNA inputs. 
-<img align="right" src="images/Filters.png" 
-The basic premise for producing a metagenome is to obtain a sample of microbes, extract the DNA, and subsample the DNA for sequencing. Whole shot-gun metagenomics does not use primers and attempts to obtain a subsample of the whole community, without bias. Earlier collection methods included, obtaining 100 L of water and filtering with a series of impact filters or using a tangential flow filtration to concentrate the particles prior to impact filtering (Haas et al., 2014)
+In this course we are going to focus on microbial metagenomics, using DNA sequencing to understand microbes in different environments. Microbes don’t usually live alone – even the simplest environments we’ve studied have multiple microbes present (Tyson et al., 2004; Edwards et al., 2006; Rodriguez-Brito et al., 2010)
 
-The advantage of TFF was that a large range of microbial sizes could be
-collected and then passed through an impact filter, which enables a more
-complete analysis of the microbial community. Filtering through an
-impact filter required serial size fraction and multiple size samples
-for construction into metagenomes are obtained. However, commonly only
-one size fraction is constructed into a metagenome and an incomplete
-picture of the microbial community is obtained. Samples from the Global
-Ocean survey collected microbial communities across multiple filter
-sizes, but only sequenced the 0.2-0.8 µm fraction ]{.c2}[[(Rusch et al.,
-2007)](https://www.google.com/url?q=https://paperpile.com/c/nxzdOK/lbUq&sa=D&ust=1540407111831000){.c7}]{.c2}[.
-The resulting description of the microbial community focused on the
-autotrophs and oligotrophic microbes, which appeared to dominate the
-microbial communities of the oceans. Later sampling which used a wider
-size fraction reviled the distribution of the heterotrophs and particle
-associated microbes, which was missing from the earlier descriptions
-]{.c2}[[(Haggerty & Dinsdale,
-2017)](https://www.google.com/url?q=https://paperpile.com/c/nxzdOK/BzS1&sa=D&ust=1540407111831000){.c7}]{.c2}[.
-]{.c6
-.c2}[![](images/image10.png)]{style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 514.67px; height: 350.95px;"}[![](images/image2.png)]{style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 393.93px; height: 724.10px;"}
+<img src="images/plate count anomaly.gif" align="left" alt="The great plate count anomaly" title="The great plate count anomaly shows many more bacteria are detected by staining (Fig 1) than by culturing (Fig 2)"  />
 
-[The use of whole genome amplification or genomiphi was another area of
-bias in metagenomic sample ]{.c2}[[(Kim & Bae,
-2011)](https://www.google.com/url?q=https://paperpile.com/c/nxzdOK/onuI&sa=D&ust=1540407111832000){.c7}]{.c2}[.
-Genomophi is particularly apt at amplifying small circular genome
-organisms, such as ssDNA viruses. Researchers interested in these
-organisms now exploit the features of genomophi to sample these
-organisms and have discovered the high diversity of these organisms
-across multiple environments ]{.c2}[[(Rosario et al., 2009; Kim & Bae,
-2011; Labonté & Suttle,
-2013)](https://www.google.com/url?q=https://paperpile.com/c/nxzdOK/onuI%2BihMX%2BGofD&sa=D&ust=1540407111832000){.c7}]{.c2}
+The *Great Plate Count Anomaly* is that not every microbe that we can detect &mdash; e.g. via direct staining &mdash; can be grown on petri dishes. This anomaly was first described in 1985, although observations describing this phenomena date back to 1932 from freshwater habitats and 1959 from marine environments (as reported in Staley and Konopka).
 
-[The first DNA sequencing platforms and library preparation methods
-required &gt; 500 ng of DNA ]{.c2}[[(Dinsdale et al.,
-2008)](https://www.google.com/url?q=https://paperpile.com/c/nxzdOK/TUkb&sa=D&ust=1540407111832000){.c7}]{.c2}[ and
-this quantity of DNA was particularly difficult to obtain from microbial
-and viral communities, hence the use of amplification techniques. These
-requirements have now been reduced to &lt; 1ng total DNA, which make
-constructing a metagenome simpler. The use of such small quantities of
-DNA raises the question of whether a representative sample of the
-communities has been obtained. To investigate this question, we compared
-the taxonomic distribution of replicate metagenomes collected from a
-single environment, the kelp forest. In Figure 7 we show that replicate
-sequenced using different library preparation methods gave a similar
-community distribution, suggesting a 1 ng sample of DNA was sufficient
-to describe the community. Further reductions in the quantity of DNA for
-library preparation have continued to be developed, for example Swift
-Biosciences can produce sequencing libraries from 10 pg of DNA.]{.c6
-.c2}
+For example, Staley and Konopka present this data on the growth of bacteria in Lake Washington. The two panels represent the number of bacteria that were detected by staining with acridine orange, and the number of bacteria that were detected with plate counts. The *x*-axis is the month of sampling, and the *y*-axis is the depth in the lake.
 
-[An advantage of conducting a shot-gun metagenome is that sequences are
-compared to obtain both the taxonomic and function of the microbial
-community. Dinsdale et al ]{.c2}[[(Dinsdale et al.,
-2008)](https://www.google.com/url?q=https://paperpile.com/c/nxzdOK/TUkb&sa=D&ust=1540407111833000){.c7}]{.c2}[ compared
-the functions of metagenomes collected from nine different environments
-and showed that the functions of the microbial community discriminated
-between environments. Metagenomics adequately described the functional
-potential of the microbial community and identified where the microbial
-community varied from the predicted levels potentially indication a
-dysbiosis in the environmental microbial community.]{.c2 .c6}
+More recently, the role of the microbiome or microbiota has become dominant in everything from human health and disease to agriculture to lifestyles. 
 
-[The importance of describing the taxa and the functional potential of a
-microbial community has recently been realized in a global context where
-the two measures were found to be decoupled ]{.c2}[[(Haggerty &
-Dinsdale,
-2017)](https://www.google.com/url?q=https://paperpile.com/c/nxzdOK/BzS1&sa=D&ust=1540407111833000){.c7}]{.c2}[.
-This strongly suggests that conducting a 16S amplicon library and
-inferring the functions using tools, such as “PICRUSt” ]{.c2}[[(Langille
-et al.,
-2013)](https://www.google.com/url?q=https://paperpile.com/c/nxzdOK/RFoN&sa=D&ust=1540407111833000){.c7}]{.c2}[ are
-not accurate and potentially inappropriate. ]{.c6 .c2}
+The concept of the microbiome or microbiota is not new – it has been around for at least 60 years. However, the application of cheap DNA sequencing to microbial environments has completely altered our understanding of the three fundamental questions that metagenomics addresses: What is in the environment, what are they doing, and how are they doing it.
 
-[The reduction in the amount of DNA has allowed for smaller quantities
-of DNA to be collected from each environment and therefore increased the
-level of replication of samples that can be obtained in a timely manner.
-For example, 2 - 3L of sea water is sufficient to make a metagenome
-without amplification and 50 - 250 ml of surface associate material for
-a host associated metagenomes from marine organisms. ]{.c6 .c2}
+The first flurry of papers about metagenomics emerged in the first years of the 21<sup>st</sup> Century (Breitbart et al., 2002, 2003; Tyson et al., 2004; Venter et al., 2004)
 
-[Metagenomics introduction ]{.c6 .c8}[![](images/image7.png)]{style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 397.33px; height: 289.00px;"} {#h.6v4or12bhafn .c18}
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Those early studies were mostly descriptive – providing an overview of the organisms in the environment being studied.  Comparative studies quickly followed, with studies comparing different environments, and meta-analyses of metagenomics data sets (Tringe et al., 2005; Rodriguez-Brito, Rohwer & Edwards, 2006; Dinsdale et al., 2008).
 
-[In this course we are going to focus on microbial metagenomics, using
-DNA sequencing to understand microbes in different environments.
-Microbes don’t usually live alone – even the simplest environments we’ve
-studied have multiple microbes present ]{.c2}[[(Tyson et al., 2004;
-Edwards et al., 2006; Rodriguez-Brito et al.,
-2010)](https://www.google.com/url?q=https://paperpile.com/c/nxzdOK/3CvR%2BUaJ2%2BMpPB&sa=D&ust=1540407111834000){.c7}]{.c2}[.
-The concept of the microbiome or microbiota is not new – it has been
-around for at least 60 years. However, the application of cheap DNA
-sequencing to microbial environments has completely altered our
-understanding of the three fundamental questions that metagenomics
-addresses: What is in the environment, what are they doing, and how are
-they doing it.]{.c6 .c2}
+<img align="right" src="images/who what where.png" title='the fundamental questions for metagenomics - who what where how?' />
 
-[Story of The first flurry of papers about metagenomics emerged in the
-first years of the 21]{.c2}[st]{.c2 .c12}[ Century ]{.c2}[[(Breitbart et
-al., 2002, 2003; Tyson et al., 2004; Venter et al.,
-2004)](https://www.google.com/url?q=https://paperpile.com/c/nxzdOK/3CvR%2BpZsz%2BYD3I%2BtyDW&sa=D&ust=1540407111834000){.c7}]{.c2}[.
-Those early studies were mostly descriptive – providing an overview of
-the organisms in the environment being studied.  Comparative studies
-quickly followed, with studies comparing different environments, and
-meta-analyses of metagenomics data sets ]{.c2}[[(Tringe et al., 2005;
-Rodriguez-Brito, Rohwer & Edwards, 2006; Dinsdale et al.,
-2008)](https://www.google.com/url?q=https://paperpile.com/c/nxzdOK/LrIm%2BTUkb%2BQVEn&sa=D&ust=1540407111834000){.c7}]{.c2}[.
-As sequencing became cheaper, data sets grew, and more samples could be
-sequenced for each environment. This lead to the ability to
-cross-compare similar samples from different environments, and through
-using savvy statistics we are able to capture complete genomes from
-metagenomics samples.]{.c6
-.c2}[![](images/image5.png)]{style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 508.63px; height: 643.20px;"}
+As sequencing became cheaper, data sets grew, and more samples could be sequenced for each environment. This lead to the ability to cross-compare similar samples from different environments, and through using savvy statistics we are able to capture complete genomes from
+metagenomics samples.
 
-[Throughout the course, we will work through several of these analyses,
-from simple samples where we identify the organisms that are present,
-through combining complex samples to identify complete genomes.]{.c6
-.c2}
+Throughout the course, we will work through several of these analyses, from simple samples where we identify the organisms that are present, through combining complex samples to identify complete genomes.
 
-[Metagenomics, BACs, and metabarcoding]{.c1} {#h.4tv4nzvfyyx .c18}
-============================================
 
-[BACS]{.c6 .c8} {#h.ouvbpyb23lry .c18}
----------------
+## Metagenomics, BACs, and metabarcoding
 
-[The term metagenomics was original coined to describe cloning genes
-from the environment ]{.c2}[[(Handelsman et al.,
-1998)](https://www.google.com/url?q=https://paperpile.com/c/nxzdOK/wu3L&sa=D&ust=1540407111835000){.c7}]{.c2}[.
-As shown in Fig. 3 of that paper (see overleaf), the concept is to clone
-fragments of DNA into bacterial artificial chromosomes, essentially low
-copy number plasmids that can hold large pieces of DNA and then use
-those fragments to select for a desired biological activity.]{.c6 .c2}
+<img src="images/Handelsman1.png" title="The paper descibing metagenomics" />
+<img src="images/Handelsman2.png" align="left" title="The paper descibing metagenomics" />
 
-[Thought Experiment: ]{.c4}[Why use bacterial artificial chromosomes
+The term metagenomics was original coined to describe cloning genes from the environment, particularly from soils (Handelsman et al., 1998)]
+
+As shown in Fig. 3 of that paper, the concept is to clone fragments of DNA into bacterial artificial chromosomes, essentially low copy number plasmids that can hold large pieces of DNA and then use those fragments to select for a desired biological activity.
+
+[Thought Experiment: Why use bacterial artificial chromosomes
 that can hold long pieces of DNA rather than just clone short fragments
 of DNA into, for example, high copy number vectors?]{.c2 .c10}
 

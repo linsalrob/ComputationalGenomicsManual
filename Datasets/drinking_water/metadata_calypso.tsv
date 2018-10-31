@@ -1,0 +1,6 @@
+Sample ID	Label	Individual or animal	Include flag	Tag	BioSample	Sample name	Library name	MBases	MBytes	AvgSpotLen	Distribution sytem or WTP	Experiment	Publication sample name	collection date	library
+SRR2080423	SA tank #3	I1	1	CTCGATG	SAMN03776101	SA 3 tank	SA1_library_R_2012_12_05_20_11_34_user_SN2-26_Auto_user_SN2-26_30.fastq	80	66	143	Distribution system	SRX1075090	SA 3 tank	02-May-2012	SA1
+SRR2080425	1.5km post discharge	I1	1	ACCAACT	SAMN03776103	1.5kmPostDis	SA1_library_R_2012_12_05_20_11_34_user_SN2-26_Auto_user_SN2-26_30.fastq	80	66	143	Distribution system	SRX1075092	1.5kmPostDis	03-May-2012	SA1
+SRR2080427	SA Source Water 2	I1	1	TCGCAGG	SAMN03776105	SASourceWater2	SA2_library_R_2012_12_11_11_14_16_user_js2-SN2-29_Auto_user_SN2-29_33.fastq	68	56	139	Source water	SRX1075094	SASourceWater2	03-May-2012	SA2
+SRR2080434	SA Customer tap 2	I1	1	GCTCGAA	SAMN03776111	SA 2 CT	SA2_library_R_2012_12_11_11_14_16_user_js2-SN2-29_Auto_user_SN2-29_33.fastq	68	56	139	Distribution system	SRX1075101	SA 2 CT	02-May-2012	SA2
+SRR2080436	WA1 outlet	I1	1	GGATCAA	SAMN03776091	WA1 outlet	WA_library_R_2013_03_26_15_14_25_user_SN1-86.fastq	59	48	140	Distribution system	SRX1075103	WA1 outlet	03-May-2012	WA
