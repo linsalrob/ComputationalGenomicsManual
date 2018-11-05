@@ -28,10 +28,9 @@ done
 
 For some reason this data seems mixed up, as there are sequences with each tag in each file. 
 
-split.py will split based on the tag sequence, and you can edit it and provide a maximum number of sequences per tag
+We resplit the data with these tags.
 
 The original number os counts per tag are:
-
 303,446  TCGCAGG
 276,080  GCTCGAA
 312,009  CTCGATG
