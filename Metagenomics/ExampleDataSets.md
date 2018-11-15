@@ -21,11 +21,15 @@ These samples were sequenced on an Ion Torrent, and so you will see quality diff
 
 In many of the examples in this manual, I use the Algae samples to demonstrate the commands. Be sure to switch the `Algae_12.fna` name to the file name that you are working on.
 
+[Read more about the coral and algae data sets](../Datasets/coral_algae/)
+
 ## [Drinking water](../Datasets/drinking_water)
 
 The drinking water study is from the [University of Adelaide, Australia](https://www.adelaide.edu.au/), and they used 16S amplicon sequencing to explore microbes in the drinking water. The project is available at the NCBI as [SRP ID SRP059994](https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRP059994) 
 
 The work is described in Shaw JLA, Monis P, Weyrich LS, Sawade E, Drikas M, Cooper AJ. 2015. Using Amplicon Sequencing To Characterize and Monitor Bacterial Diversity in Drinking Water Distribution Systems. [Appl Environ Microbiol 81:6463–6473](http://aem.asm.org/content/81/18/6463.long)
+
+[Read more about the drinking water datasets](../Datasets/drinking_water/)
 
 ## [Ground Water](../Datasets/ground_water)
 
@@ -34,10 +38,13 @@ This random community metagenomics data set comes from SRA project [SRP075429](h
 
 The work was published in Hernsdorf AW, Amano Y, Miyakawa K, Ise K, Suzuki Y, Anantharaman K, Probst A, Burstein D, Thomas BC, Banfield JF. 2017. Potential for microbial H2 and metal transformations associated with novel bacteria and archaea in deep terrestrial subsurface sediments. [ISME J 11:1915–1929](https://www.nature.com/articles/ismej201739)
 
+[Read more about the ground water datasets](../Datasets/ground_water/)
+
 ## [Gut](../Datasets/gut)
 
 The gut random community data set is also from the Banfield lab, from SRA project [SRP074153](https://www.ncbi.nlm.nih.gov/Traces/study/?acc=SRP074153) where they looked at the infants in NICU and hospitals. 
 
 The work was published in Brooks B, Olm MR, Firek BA, Baker R, Thomas BC, Morowitz MJ, Banfield JF. 2017. Strain-resolved analysis of hospital rooms and infants reveals overlap between the human and room microbiome. [Nat Commun 8:1814](https://www.nature.com/articles/s41467-017-02018-w)
 
+[Read more about the gut datasets](../Datasets/gut/)
 
