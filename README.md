@@ -23,7 +23,7 @@ Chapter | Contents  | HTML  | PDF
 5\. | Databases | [HTML](Databases/) | [PDF](Databases/Databases.pdf)
 5a. | - NCBI Edirect | [HTML](Databases/NCBI_Edirect.md) | [PDF](Databases/NCBI_Edirect.pdf)
 5b. | - NCBI SRA | [HTML](Databases/SRA.md) | [PDF](Databases/SRA.pdf)
-6\. | Genome Sequencing Overview | [HTML](Genome_Sequencing_Overview) | [PDF](Genome_Sequencing_Overview/Genome_Sequencing_Overview.pdf)
+6\. | Genome Sequencing Overview | [HTML](GenomeSequencingOverview) | [PDF](GenomeSequencingOverview/GenomeSequencingOverview.pdf)
 7\. | Sequence Assembly | [HTML](SequenceAssembly) | [PDF](SequenceAssembly/SequenceAssembly.pdf)
 8\. | ORF Calling | [HTML](ORFCalling/) | [PDF](ORFCalling/ORFCalling.pdf)
 9\. | tRNA and rRNA identification | [HTML](tRNA_rRNA/) | [PDF](tRNA_rRNA/tRNA_rRNA.pdf)
