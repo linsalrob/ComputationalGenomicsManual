@@ -43,5 +43,12 @@ Counts | Tag
 293,741 | ACCAACT
 269,702 | GGATCAA
 
+## Sequences
 
+* [barcodes](fastq/barcodes.fastq.gz)
+* [sequences](fastq/sequences.fastq.gz)
 
+## Metadata
+
+* [Tab separated format](metadata.tsv)
+* [Calypso Format](metadata_calypso.tsv)
