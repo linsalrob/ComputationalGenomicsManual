@@ -1,0 +1,28 @@
+Feature ID	Taxon	Confidence
+8965c65564ea3b04bb15317dacddc2e8	k__Bacteria; p__Proteobacteria; c__Deltaproteobacteria; o__MIZ46; f__; g__; s__	0.9464073644349654
+3f858109e7e20a4f5c0748c463a8a2f6	k__Bacteria; p__Acidobacteria; c__Acidobacteria-6; o__iii1-15; f__; g__; s__	0.9968867063333938
+68a419933397fea1d4ac19377cc5f2b8	k__Bacteria; p__WS3; c__PRR-12; o__Sediment-1; f__PRR-10; g__; s__	0.9689803287271772
+dcff3de33b5ae90169074fd3a9705a38	k__Bacteria; p__Firmicutes; c__Bacilli; o__Bacillales; f__Alicyclobacillaceae; g__Alicyclobacillus; s__	0.9864737465679667
+ae9f4d23c10b6d3e87c7ff38c0a40b67	k__Bacteria; p__Proteobacteria; c__Betaproteobacteria; o__MWH-UniP1; f__; g__; s__	0.7415167776422584
+964caa41debda91fc4d3648d4347a655	k__Bacteria; p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Streptococcus; s__	0.9775350602210992
+f703de3042bc9015b44ffd029644c602	k__Bacteria; p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Streptococcus; s__	0.7554837395491494
+a5fa5815af312cb8d19f29f79cc77e5c	k__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Pseudomonadales; f__Pseudomonadaceae; g__Pseudomonas; s__	0.7236711842229805
+edaebd8b81788273e1d7165dbdcfaa93	k__Bacteria; p__Proteobacteria; c__Betaproteobacteria; o__Burkholderiales; f__Comamonadaceae	0.9973695680171468
+f67861c93e8f58d17d6985c69c2e6a4d	k__Bacteria; p__Firmicutes; c__Bacilli	0.9999952681428291
+eb31a2131deb44b6c2a11e425727ddd0	k__Bacteria; p__Acidobacteria; c__Acidobacteria-6; o__iii1-15; f__; g__; s__	0.9959990338868077
+0864d052af4c418d311141cf1ac53a96	k__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Pseudomonadales; f__Moraxellaceae; g__Acinetobacter; s__johnsonii	0.8657344612862987
+39b9533cab96a88ae7b5e3887d920e26	k__Bacteria; p__Acidobacteria; c__Holophagae; o__Holophagales; f__Holophagaceae; g__; s__	0.9399941865616229
+21a399a771c50adaffd20dfd5105f8b1	k__Bacteria; p__Proteobacteria; c__Betaproteobacteria; o__Burkholderiales	0.9658553184635251
+c1a3db6172f8739a3b9ee1004e49f60e	k__Bacteria; p__Acidobacteria; c__Acidobacteria-6; o__iii1-15; f__; g__; s__	0.9954748370411025
+7e079794fe92e5af11116de7406b9bfe	k__Bacteria; p__WS3; c__PRR-12; o__Sediment-1; f__; g__; s__	0.931959289502759
+fab76d07d660f36fde1db47059bfe35d	k__Bacteria; p__Proteobacteria; c__Deltaproteobacteria	0.9606315334858244
+f0d9bd5af03d4f2d530ac4f910aac6d7	k__Bacteria; p__Proteobacteria; c__Betaproteobacteria	0.9729873431627327
+0752187a937f131ad5090035e3f1d98b	k__Bacteria; p__Proteobacteria; c__Betaproteobacteria; o__Burkholderiales; f__Comamonadaceae; g__Acidovorax	0.7537136997477545
+1fa8ba592ce92c1495bd962df6c24ace	k__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Pseudomonadales; f__Pseudomonadaceae; g__Pseudomonas	0.7260916696928624
+7d1e10878271601a8a39a56fd47de29a	k__Bacteria; p__Firmicutes; c__Bacilli; o__Lactobacillales; f__Streptococcaceae; g__Streptococcus	0.9948629982970587
+c0bfa07f6fbe6d2394f4e5f99859d027	k__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Pseudomonadales; f__Moraxellaceae; g__Acinetobacter; s__lwoffii	0.9108757063490508
+14f86977a08ddf348f5cc79b13a1445a	k__Bacteria; p__Proteobacteria; c__Betaproteobacteria; o__Burkholderiales; f__Comamonadaceae; g__Limnohabitans; s__	0.7772991977335768
+7395063f1b2426d9f899cfe1edc829be	k__Bacteria; p__Proteobacteria; c__Gammaproteobacteria; o__Xanthomonadales; f__Xanthomonadaceae; g__Stenotrophomonas	0.9371458123074997
+6c0218580520ccd4d10e547c63a95d9c	k__Bacteria; p__Proteobacteria; c__Deltaproteobacteria; o__NB1-j; f__MND4; g__; s__	0.9987261514366896
+38265b37011008edd57e91762101f8bf	k__Bacteria; p__Proteobacteria; c__Betaproteobacteria; o__Methylophilales; f__Methylophilaceae	0.9272825528566369
+5c008808ecf554b5384c74fa949b4afb	k__Bacteria; p__Acidobacteria; c__Holophagae; o__Holophagales; f__Holophagaceae; g__; s__	0.9617591565649898

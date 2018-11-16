@@ -51,4 +51,18 @@ Counts | Tag
 ## Metadata
 
 * [Tab separated format](metadata.tsv)
-* [Calypso Format](metadata_calypso.tsv)
+
+## Calypso data
+
+We have this data available for download for use in Calypso
+
+* [biom feature table](Calypso/feature-table.biom)
+* [metadata](Calypso/metadata_calypso.tsv)
+* [taxonomy](Calypso/taxonomy.tsv)
+
+
+
+
+
+
+
