@@ -12,20 +12,38 @@ Coral reefs are undergoing global microbialization as carbon and energy from hig
 
 ## Data
 
+We have made all the data sets available either as separate tarballs:
+
+* [Algae](https://goo.gl/zvnZD4)
+* [CCA](https://goo.gl/LRCXy2)
+* [Control](https://goo.gl/Zbm9TA)
+* [Coral](https://goo.gl/Gf3EvW)
+
 ### Algae
 
 * [Algae 11](fastq/Algae_11.fastq.gz)
 * [Algae 12](fastq/Algae_12.fastq.gz)
 * [Algae 13](fastq/Algae_13.fastq.gz)
 * [Algae 14](fastq/Algae_14.fastq.gz)
+
+### CCA
+
 * [CCA 11](fastq/CCA_11.fastq.gz)
 * [CCA 12](fastq/CCA_12.fastq.gz)
 * [CCA 13](fastq/CCA_13.fastq.gz)
+
+### Control
+
 * [Control 11](fastq/Control_11.fastq.gz)
 * [Control 12](fastq/Control_12.fastq.gz)
 * [Control 13](fastq/Control_13.fastq.gz)
 * [Control 14](fastq/Control_14.fastq.gz)
+
+### Coral
+
 * [Coral 11](fastq/Coral_11.fastq.gz)
 * [Coral 12](fastq/Coral_12.fastq.gz)
 * [Coral 13](fastq/Coral_13.fastq.gz)
 * [Coral 14](fastq/Coral_14.fastq.gz)
+
+
