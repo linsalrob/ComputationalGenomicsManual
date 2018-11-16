@@ -33,6 +33,10 @@ Chapter | Contents  | HTML  | PDF
 12\. | Cross Assembly | [HTML](CrossAssembly/) | [PDF](CrossAssembly/CrossAssembly.pdf)
 12a. | - Metabat | [HTML](CrossAssembly/Metabat.md) | [PDF](CrossAssembly/Metabat.pdf)
 12b. | - CCOM | [HTML](CrossAssembly/CCOM.md) | [PDF](CrossAssembly/CCOM.pdf)
+13\. | 16S sequencing | [HTML](16S/) | [PDF](16S/16S.pdf)
+14\. | FOCUS | [HTML](FOCUS/) | [PDF](FOCUS/FOCUS.pdf)
+15\. | GenomePeek | [HTML](GenomePeek/) | [PDF](GenomePeek/GenomePeek.pdf)
+16\. | RTMg | [HTML](RTMg/) | [PDF](RTMg/RTMg.pdf)
 
 # Assignments. 
 
