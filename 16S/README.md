@@ -320,4 +320,10 @@ Note that different organisms have different numbers of 16S genes, that skews 16
 
 ![copyrighter](images/copyrighter.png "Copyrighter corrects copy number")
 
+However, apparently this remains an [unsolved problem in bioinformatics](https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-018-0420-9), and maybe you should consider working on it.
 
+# What is an OTU?
+
+In 16S sequencing people often cluster the data at some level of similarity, and call that an *Operational Taxonomic Unit* or *OTU*. Transitionally, 97% similarity was used, and there is actually a biological argument in support of that cutoff: homologous recombination is restricted to DNA sequences that are >= 97% identical and below that level of similarity homologous recombination is rare (Zahrt TC, Maloy S. 1997. [Barriers to recombination between closely related bacteria: MutS and RecBCD inhibit recombination between Salmonella typhimurium and Salmonella typhi](http://www.pnas.org/content/94/18/9786.short). Proc Natl Acad Sci U S A 94:9786–9791.). This would suggest that sequences that are >97% similar are from the same "*species*" since the organisms can have "*sex*" with each other and efficiently share their DNA<sup>1</sup>. However, the 16S *rRNA* gene is so constrained, that the rest of the genome will be much less similar than 97%.
+
+More recently, however, several groups have questioned the utility of the 97% cutoff in 16S sequences. For example, [Edgar argues that the cutoff should be 99% or 100%](https://academic.oup.com/bioinformatics/article-abstract/34/14/2371/4913809?redirectedFrom=fulltext), Konstantinos Konstantinidis [crticized OTU clustering as underestimating diversity](https://aem.asm.org/content/84/6/e00014-18), and QIIME2 has moved [away from OTU clustering](https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-018-0470-z) including in [tutorials](https://docs.qiime2.org/2018.11/tutorials/otu-clustering/). 
