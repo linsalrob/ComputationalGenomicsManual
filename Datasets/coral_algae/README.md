@@ -12,12 +12,18 @@ Coral reefs are undergoing global microbialization as carbon and energy from hig
 
 ## Data
 
-We have made all the data sets available either as separate tarballs:
+We have made all the data sets available either as separate tarballs. *Note:* when you download these you will most likely need to change the name and then use the command:
 
-* [Algae](https://goo.gl/zvnZD4)
-* [CCA](https://goo.gl/LRCXy2)
-* [Control](https://goo.gl/Zbm9TA)
-* [Coral](https://goo.gl/Gf3EvW)
+```bash
+tar xf Algae.tgz
+```
+
+to extract the data. (Of course, changing Algae to CCA, Control or Coral as appropriate.)
+
+* [Algae.tgz](https://goo.gl/zvnZD4)
+* [CCA.tgz](https://goo.gl/LRCXy2)
+* [Control.tgz](https://goo.gl/Zbm9TA)
+* [Coral.tgz](https://goo.gl/Gf3EvW)
 
 ### Algae
 
