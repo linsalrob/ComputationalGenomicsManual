@@ -67,5 +67,23 @@ As you work through the steps associated with cross assembly, here are some ques
 * After you have run `crAss`, what are the most correlated contigs?
 * *Extra credit:* If you pull out the reads associated with contigs that have Pearson correlation (r) > 0.95 and repeat the assembly of just those reads, do you get better assembly statistics?
 
+## Part 4. Checking the metagenome annotated genomes with CheckM
 
+Once we have assembled the genomes, we want to check the completeness and contamination of the bins. Take a set of highly correlated contigs and create a directory with them. They are a metagenome bin.
+
+Next, we're going to run [CheckM](https://ecogenomics.github.io/CheckM/) on those contigs, using the [description here](../../CheckM).
+
+* What is the completeness of your genome bin?
+* What is the contamination of your genome bin?
+* Do you think this represents a whole genome?
+
+
+## Part 5. Visualization with anvi'o.
+
+Finally, we're going to work through the anvi'o workflow to create  a visualization of our bins.
+
+The workflow is [described here](../../ANVIO) and is also [thoroughly described on the anvi'o website](http://merenlab.org/2016/06/22/anvio-tutorial-v2/).
+
+* What does the anvi'o visualization tell you about your metagenome bins?
+* Paste a copy of the image into your report.
 
