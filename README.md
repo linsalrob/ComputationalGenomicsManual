@@ -35,9 +35,12 @@ Chapter | Contents  | HTML  | PDF
 12b. | - CCOM | [HTML](CrossAssembly/CCOM.md) | [PDF](CrossAssembly/CCOM.pdf)
 13\. | 16S sequencing | [HTML](16S/) | [PDF](16S/16S.pdf)
 14\. | FOCUS | [HTML](FOCUS/) | [PDF](FOCUS/FOCUS.pdf)
-15\. | GenomePeek | [HTML](GenomePeek/) | [PDF](GenomePeek/GenomePeek.pdf)
-16\. | RTMg | [HTML](RTMg/) | [PDF](RTMg/RTMg.pdf)
-17\. | OrfM and the SEED | [HTML](Metagenomics/AnnotatingOrfMSeed.md) | [PDF](Metagenomics/AnnotatingOrfMSeed.pdf)
+15\. | SUPER-FOCUS | [HTML](SUPER-FOCUS/) | [PDF](SUPER-FOCUS/SUPER-FOCUS.pdf)
+16\. | GenomePeek | [HTML](GenomePeek/) | [PDF](GenomePeek/GenomePeek.pdf)
+17\. | RTMg | [HTML](RTMg/) | [PDF](RTMg/RTMg.pdf)
+18\. | OrfM and the SEED | [HTML](Metagenomics/AnnotatingOrfMSeed.md) | [PDF](Metagenomics/AnnotatingOrfMSeed.pdf)
+19\. | ANVI'O | [HTML](ANVIO/) | [PDF](ANVIO/ANVIO.pdf)
+20\. | CheckM | [HTML](CheckM/) | [PDF](CheckM/CheckM.pdf)
 
 
 # Assignments. 
@@ -48,6 +51,12 @@ At the moment the assignments are live and so solutions are not shown. They will
 * [Genomics Assignment](Assignments/GenomicsAssignment/) is to analyze complete genomes from *Klebsiella*.
 * [Metagenomics Assignment](Assignments/MetagenomicsAssignment) is to analyze some metagenomics data and describe the organisms that you find there.
 
+# Datasets
+
+We have several different [datasets](Datasets/) available for you to use to try the course work out. There are both 16S and random metagenomes, and links to genomics data.
+
+
+# PDFs
 
 Note: The PDFs are automatically created from the markdown, and loose some of the images and links. You should probably use the HTML version most of the time.
 
@@ -57,8 +66,12 @@ Some of the images used in this manual are currently copyright other people. As 
 
 # Copyright
 
-This manual is Copyright Robert A. Edwards.
+This manual is Copyright Robert A. Edwards. 2018.
 
 # Citation
 
 If you wish to cite this manual, please cite: *Edwards, R. 2018. Computational Genomics. https://linsalrob.github.io/ComputationalGenomicsManual/. Accessed [today's date]*
+
+# References
+
+We have an [extensive list of references](References/) available, but if you find something missing that we should have cited (a) we're sorry, we tried to remember all of them and (b) please email Rob or provide a pull request and we'll add it.
