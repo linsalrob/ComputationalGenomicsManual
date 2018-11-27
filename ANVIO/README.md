@@ -2,6 +2,20 @@
 
 **NOTE:** Anvi'o has a *lot* of tutorials that are more comprehensive than this one and you can find them at the [anvi'o website](http://merenlab.org/software/anvio/). I encourage you to work through those tutorials.
 
+**NOTE:** anvi'o is installed on the AWS images (version > 8) in a virtual environment. To run it, you need to enter the command:
+
+```bash
+source /usr/local/virtual-envs/anvi-5.2/bin/activate
+```
+
+this will activate the anvi'o system, and you should be good to go. If at anytime you want to leave the anvi'o system, you can use
+
+```bash
+deactivate
+```
+
+to return to your previous settings.
+
 This is a visualization platform to see how the bins look. This platform can be installed only on Mac and LINUX environment. They don’t have a version for windows, however everyone seems to get it to work using Linux under windows. Follow the instructions on the [anvi'o installation website](http://merenlab.org/2016/06/26/installation-v2/) to install it. 
 
 We’re following the Metagenomics workflow that is described [in the v2 tutorial](http://merenlab.org/2016/06/22/anvio-tutorial-v2/) for these steps.
