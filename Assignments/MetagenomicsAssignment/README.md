@@ -6,7 +6,19 @@ For this assignment we are going to complete some metagenomics analyses. I have 
 
 *Extra credit:* If you want to find another data set to use, you can [search the SRA](../Databases/SRA.html) for a metagenomic data set and use that instead. You should choose a metagenome that has at least three runs associated with it, as later in the assignment we will use those to create metagenome assembled genomes.
 
-## Part 1. Annotating the organisms present in the metagenome
+## Part 1. Describe your metagenomes
+
+* Where did they come from?
+* Who did the sequencing?
+* What sequencing approach did they use?
+* How much data did they generate?
+* Why did they sequence it?
+* Was there a question they were trying to answer?
+
+* *Extra credit:* Using a different data set that is not one of those provided here will earn you extra credit! 
+* *Miniumum credit!* If you use the Algae data set, you will definitely not get extra credit and will probably get the bare minimum credit since all you need to do is copy and paste the commands. Use a different data set!
+
+## Part 2. Annotating the organisms present in the metagenome
 
 First, we are going to identify the organisms present in the metagenome. There are several ways to do that, but I recommend [focus](https://edwards.sdsu.edu/FOCUS) as it is installed in the AWS instances.
 
@@ -21,15 +33,13 @@ There are several other ways to analyse the metagenomes, including [mg-rast](htt
 	b) did it give you similar results to FOCUS. What were the critical differences?
 	c) Which method would you use again, and why?
 
-## Part 2. Annotating the functions present in the metagenome
+## Part 3. Annotating the functions present in the metagenome
 
 Just as with annotating the organisms present in the metagenome, there are several different methods to annotate the functions present in the metagenome.
 
 One approach is to use [real time metagenomics](../RTMg/), either in the web version or the stand alone version (*pro tip*: the web version is limited in how many queries it can make at once. The standalone version is not limited. If there is a class running, you probably want to use the standalone version!)
 
-You can also use [super-focus](https://edwards.sdsu.edu/SUPERFOCUS/)
-
-. It is installed on the AWS instance, though before you start you will need to use this command to download the appropriate databases.
+You can also use [super-focus](https://edwards.sdsu.edu/SUPERFOCUS/). It is installed on the AWS instance, though before you start you will need to use this command to download the appropriate databases.
 
 ```bash
 superfocus_downloadDB -a diamond
@@ -47,7 +57,10 @@ a) what method did you use and how did you use it (e.g. was it on the AWS instan
 b) did it give you similar results to the first method you chose?. What were the critical differences?
 c) Which method would you use again, and why?
 
-## Part 3. Metagenome Assembled Genomes
+*Extra credit:* How do you summarize the functions? We always see stacked bar charts (gross) or pie charts (grosser) for functions present in metagenomes. I always give additional credit for novel, unique, and different data visualization and presentation approaches (although this is not a data visualization class!)
+
+
+## Part 4. Metagenome Assembled Genomes
 
 As noted above the metagenome needs to have more than one run associated with it for this step to work. Ideally you will have a metagenome with 4 or more runs.
 
@@ -55,9 +68,6 @@ For this aim, we're going to use [cross-assembly](../CrossAssembly) to analyze t
 
 As you work through the steps associated with cross assembly, here are some questions to answer:
 
-* Which dataset did you choose, and why? 
-	* *Extra credit:* As above, using a different data set that is not one of those provided here will earn you extra credit! 
-	* *Miniumum credit!* If you use the Algae data set, you will definitely not get extra credit and will probably get the bare minimum credit since all you need to do is copy and paste the commands. Use a different data set!
 * What are the assembly statistics? For example:
 	* How many contigs did you get from the assembly?
 	* What is the N<sub>50</sub> and N<sub>75</sub>?
@@ -67,7 +77,7 @@ As you work through the steps associated with cross assembly, here are some ques
 * After you have run `crAss`, what are the most correlated contigs?
 * *Extra credit:* If you pull out the reads associated with contigs that have Pearson correlation (r) > 0.95 and repeat the assembly of just those reads, do you get better assembly statistics?
 
-## Part 4. Checking the metagenome annotated genomes with CheckM
+## Part 5. Checking the metagenome annotated genomes with CheckM
 
 Once we have assembled the genomes, we want to check the completeness and contamination of the bins. Take a set of highly correlated contigs and create a directory with them. They are a metagenome bin.
 
@@ -77,8 +87,9 @@ Next, we're going to run [CheckM](https://ecogenomics.github.io/CheckM/) on thos
 * What is the contamination of your genome bin?
 * Do you think this represents a whole genome?
 
+*Extra credit:* "Highly correlated contigs" is not a well defined term! You probably used Pearson correlation > 0.95 since that was in the previous question! What happens to completeness and contamination as you decrease the correlation coefficient of the contigs in your bin?
 
-## Part 5. Visualization with anvi'o.
+## Part 6. Visualization with anvi'o.
 
 Finally, we're going to work through the anvi'o workflow to create  a visualization of our bins.
 
@@ -87,3 +98,13 @@ The workflow is [described here](../../ANVIO) and is also [thoroughly described 
 * What does the anvi'o visualization tell you about your metagenome bins?
 * Paste a copy of the image into your report.
 
+*Extra credit:* Can you use anvi'o to refine the quality of your bins? If you do that, what happens to the checkM scores?
+
+## Part 7. Discussion
+In the beginning you described the metagenome and why it was sequenced.
+
+* What did you find?
+* How has your analysis contributed to our understanding of this sample?
+* Did you analysis recapitulate the results of the original authors?
+* Did you find something they missed?
+* Did they find something you missed?
