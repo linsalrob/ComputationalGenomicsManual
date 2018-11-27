@@ -1,4 +1,4 @@
-# Visualizing the bins with Anvi’o
+# Visualizing the bins with anvi’o
 
 **NOTE:** Anvi'o has a *lot* of tutorials that are more comprehensive than this one and you can find them at the [anvi'o website](http://merenlab.org/software/anvio/). I encourage you to work through those tutorials.
 
@@ -15,6 +15,26 @@ deactivate
 ```
 
 to return to your previous settings.
+
+To test your anvi'o installation, you can use 
+
+```bash
+anvi-self-test --suite mini
+```
+
+which will create a test dataset and start the server listening.
+
+---
+
+# Accessing the AWS instance
+
+By default the AWS instance does not allow access via `http` or `https`, the two protocols that we use on websites.
+
+You need to create a new set of security rules and then apply them to your image. For more details, see [how to create security rules](security.md)
+
+---
+
+# Getting started with anvi'o
 
 This is a visualization platform to see how the bins look. This platform can be installed only on Mac and LINUX environment. They don’t have a version for windows, however everyone seems to get it to work using Linux under windows. Follow the instructions on the [anvi'o installation website](http://merenlab.org/2016/06/26/installation-v2/) to install it. 
 
