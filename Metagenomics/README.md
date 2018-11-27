@@ -116,6 +116,14 @@ Notice that in this comparison the first two components of the Canonical Discrim
 
 At that time it was still expensive to sequence metagenomes, and so most studies only sequenced a single point. Recently, however, it is so cheap to sequence metagenomes that most studies sequence multiple different samples from the environment. This has lead to the notion of binning reads from related sequencing efforts to create population genomes that we talk about elsewhere.
 
+There are several ways to annotate metagenomes, many of which we describe here, including:
+
+
+* [FOCUS](../FOCUS)
+* [SUPER-FOCUS](../SUPER-FOCUS)
+* [Real time metagenomics](../RTMg)
+* [Using orfM and the SEED](AnnotatingOrfMSeed.md)
+
 ---
 
 <sup>1</sup>This is not just our opinion: see, for example, the [three virtues of a great programmer](http://threevirtues.com/)

@@ -37,6 +37,8 @@ Chapter | Contents  | HTML  | PDF
 14\. | FOCUS | [HTML](FOCUS/) | [PDF](FOCUS/FOCUS.pdf)
 15\. | GenomePeek | [HTML](GenomePeek/) | [PDF](GenomePeek/GenomePeek.pdf)
 16\. | RTMg | [HTML](RTMg/) | [PDF](RTMg/RTMg.pdf)
+17\. | OrfM and the SEED | [HTML](Metagenomics/AnnotatingOrfMSeed.md) | [PDF](Metagenomics/AnnotatingOrfMSeed.pdf)
+
 
 # Assignments. 
 
