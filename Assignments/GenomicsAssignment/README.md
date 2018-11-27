@@ -22,7 +22,7 @@ I particularly encourage you to read [this terrific blog post](https://holtlab.n
 
 Finally, the [metadata associated with the samples is available at microreact](https://microreact.org/project/VJdoJhfkx). You should take a look at that, as it will get you started with understanding the differences in the data.
 
-## Assignment part I - Download and assemble the data
+## Part 1. Download and assemble the data
 
 You can find a complete list of the sequence accessions for these samples [here](klebsiella.txt). These IDs are from the [European Nucleotide Archive](https://www.ebi.ac.uk/ena) but you can also download them from the [NCBI sequence read archive](https://www.ncbi.nlm.nih.gov/sra/) which is what we will do here. (By the way, you will notice that we have trimmed out some of the sequences described in the [metadata](https://microreact.org/project/VJdoJhfkx) because they are already assembled! if you want to proceed with some of those, you can skip the assembly step.
 
@@ -55,9 +55,28 @@ Once you have assembled that data can you generate the data that describes:
 * Longest contig
 * N<sub>50</sub>
 
-# Assignment part II - Identify the open reading frames
+## Part 2. Identify the open reading frames
+
+Once you have assembled the genome into contigs, we are going to annotate the [open reading frames](../ORFCalling/) in the genome.
+
+Describe:
+
+* The number of predicted genes
+* The length of the longest gene (bp)
+
+## Part 3. Identify the RNA genes.
+
+The next step is to identify the [RNA genes](../tRNA_rRNA) in the genome. We will identify both the rRNA and the tRNA genes.
+
+Describe:
+
+* The number of rRNA
+* Number of tRNA
 
 
+## Part 4. Identify the functions of the proteins.
+
+Function of the longest protein	Number of hypothetical proteins	Number of proteins with known functions
 
 
 

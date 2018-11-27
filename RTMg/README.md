@@ -10,7 +10,7 @@ Give [RTMg](https://edwards.sdsu.edu/RTMg) RTMg a try, you can download all the 
 
 ## Stand alone version
 
-The web version is nice, but what do you do if you have hundreds of thousands of sequences to annotate. You really don't want to wait for the web browser to load. This is where the stand alone versions come in. The stand alone versions are part of the [SEED servers](http://blog.theseed.org/servers/), that are available free for mac, linux, and windows from the [install page](http://blog.theseed.org/servers/installation/distribution-of-the-seed-server-packages.html). (Note, we have not yet installed these on the AWS instance, but they are trivial to install)
+The web version is nice, but what do you do if you have hundreds of thousands of sequences to annotate. You really don't want to wait for the web browser to load. This is where the stand alone versions come in. The stand alone versions are part of the [SEED servers](http://blog.theseed.org/servers/), that are available free for mac, linux, and windows from the [install page](http://blog.theseed.org/servers/installation/distribution-of-the-seed-server-packages.html). These are installed on version 7 or higher of the AWS image.
 
 Once you have downloaded and installed the SEED servers packages, you still have more options. The first is the desktop `myRAST` stand alone application. This is an application that you can run on your machine and will annotate your metagenomes for you in a graphical interface. The annotation is very similar to that for complete genomes, described in the [RAST blog](http://blog.theseed.org/servers/presentations/t1/running-a-job-with-the-desktop-rast.html).
 

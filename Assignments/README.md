@@ -4,4 +4,6 @@ This folder contains the assignments for Fall 2018 and associated data. The solu
 
 All the assignments are posted on the official SDSU CMS (BlackBoard) and that is considered the authoritative site for deadlines, etc. All work must be turned in through Blackboard to receive a grade.
 
-* [Assignment 1](Assignment1/)
+* [NCBI EDirect](Assignments/NCBIEDirectAssignment) is to familiarize yourself with NCBI EDirect.
+* [Genomics Assignment](Assignments/GenomicsAssignment/) is to analyze complete genomes from *Klebsiella*.
+* [Metagenomics Assignment](Assignments/MetagenomicsAssignment) is to analyze some metagenomics data and describe the organisms that you find there.

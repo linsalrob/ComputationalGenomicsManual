@@ -42,7 +42,9 @@ Chapter | Contents  | HTML  | PDF
 
 At the moment the assignments are live and so solutions are not shown. They will eventually be included so you can work through the examples.
 
-* [Assignment 1](Assignments/Assignment1/) is to familiarize yourself with NCBI EDirect.
+* [NCBI EDirect](Assignments/NCBIEDirectAssignment) is to familiarize yourself with NCBI EDirect.
+* [Genomics Assignment](Assignments/GenomicsAssignment/) is to analyze complete genomes from *Klebsiella*.
+* [Metagenomics Assignment](Assignments/MetagenomicsAssignment) is to analyze some metagenomics data and describe the organisms that you find there.
 
 
 Note: The PDFs are automatically created from the markdown, and loose some of the images and links. You should probably use the HTML version most of the time.

@@ -20,18 +20,17 @@ The command takes an input fasta file, a file name to output the renumbered sequ
 
 ```bash
 renumber_fasta.py -f Algae_11.fna -o Algae_11.renum.fna
-514323 sequences wrote to the file
+The last ID written to the file Algae_11.renum.fna was 514323
 
 renumber_fasta.py -f Algae_12.fna -o Algae_12.renum.fna -n 514324
-1514534 sequences wrote to the file
+The last ID written to the file Algae_12.renum.fna was 1514534
 
 renumber_fasta.py -f Algae_13.fna -o Algae_13.renum.fna -n 1514535
-2800777 sequences wrote to the file
+The last ID written to the file Algae_13.renum.fna was 2800777
 
 renumber_fasta.py -f Algae_14.fna -o Algae_14.renum.fna -n 2800778
-4262674 sequences wrote to the file
+The last ID written to the file Algae_14.renum.fna was 4262674
 ```
-
 
 *Note:* It is never a good idea to provide the same name for input and output. Usually you will end up overwriting your file and loosing all your data. This is a bad habit to get into: it is much better to make a new file (like we have done here), and once you are happy, delete the old file.
 
@@ -63,7 +62,7 @@ We are going to use the spades assembler (57) (http://bioinf.spbau.ru/spades) to
 If we have Ion Torrent data, we would use an assembly commad like this:
 
 ```bash
-python spades.py --iontorrent -s <Reads file .fasta> --only-assembler -o <output directory for the results>
+spades.py --iontorrent -s <Reads file .fasta> --only-assembler -o <output directory for the results>
 ```
 
  and so we’ll use the command:
