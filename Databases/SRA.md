@@ -45,7 +45,7 @@ As an alternative to searching through the website, we can also access the data 
 <img align="right" border="10" style="border-color:white" src="images/1772048.png">The [SRAdb bioconductor R package](https://bioconductor.org/packages/release/bioc/html/SRAdb.html) integrates the ability to download an SQLlite database of the SRA metadata that was created by the [Meltzer Lab](https://ccr.cancer.gov/Genetics-Branch/paul-s-meltzer) (where you can also [explore the SRA metadata](https://gbnci-abcc.ncifcrf.gov/sra/)). However, we don't use R that often, but we can still take advantage of their hard work (thank you!!!). Their [GitHub site](https://github.com/seandavi/SRAdb) includes direct links to both the [SQLite](https://starbuck1.s3.amazonaws.com/sradb/SRAmetadb.sqlite.gz) and [MySQL](https://starbuck1.s3.amazonaws.com/sradb/SRAdb.mysqldump.gz) versions of their database. 
 
 
- The uncompressed file is ~23GB, *so you can not download it onto the Amazon Machine Image*, but this now allows you to perform complex queries on the SRA data.
+The uncompressed file is ~23GB, *so you can not download it onto the Amazon Machine Image*, but this now allows you to perform complex queries on the SRA data.
 
 Once you have downloaded the SQLlite database you can access it with your favorite programming tools. Almost all languages have an SQLlite connector, and there is also the stand alone program called [SQLlite](https://sqlite.org/download.html) that will allow you to search the data.
 
@@ -62,7 +62,7 @@ We are interested in finding metagenomes in the SRA, but they have a mixture of 
 
 To solve this problem, we wrote the program [PARTIE](https://github.com/linsalrob/partie) ([Torres, Edwards & McNair, 2017](https://www.ncbi.nlm.nih.gov/pubmed/28369246)). We started by collecting all the potential metagenomes, including amplicon sequencing data sets, random metagenomes, and everything else that suggested it might be a  metagenome. Then we built a computer-based classifier using machine learning. We trained the machine learning algorithm about what is, and is not, a metagenome, by using a list where we had manually curated them. We measured how many unique *k*-mers there were (see the section on *k*-mers elsewhere), how many hits to a 16S library, hits to phages and viruses, hits to all bacteria. Uses these measures we can quickly and accurately determine whether something is a metagenome or not.
 
-You can download the latest list of metagenomes from our [Git repository for this project](https://github.com/linsalrob/partie) and it is on your AWS images in `/usr/local/genome/partie`.
+You can download the latest list of metagenomes from our [Git repository for this project](https://github.com/linsalrob/partie) and it is on your AWS images in `/usr/local/genome/partie`. As noted below we have also helped make this more accessible.
 
 There is one key file that you should look at: [SRA_Metagenome_Types.txt](https://raw.githubusercontent.com/linsalrob/partie/master/SRA_Metagenome_Types.txt) has only two columns: the `SRA ID` and whether it is an ampicon or WGS or Other sequence.
 
@@ -100,6 +100,10 @@ These are datasets in the SRA that come from groundwater and are metagenomes, ev
 For example, here is one that I chose at random:
 
 [Rifle groundwater metagenome and metatranscriptome following nitrate amendment Raw sequence reads](https://www.ncbi.nlm.nih.gov/sra/?term=SRR2177956) (In case you are curious, [Rifle](https://goo.gl/maps/uhf9GgvEmnR2)  is a place in Colorado)
+
+##  Perusing the abstracts
+
+We have also grouped those SRA run IDs that are WGS metagenomes into projects, and then for the projects we have extracted the title and abstract from the SRA metadata. You can download this [tab-separated values (tsv) file](SRA_WGS_Abstracts.tsv) and open it in your favorite spreadsheet program to peruse the abstracts of the different metagenomic samples.
 
 ## Example ways to retrieve SRA data
 

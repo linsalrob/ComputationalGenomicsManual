@@ -77,10 +77,10 @@ samtools view -bS  Algae_14.renum.sam  | samtools sort -o Algae_14.renum.bam  -
 
 Note that this creates four new files called `Algae_11.renum.bam`,  `Algae_12.renum.bam`,  `Algae_13.renum.bam`,  `Algae_14.renum.bam`.
 
-We need to index that file, which means we make a separate file that tells us where the reads are in the binary file. We can either do that using samtools with this command:
+We need to index those files, which means we make a separate file that tells us where the reads are in the binary file. We can either do that using samtools with this command:
 
 ```bash
-samtools index AlgaeAllReads.bowtie.bam AlgaeAllReads.bowtie.bam.bai
+samtools index Algae_11.renum.bam
 ```
 
 or we can do this using anvi’o (see below). (Some of the samtools implementations crash when you try and do this step. If that is the case, just use anvi’o, the result is the same.)
