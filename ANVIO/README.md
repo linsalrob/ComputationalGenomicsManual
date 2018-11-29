@@ -49,6 +49,14 @@ To start the workflow you will need the following two input files
 
 For anvi’o we want to have one alignment for every reads file, and so we are going to repeat the `bowtie` mapping that we did earlier. However, previously we did it with a single reads file, the *AllReads*, but this time we are going to do it with each reads file independently.
 
+If you did not create a bowtie index previously, you need to do that now. The command is
+
+```bash
+bowtie2-build AlgaeContigs.fna AlgaeBowtie 
+```
+
+where `AlgaeContigs.fna` is the contigs file and `AlgaeBowtie` is the name of the index that will be created and you use in the bowtie2 command as shown below.
+
 First, we start by mapping our reads:
 
 ```bash
