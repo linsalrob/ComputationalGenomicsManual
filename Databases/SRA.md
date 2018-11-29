@@ -236,9 +236,17 @@ We typically just use `fastq-dump` to just extract 10,000 or 100,000 sequences f
 
 We have spent a long time working with `fastq-dump`, and our standard incantation for calling it is:
 
+```bash
+fastq-dump --outdir fastq --gzip --skip-technical  --readids --read-filter pass --dumpbase --split-3 --clip $SRR_ID
 ```
-fastq-dump --outdir fastq --gzip --skip-technical  --readids --read-filter pass --dumpbase --split-3 --clip SRR_ID
+
+Sometimes you may only want to download a subset of the reads. We can use -N and -X to limit the number of reads. For example, this command downloads the first 100,000 reads.
+
+```bash
+fastq-dump --outdir fastq --gzip --skip-technical  --readids --read-filter pass --dumpbase --split-3 --clip -N 0 -X 100000 $SRR_ID
 ```
+
+
 
 You can find a lot more information about the [fastq-dump](https://edwards.sdsu.edu/research/fastq-dump/) parameters from our website (compare that one and the NCBI one...!)
 
