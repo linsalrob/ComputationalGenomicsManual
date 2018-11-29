@@ -176,7 +176,7 @@ When we create sequence alignments, we often just skip the creation of the SAM f
 For example, this is a common command that we will use:
 
 ```
-bowtie2 -p 6 -q --no-unal -x crassphage.bt2 -1 reads.r1.fastq -2 reads.r2.fastq | samtools view -bS - | samtools sort - outputdir/crassphage.reads.bam
+bowtie2 -p 6 -q --no-unal -x crassphage.bt2 -1 reads.r1.fastq -2 reads.r2.fastq | samtools view -bS - | samtools sort -o outputdir/crassphage.reads.bam -
 ```
 
 This command takes a bowtie2 indexed file (`crassphage.bt2`) and two read files (`reads.r1.fastq` and `reads.r2.fastq`) and uses `bowtie2` to compare the reads to the crassphage reference. Then we convert the output to BAM format using the `-bS` option to samtools view, and finally sort the reads in the bam file (which makes indexing and accessing the data much quicker).

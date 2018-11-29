@@ -69,10 +69,10 @@ bowtie2 -f -x AlgaeBowtie -U Algae_14.renum.fna > Algae_14.renum.sam
 This creates a series of files that ends with `.sam`. This is a plain text format of a file which we can easily read, but computers find hard to read. Computers find it easier to read `.bam` files, which are a binary format, and so we can convert those `.sam` files to `.bam` files. Note that here, the `samtools` program has a weird glitch, which is that it will automatically add `.bam` to the end of the file name. Therefore, we don’t have to do that! If you get a file that ends `.bam.bam`, you can always use the `mv` command to move it to a file that ends just `.bam`
 
 ```bash
-samtools view -bS  Algae_11.renum.sam  | samtools sort - Algae_11.renum
-samtools view -bS  Algae_12.renum.sam  | samtools sort - Algae_12.renum
-samtools view -bS  Algae_13.renum.sam  | samtools sort - Algae_13.renum
-samtools view -bS  Algae_14.renum.sam  | samtools sort - Algae_14.renum
+samtools view -bS  Algae_11.renum.sam  | samtools sort -o Algae_11.renum -
+samtools view -bS  Algae_12.renum.sam  | samtools sort -o Algae_12.renum -
+samtools view -bS  Algae_13.renum.sam  | samtools sort -o Algae_13.renum -
+samtools view -bS  Algae_14.renum.sam  | samtools sort -o Algae_14.renum -
 ```
 
 Note that this creates four new files called `Algae_11.renum.bam`,  `Algae_12.renum.bam`,  `Algae_13.renum.bam`,  `Algae_14.renum.bam`.
