@@ -292,6 +292,8 @@ The `-f 1,2` option to cut means print out the first two fields that match. We h
 
 When I run this, I find a contig (called `NODE_323_length_2368_cov_1.94207`)  that is highly correlated to 18 other contigs. 
 
+When you run it, you might get a contig that is most correlated to 100,000 other contigs. Don't use that! Choose one that is correlated to about 15 or so contigs so that you don't get overwhelmed.
+
 To find out what those contigs are, we can use a combination of `grep` and `cut` (don’t forget to change the `NODE_323_length_2368_cov_1.94207` and the `pearson.txt` parts of this command!)
 
 ```bash
