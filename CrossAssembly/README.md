@@ -308,7 +308,7 @@ grep NODE_323_length_2368_cov_1.94207 pearson.txt | cut -f 1,2 --output-delimite
 
 Here we use the `xargs` command, and tell it that we want one argument per command (`-n 1`), and that we want to insert (`-I`) the argument at the position marked by the `%`. Thus xargs runs the grep for each argument on the file `output.contigs2reads.tsv`.
 
-<img src="images/nineteencontigs.png" align="right" alt="coverage of 19 contigs" />
+<img src="images/nineteencontigs.png" alt="coverage of 19 contigs" />
 I can redirect the output of this file to a new file:
 
 ```bash
