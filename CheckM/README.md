@@ -16,6 +16,8 @@ Next, it looks for those genes using [hmmer](../Databases) to search your genome
 
 There are lots of different workflows that you can complete using CheckM and  you should [check out their manual](https://github.com/Ecogenomics/CheckM/wiki) for more commands and workflows.
 
+In the [previous steps](../CrossAssembly/) we made a bin based on contigs that are correlated with each other across multiple genomes. We can put those contigs into a directory, and use CheckM to test what is our coverage or completeness.
+
 The simplest workflow that we use is:
 
 ```bash
@@ -33,6 +35,6 @@ will run `checkm` with 16 threads.
 
 You can find a detailed description of the steps that CheckM takes [in the lineage_wf](https://github.com/Ecogenomics/CheckM/wiki/Workflows#lineage-specific-workflow) on the [CheckM wiki](https://github.com/Ecogenomics/CheckM/wiki). 
 
-
+*Note;* In the  [previous steps](../CrossAssembly/) we filtered contigs based on their Pearson correlation coefficient. You can make repeated attempts at binning sequences with different correlation coefficients or other parameters, and then testing them with CheckM to see the result.
 
 

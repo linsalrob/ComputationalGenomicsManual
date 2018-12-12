@@ -273,8 +273,20 @@ crAss.pl crAss/
 And then we can look for correlations:
 
 ```bash
-crAss_contig_correlations.py -d crAss/output.contigs2reads.txt -s 1
+crAss_contig_correlations.py -d crAss/output.contigs2reads.txt -s 1 > pearson.txt
 ```
+
+*Note:* `crAss_contig_correlations.py` has two parameters, `-r` and `-s` that adjust the sensitivity of the output. `-r` limits the outputs based on the row sums. If you have lots of data, you can increase `-r` and only print out those contigs that are highly prevalent. `-s` limits the amount of zero's in your datasets. The problem is that zero doesn't mean anything and yet it correlates highly! For example, if you have data like this:
+
+Contig | Metagenome 1 | Metagenome 2 | Metagenome 3
+--- | --- | --- | ---
+Contig 1 | 0 |  0 | 0
+Contig 2 | 0 |  0 | 0
+Contig 3 | 0 |  0 | 0
+
+They will all be highly correlated!
+
+You can use the `-s` flag to filter some of these out
 
 ### V. Using linux commands to find related contigs
 
@@ -310,19 +322,32 @@ grep NODE_323_length_2368_cov_1.94207 pearson.txt | cut -f 1,2 --output-delimite
 
 Here we use the `xargs` command, and tell it that we want one argument per command (`-n 1`), and that we want to insert (`-I`) the argument at the position marked by the `%`. Thus xargs runs the grep for each argument on the file `output.contigs2reads.tsv`.
 
-<img src="images/nineteencontigs.png" alt="coverage of 19 contigs" />
+
 I can redirect the output of this file to a new file:
 
 ```bash
 grep NODE_323_length_2368_cov_1.94207 pearson.txt | cut -f 1,2 --output-delimiter=$'\n' | sort -u | xargs -n 1 -I % grep % crAss/output.contigs2reads.txt > node_323.tsv
 ```
 
-Now that I have the interesting contigs, I can plot a graph of their abundance across the different samples.
+Now that I have a list of the interesting contigs, I can plot a graph of their abundance across the different samples.
+
+<img src="images/nineteencontigs.png" alt="coverage of 19 contigs" />
+
 
 We could explore this data set further by asking whether it is appropriate that all of these contigs be binned together. For example, if we blast them against a non-redundant database (e.g. at NCBI), do all the contigs match a similar organism?
 
 We could extract just the reads that contributed to these contigs and reassemble them to see whether we get better assemblies without all the other reads in the mix causing us problems.
 
-We could extend this analysis by decreasing our threshold for the Pearson correlation.
+To do this, you need to first get a list of just the contig IDs:
 
-As we will do later, we could test whether these contigs make up a whole organism.
+```bash
+cut -f 1 node_323.tsv > ids.txt
+```
+
+and use those to extract the contigs from the `contigs.fasta` file that you created with `spades`. For example, you [can use this code](https://edwards.sdsu.edu/research/perl-one-liner-to-extract-sequences-by-their-identifer-from-a-fasta-file/) or you can do it via [seqtk](https://www.biostars.org/p/45356/). 
+
+Those sequences represent a set of contigs that are correlated across your metagenomes &ndash; *i.e.* the most likely explanation is that they come from the same genome! This is a metagenome assembled genome, and you can check the completeness with [checkM](../CheckM/). 
+
+
+
+
