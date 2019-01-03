@@ -204,7 +204,24 @@ The alternative is to use a small program that I wrote, `crAss_contig_correlatio
 crAss_contig_correlations.py -d crAss/output.contigs2reads.txt > pearson.txt
 ```
 
-One of the problems we may run into is that if there are a few reads that map, we get a strong correlation, but it is not meaningful. Therefore, we can restrict the correlation to both the number of non-zero values (if everything was 0, the correlation score would be 1!) and also to a minimum number of reads in total (the row total for the table). In this example, I restrict my analysis to just those contigs that are present with 30 or more reads in all the samples using the `-r` option:
+This code takes several different options that can be used to limit the output for `crAss_contig_correlations.py`. As always, use the `-h` flag to get some helpful information:
+
+```bash
+$ crAss_contig_correlations.py -h
+usage: crAss_contig_correlations.py [-h] -d D [-s S] [-r R] [-m M]
+
+calculate pairwise pearson correlations between contigs and then cluster them
+
+optional arguments:
+	-h, --help  show this help message and exit
+	-d D        data table with contigs in rows and occurence in columns
+	-s S        minimum number of non-zero samples (default=all samples)
+	-r R        minimum number of reads (row total) for a sample to be included  (default=all rows)
+	-m M        minimum Pearson correlation to be printed out
+```
+
+
+For example, one of the problems we may run into is that if there are a few reads that map, we get a strong correlation, but it is not meaningful. Therefore, we can restrict the correlation to both the number of non-zero values (if everything was 0, the correlation score would be 1!) and also to a minimum number of reads in total (the row total for the table). In this example, I restrict my analysis to just those contigs that are present with 30 or more reads in all the samples using the `-r` option:
 
 ```bash
 crAss_contig_correlations.py -r 30 -d crAss/output.contigs2reads.txt > pearson.txt
