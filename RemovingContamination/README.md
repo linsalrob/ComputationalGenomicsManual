@@ -91,6 +91,10 @@ This makes an indexed `.bam` file of the alignments, and reports how many sequen
 
 ## Splitting the reads.
 
+You may decide to skip one of these steps depending on your specific needs. But here is how to get the human and non-human data back from your bamfile!
+
+### Extracting the reads that are human
+
 Our goal is to use the [samtools flags](https://broadinstitute.github.io/picard/explain-flags.html) to parse the alignment file into reads that map the human genome and reads that do not map the human genome. However, we also want to preserve our left and right pairs so we can do interesting things with them later.
 
 First, we make a set of human-only reads using a combination of two flags. `-G 12` excludes any reads that match having an unmapped read or an unmapped mate. In other words, we only find mapped reads. `-f 65` says find a read that is paired *and* is the first read in the pair (i.e. the *left* read). So together, we are just finding the left reads that *are* mapped to the human genome.
@@ -168,7 +172,7 @@ The 3,181 unpaired reads are reported by bowtie2:
 </pre>
 
 
-## Extract the reads that are NOT human
+### Extracting the reads that are NOT human
 
 We take essentially the same approach to map the non human reads, this time using `samtools` flag `-f 77` to find a read that is paired, where neither the read nor its mate are mapped, and the read is the first in the pair. Similarly, `-f 141` retrieves the second in the pair that is not mapped, and finally `-f 4` finds unmapped, unpaired reads.
 
