@@ -8,7 +8,7 @@ There are several ways to do this. For example, [deconseq](http://deconseq.sourc
 
 ## Download and prepare the human genome
 
-In this example, we're using build 38 of the human genome available from UC Santa Cruz. There are several [different files available](http://hgdownload.cse.ucsc.edu/goldenPath/hg38/bigZips/) for the human genome, but we are using:
+In this example, we're using build 38 of the human genome available from UC Santa Cruz. There are several [different files available](http://hgdownload.cse.ucsc.edu/goldenPath/hg38/bigZips/) for the human genome, but we are using `hg38.fa.gz`:
 
 <pre>
 hg38.fa.gz - "Soft-masked" assembly sequence in one file.
@@ -23,7 +23,7 @@ First, we download this file, and verify the download worked correctly:
 ```bash
 curl -lo hg38.fa.gz http://hgdownload.cse.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz
 curl http://hgdownload.cse.ucsc.edu/goldenPath/hg38/bigZips/md5sum.txt | grep hg38.fa.gz > md5sum.txt
-  md5sum --check md5sum.txt
+md5sum --check md5sum.txt
 ```
 
 At this point you should see the message:
@@ -38,6 +38,7 @@ Next, we uncompress the human genome and build a bowtie index. Here, we are usin
 Finally, we use `bowtie2-build` to create an index of that file (note, here I am using 16 threads, but you may need more or less!):
 
 ```bash
+unpigz hg38.fa.gz
 bowtie2-build --threads 16 hg38.fa humanGenome
 ```
 
@@ -47,63 +48,7 @@ Now we are ready to screen against the human genome!
 
 ## Mapping your reads to the human genome
 
-Lets assume your sequences are in three files
-
-left.fastq – the left reads in a fastq file
-right.fastq – the right reads in a file
-single.fastq – the singleton reads in a fastq file
-
-run the mapping (using 16 processes):
-
-```
-bowtie2 -p 16 -x sharks -1 left.fastq -2 right.fastq -U single.fastq | samtools sort > seqs.sharks.bam
-```
-
-## Using samtools to separate contamination and not contamination
-
-
-
-
- # build the index
-bowtie2-build sharks.fasta sharks
-
-Now we have our bamfile we can use samtools to separate the sequences into those sequences that map to the sharks and those sequences that do not map to the sharks. We’ll do this in two separate steps.
-
-Note that for all these steps, we are making use of the samtools flags filters, using either -f or -F (match a flag or do not match a flag) or -G (exclude reads that match). You can learn more about the samtools flags and explore the options with this samtools flags calculator.
-
-Sequences that map to the reference
-We can extract all the sequences that map to the shark reference genomes into three files: the left reads, the right reads, and the unmapped reads.
-
-# extract the left reads that match the reference genome
-samtools fastq -G 12 -f 65 seqs.sharks.bam > left.shark.fastq
-# extract the right reads that match the reference genome
-samtools fastq -G 12 -f 129 seqs.sharks.bam > right.shark.fastq
-# extract the single reads that match the reference genome
-samtools fastq -F 5 seqs.sharks.bam > single.shark.fastq
-In the first two commands, we use -G 12 which excludes reads where the read is unmapped and the mate is unmapped, and then we look for reads that are paired and it is the first read in the pair (-f 65) or it is the second read in the pair (-f 129). This combination gives us either the left or right mapped reads.
-
-Next, we look for reads that are not pairs (that would normally be -F 1) and are mapped (that would normally be -F 4), hence we use -F 5 to find the singletons that are mapped to the reference, and are hence shark sequences.
-
-Sequences that do not map to the reference
-We apply a similar logic to find the sequences that do not map to the reference genome. Again, we’ll end up with three files, a left reads, right reads, and unmapped reads.
-
-# extract the left reads that do NOT match the reference genome
-samtools fastq -f 77 seqs.sharks.bam > left.notshark.fastq
-# extract the right reads that do NOT match the reference genome
-samtools fastq -f 141 seqs.sharks.bam > right.notshark.fastq
-# extract the single reads that do NOT match the reference genome
-samtools fastq -f 4 -F 1 seqs.sharks.bam > single.notshark.fastq
-The logic here is very similar. A samtools flag of -f 77 means the read is paird, neither the read nor mate is mapped, and the it is the first read in the pair, while a flag of -f 141 means the same except it is the second mate in the pair.
-
-Finally, we use two flags: -f 4 (the read is unmapped) and -F 1 (the read is not paired) to find the single reads that are not mapped.
-
-By combining the flags in the samtools files we can easily separate our sequences into those reads that match the reference genome, and those that do not. The next question is, which ones are you interested in!
-
-
-
-# Example dataset
-
-For this example, we're using the data set [SRR2005706](https://www.ncbi.nlm.nih.gov/sra/SRR2005706). We happen to know that metagenome has human contamination in it, and is a relatively small metagenome so it is perfect to test for this example!
+For this example, we're using the data set [SRR2005706](https://www.ncbi.nlm.nih.gov/sra/SRR2005706). We happen to know that metagenome has human contamination in it, and is a relatively small metagenome so it is perfect to test for this example! (Our new version of [partie](https://github.com/linsalrob/partie) includes a measurement of human sequence contamination!)
 
 First, we download the whole dataset, and split it into three files, a left reads, a right reads, and an unpaired reads:
 
@@ -111,7 +56,7 @@ First, we download the whole dataset, and split it into three files, a left read
 fastq-dump --outdir fastq --skip-technical  --readids --read-filter pass --dumpbase --clip --split-3 SRR2005706
 ```
 
-This creates a directory called `fastq` with three files: `fastq/SRR2005706_pass_1.fastq`, `fastq/SRR2005706_pass_2.fastq`, and `fastq/SRR2005706_pass.fastq`.
+This creates a directory called `fastq` with three files: `fastq/SRR2005706_pass_1.fastq`, `fastq/SRR2005706_pass_2.fastq`, and `fastq/SRR2005706_pass.fastq`. The file that ends `pass_1.fastq` are the *left* reads, the file that ends `pass_2.fastq` are the *right* reads, and the file that ends `pass.fastq` are the unpaired reads.
 
 We use bowtie2 to map this data to our human genome, using the index file that we created above. Note in this example I am using 16 threads, but you may need to change that to match your compute resources as appropriate:
 
@@ -146,7 +91,20 @@ This makes an indexed `.bam` file of the alignments, and reports how many sequen
 
 ## Splitting the reads.
 
-Firt, we make a set of human-only reads:
+You may decide to skip one of these steps depending on your specific needs. But here is how to get the human and non-human data back from your bamfile!
+
+### Extracting the reads that are human
+
+Our goal is to use the [samtools flags](https://broadinstitute.github.io/picard/explain-flags.html) to parse the alignment file into reads that map the human genome and reads that do not map the human genome. However, we also want to preserve our left and right pairs so we can do interesting things with them later.
+
+First, we make a set of human-only reads using a combination of two flags. `-G 12` excludes any reads that match having an unmapped read or an unmapped mate. In other words, we only find mapped reads. `-f 65` says find a read that is paired *and* is the first read in the pair (i.e. the *left* read). So together, we are just finding the left reads that *are* mapped to the human genome.
+
+We repeat this with `-f 129` which means the read is paired and it is the second read in the pair.
+
+Finally, we add `-F 5` which is looking for reads that are paired and unmapped, except we invert that match by using a capital F rather than a lower case f, and so we get reads that are NOT paired and are NOT mapped. Note the subtle difference between the `-G` and `-F` options to `samtools`.
+
+Check out the [samtools flag calculator](https://broadinstitute.github.io/picard/explain-flags.html) for more help parsing these flags.
+
 
 ```bash
 samtools fastq -G 12 -f 65 SRR2005706.human.bam > is_human/left.human.fastq
@@ -189,7 +147,7 @@ N50: 100
 N75: 100
 ```
 
-We have a total of 1659 pairs that map to the human genome. Of these, 1158 were concordantly mapped. If we want just those, we can add a flag 2 to our selection:
+We have a total of 1,659 pairs that map to the human genome. Of these, 1,158 were concordantly mapped. If we want just those, we can add a flag 2 to our selection:
 
 ```bash
 samtools fastq -G 13 -f 131 SRR2005706.human.bam > is_human/right_concordantly_aligned.fastq
@@ -214,9 +172,9 @@ The 3,181 unpaired reads are reported by bowtie2:
 </pre>
 
 
-## Extract the reads that are NOT human
+### Extracting the reads that are NOT human
 
-As noted above, we can extract those reads that are not human:
+We take essentially the same approach to map the non human reads, this time using `samtools` flag `-f 77` to find a read that is paired, where neither the read nor its mate are mapped, and the read is the first in the pair. Similarly, `-f 141` retrieves the second in the pair that is not mapped, and finally `-f 4` finds unmapped, unpaired reads.
 
 ```bash
 samtools fastq -f 77 SRR2005706.human.bam > not_human/left.fastq
@@ -232,13 +190,14 @@ samtools fastq -f 4 -F 1 SRR2005706.human.bam > not_human/single.fastq
 
 ### Read counts
 
---- | --- | --- 
-Source | Left and right pairs | Singletons
---- | --- | ---
-Original downloaded dataset | 34,823 | 7,297
+
+Source | Left and right pairs | Singletons |
+--- | --- | --- |
 Human sequences | 1,659 | 3,181
 Non Human sequences | 33,164 | 4,116
 Total (human + not human) | 34,823 | 7,297
+&nbsp; | &nbsp; | &nbsp;
+Original downloaded dataset | 34,823 | 7,297 |
 
 
 
