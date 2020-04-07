@@ -1,3 +1,5 @@
+[![Edwards Lab](https://img.shields.io/badge/Bioinformatics-EdwardsLab-03A9F4)](https://edwards.sdsu.edu/research)
+
 # ComputationalGenomicsManual
 
 Robs manual for the computational genomics and bioinformatics class
