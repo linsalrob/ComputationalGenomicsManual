@@ -191,6 +191,7 @@ Here are some exercises that you can try:
 
 
 ## Linux cheat sheet
+
 Command | Meaning
 --- | ---
 `cd directory [.. - ~]` | Change directory [to the parent directory, the last directory you were in, or your home directory]
@@ -213,6 +214,7 @@ Command | Meaning
 `uniq file` | Look for duplicate words in the file
 `cut -f 1 file` | Split the contents of a file, e.g. if it is in columns
 `xargs -n 1 command` | Use each entry as a parameter to pass to command
+
 
 ### Pipes
 
