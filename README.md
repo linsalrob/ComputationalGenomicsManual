@@ -37,12 +37,13 @@ Chapter | Contents  | HTML  | PDF
 12b. | - CCOM | [HTML](CrossAssembly/CCOM.md) | [PDF](CrossAssembly/CCOM.pdf)
 13\. | 16S sequencing | [HTML](16S/) | [PDF](16S/16S.pdf)
 14\. | FOCUS | [HTML](FOCUS/) | [PDF](FOCUS/FOCUS.pdf)
-15\. | SUPER-FOCUS | [HTML](SUPER-FOCUS/) | [PDF](SUPER-FOCUS/SUPER-FOCUS.pdf)
-16\. | GenomePeek | [HTML](GenomePeek/) | [PDF](GenomePeek/GenomePeek.pdf)
-17\. | RTMg | [HTML](RTMg/) | [PDF](RTMg/RTMg.pdf)
-18\. | OrfM and the SEED | [HTML](Metagenomics/AnnotatingOrfMSeed.md) | [PDF](Metagenomics/AnnotatingOrfMSeed.pdf)
-19\. | ANVI'O | [HTML](ANVIO/) | [PDF](ANVIO/ANVIO.pdf)
-20\. | CheckM | [HTML](CheckM/) | [PDF](CheckM/CheckM.pdf)
+15\. | Kraken | [HTML](Kraken2) | [PDF](Kraken2/Kraken2.pdf)
+16\. | SUPER-FOCUS | [HTML](SUPER-FOCUS/) | [PDF](SUPER-FOCUS/SUPER-FOCUS.pdf)
+17\. | GenomePeek | [HTML](GenomePeek/) | [PDF](GenomePeek/GenomePeek.pdf)
+18\. | RTMg | [HTML](RTMg/) | [PDF](RTMg/RTMg.pdf)
+19\. | OrfM and the SEED | [HTML](Metagenomics/AnnotatingOrfMSeed.md) | [PDF](Metagenomics/AnnotatingOrfMSeed.pdf)
+20\. | ANVI'O | [HTML](ANVIO/) | [PDF](ANVIO/ANVIO.pdf)
+21\. | CheckM | [HTML](CheckM/) | [PDF](CheckM/CheckM.pdf)
 
 
 # Workshops.
