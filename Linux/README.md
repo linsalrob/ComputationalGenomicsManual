@@ -193,7 +193,7 @@ Here are some exercises that you can try:
 ## Linux cheat sheet
 
 Command | Meaning
---- | ---
+:--- |:---
 `cd directory [.. - ~]` | Change directory [to the parent directory, the last directory you were in, or your home directory]
 `mkdir directory` | Make directory
 `mv filepath1 filepath2` | Move file from filepath1 to location at filepath2
