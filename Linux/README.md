@@ -48,7 +48,9 @@ You don’t need to do anything to use them, they will be used by ssh by default
 
 ### Windows
 
-Download [PuTTY](https://www.putty.org/). Note: For PuTTY, there are some hacked versions of PuTTY floating around the internet and you don’t want to inadvertently download one of those as it may give the bad guys access to your machine. There are also versions with advertisements, and other crap added on. I always start at [https://www.putty.org/](https://www.putty.org/) and go from there. Do not Google for it, just go direct to the website and click the download link. 
+We recommend [mobaxterm](https://mobaxterm.mobatek.net/) if you are using Windows. This is a seemless SSH client with built in file transfer and support for X-windows. There are both free and supported versions.
+
+As an alternative to mobaxterm, you can also try [PuTTY](https://www.putty.org/). **Note:** For PuTTY, there are some hacked versions of PuTTY floating around the internet and you don’t want to inadvertently download one of those as it may give the bad guys access to your machine. There are also versions with advertisements, and other crap added on. I always start at [https://www.putty.org/](https://www.putty.org/) and go from there. Do not Google for it, just go direct to the website and click the download link. 
 
 You want either the 32-bit or 64-bit MSI Windows Installer, depending on whether your computer has 32- or 64-bits.
 
@@ -81,6 +83,15 @@ We will use them later!
 Pageant is the PuTTY key agent, and several programs can access the keys from there.
 
 ### Accessing Your Linux Server – Windows
+
+#### Accessing Your Server via Mobaxterm
+
+Click on the sessions tab and create a new SSH session. Enter the IP address or your computer, and the username as appropriate. Under **Advanced SSH settings** you can choose your private key to secure the connection.
+![using mobaxterm](images/mobaxterm_ssh.png)
+
+![mobaxterm keys](images/mobaxterm_keys.png)
+
+
 #### Accessing Your Server via PuTTY
 
 ![accessing the server](images/image3.png)
