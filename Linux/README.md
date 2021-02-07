@@ -192,7 +192,7 @@ Here are some exercises that you can try:
 
 ## Linux cheat sheet
 Command | Meaning
-:--- | :--------------------------------
+--- | ---
 `cd directory [.. - ~]` | Change directory [to the parent directory, the last directory you were in, or your home directory]
 `mkdir directory` | Make directory
 `mv filepath1 filepath2` | Move file from filepath1 to location at filepath2
@@ -216,7 +216,7 @@ Command | Meaning
 
 ### Pipes
 
-One of the strengths of unix is the ability to pipe commands together. You can take the output of one command, and use it as the input to another command. This means that you can join arbitrary things together to generate new results. This is one of the reasons that unix is so popular among data analysts. The method for doing this is called piping, and we use the vertical line symbol to pipe the input “|”.
+One of the strengths of unix is the ability to pipe commands together. You can take the output of one command, and use it as the input to another command. This means that you can join arbitrary things together to generate new results. This is one of the reasons that unix is so popular among data analysts. The method for doing this is called piping, and we use the vertical line symbol to pipe the input “\|”.
 
 For example, to sort the lines in a file we can combine two commands, `cat` and  `sort`. The first command prints the entire contents of a file and the second sorts the lines on the input. For example, if we have a file called poem.txt, we can sort the lines using this command:
 
