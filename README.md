@@ -45,13 +45,19 @@ Chapter | Contents  | HTML  | PDF
 20\. | CheckM | [HTML](CheckM/) | [PDF](CheckM/CheckM.pdf)
 
 
+# Workshops.
+
+We are using this content in a [variety of workshops](Workshops/)
+
+
 # Assignments. 
 
-At the moment the assignments are live and so solutions are not shown. They will eventually be included so you can work through the examples.
+Solutions are still not shown, but you can work through some of these
 
 * [NCBI EDirect](Assignments/NCBIEDirectAssignment) is to familiarize yourself with NCBI EDirect.
 * [Genomics Assignment](Assignments/GenomicsAssignment/) is to analyze complete genomes from *Klebsiella*.
 * [Metagenomics Assignment](Assignments/MetagenomicsAssignment) is to analyze some metagenomics data and describe the organisms that you find there.
+
 
 # Datasets
 
