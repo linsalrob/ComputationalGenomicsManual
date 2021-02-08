@@ -209,8 +209,24 @@ It is somewhat of a legacy file format, and it is quite difficult to find softwa
 
 The Protein Data Bank (PDB) format is most commonly used to store three dimensional structural information about protein crystal structures.  This file format includes the positions of the atoms in the structure, as well as annotations and information about the protein that was crystallized. Although PDB files are plain text, they are not really suitable for viewing without a third part application. Typically people view PDB files with either [PyMol](https://pymol.org/2/) or [RasMol](http://www.openrasmol.org/) although there are other viewers out there.
 
+## BLAST m8
 
+The BLAST m8 format has become a _de facto_ standard because it is quite straightforward. It is widely used by sequence alignment programs to summarize results. The data is tab-separated and has the following columns:
 
+Column | Content
+--- | ---
+0 | Query sequence ID
+1 | Subject (database) sequence ID
+2 | Percent Identity
+3 | Alignment Length
+4 | Number of gaps
+5 | Number of mismatches
+6 | Start on the query sequence
+7 | End on the query sequence
+8 | Start on the database sequence
+9 | End on the database sequence
+10 | E value - the expectation that this alignment is random given the length of the sequence and length of the database
+11 | bit score - the score of the alignment itself
 
 
 <sup><a name="footnote1">1</a></sup> Answer: For a quality of 31, the symbol would be 31+33 = 64. Checking the ASCII chart, the symbol that would be inserted is an *@* symbol. Note that is used to start the sequence ID, so you can **not** just grep for lines beginning with the @ symbol to find sequence IDs.
