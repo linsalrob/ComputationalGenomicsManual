@@ -22,7 +22,13 @@ Velvet |  genomes  | Sanger, 454, Solexa, SOLiD | [Zerbino and Birney, 2008](htt
 Canu |  genomes  | PacBio/Oxford Nanopore reads |  [Koren *et al.* 2017](https://genome.cshlp.org/content/27/5/722) | [manual for all versions](https://canu.readthedocs.io/en/latest/quick-start.html) | [Git repo](https://github.com/marbl/canu)
 MaSuRCA | Any size, haploid/diploid genomes | Illumina and PacBio/Oxford Nanopore data, legacy 454 and Sanger data | [Zimin A, *et al.* 2017](https://www.ncbi.nlm.nih.gov/pubmed/28130360) |   [Git Repo](https://github.com/alekseyzimin/masurca) | [Git Repo](https://github.com/alekseyzimin/masurca)
 Hinge | Small microbial genomes | PacBio/Oxford Nanopore reads | [Kamath *et al.* 2017](https://genome.cshlp.org/content/27/5/747.full) | [jupyter notebook](https://github.com/HingeAssembler/HINGE-analyses) |   [Git repo](https://github.com/HingeAssembler/HINGE)
-  
+Unicycler | Illumina-only data, and can optimize SPAdes | [Wick *et al.*](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005595)  | [Git Repo](https://github.com/rrwick/Unicycler)  
+Flye | De novo assembly of long reads (PacBio/Oxford Nanopore) | [Kolmogorov *et al.*](https://doi.org/10.1038/s41592-020-00971-x) | [Git Repo](https://github.com/fenderglass/Flye)
+miniasm + minipolish | Long read assembler and polishing together  | [Wick and Holt](https://f1000research.com/articles/8-2138) | [Git repo](https://github.com/rrwick/Minipolish)
+raven | Assembler for long, uncorrected reads | TBD | [Git repo](https://github.com/lbcb-sci/raven)
+Trycycler | Not really an assembler, *per se*, but more an approach to merging assemblies. | [DOI:10.5281/zenodo.3965017](https://doi.org/10.5281/zenodo.3965017) | [git Repo](https://github.com/rrwick/Trycycler)
+
+For the most comprehensive comparison of sequence assemblers, we encourage you to review [Wick RR, Holt KE. Benchmarking of long-read assemblers for prokaryote whole genome sequencing. F1000Research. 2019;8(2138).](https://f1000research.com/articles/8-2138)
 
 We use the [St. Petersburg genome assembler, SPAdes](http://cab.spbu.ru/software/spades/) and the version installed on the AWS instances is 3.12.0 for which the [manual is here](http://cab.spbu.ru/files/release3.12.0/manual.html)
 
