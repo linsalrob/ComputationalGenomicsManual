@@ -45,11 +45,10 @@ cpan -i Bio::Perl
 # This should not require any manual input. See the manual section
 # at the end
 
-pip-2.7 install numpy matplotlib scipy cython h5py checkm ete3 pysam cherrypy bottle scikit-learn  lxml beautifulsoup4 scikit-learn pandas statsmodels MUSiCC biopython bottle checkm fishtaco numpy  python_libsbml requests ipykernel gffutils metagenomics-focus superfocus biom-format
 
-pip-3 install numpy matplotlib scipy cython virtualenv h5py checkm ete3 cherrypy bottle scikit-learn  lxml beautifulsoup4 scikit-learn pandas statsmodels MUSiCC biopython bottle 
+pip-3.8 install numpy matplotlib scipy cython virtualenv h5py checkm ete3 cherrypy bottle scikit-learn  lxml beautifulsoup4 scikit-learn pandas statsmodels MUSiCC biopython bottle 
 
-pip-3 install checkm fishtaco numpy python_libsbml requests ipykernel jupyter gffutils metagenomics-focus superfocus pysam numpy matplotlib scipy
+pip-3.8 install checkm fishtaco numpy python_libsbml requests ipykernel jupyter gffutils metagenomics-focus superfocus pysam numpy matplotlib scipy snakemake
 
 
 
@@ -57,7 +56,8 @@ pip-3 install checkm fishtaco numpy python_libsbml requests ipykernel jupyter gf
 
 # Install this software:
 
-
+# Set up bash fast fail
+set -euo pipefail
 
 ## fasttree: 
 mkdir -p /usr/local/genome/fasttree
@@ -110,7 +110,7 @@ rm -f fastq2fasta.cpp
 echo "export PATH=\$PATH:$PWD" > /etc/profile.d/fastqfasta.sh
 
 # fastqc:
-mkdir /usr/local/genome/fastqc
+mkdir -p /usr/local/genome/fastqc
 cd /usr/local/genome/fastqc
 curl -Lo fastqc.zip https://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.11.7.zip
 unzip fastqc.zip 
@@ -119,7 +119,7 @@ chmod 755 fastqc
 echo "export PATH=\$PATH:$PWD" > /etc/profile.d/fastqc.sh
 
 # Jellyfish
-mkdir /usr/local/genome/jellyfish
+mkdir -p /usr/local/genome/jellyfish
 cd /usr/local/genome/jellyfish 
 curl -Lo jellyfish.tgz https://github.com/gmarcais/Jellyfish/releases/download/v2.2.10/jellyfish-2.2.10.tar.gz
 tar xf jellyfish.tgz
@@ -141,12 +141,12 @@ cd current/bin/
 echo "export PATH=\$PATH:$PWD" > /etc/profile.d/magicblast.sh
 
 # SRA toolkit
-mkdir /usr/local/genome/sra
+mkdir -p /usr/local/genome/sra
 cd /usr/local/genome/sra
 curl -Lo sratoolkit.tgz https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-centos_linux64.tar.gz
 tar xf sratoolkit.tgz 
 rm -f sratoolkit.tgz 
-ln -s sratoolkit.2.8.2-1-centos_linux64 current
+ln -s sratoolkit.*-centos_linux64 current
 cd current/bin/
 echo "export PATH=\$PATH:$PWD" > /etc/profile.d/sra.sh
 
@@ -253,7 +253,7 @@ echo "export PATH=\$PATH:$PWD" > /etc/profile.d/phylip.sh
 
 # samtools 
 mkdir /usr/local/genome/sam_bcf_hts
-export VERSION=1.9
+export VERSION=1.11
 cd /usr/local/genome/sam_bcf_hts
 curl -Lo samtools-$VERSION.tar.bz2  https://github.com/samtools/samtools/releases/download/$VERSION/samtools-$VERSION.tar.bz2
 curl -Lo bcftools-$VERSION.tar.bz2 https://github.com/samtools/bcftools/releases/download/$VERSION/bcftools-$VERSION.tar.bz2
@@ -310,15 +310,19 @@ make && make install
 cd ..
 rm -rf Prodigal/
 
+
 #bowtie2
+# CHECK THE VERSION HERE: https://sourceforge.net/projects/bowtie-bio/files/bowtie2/
+export BT2_VER=2.4.2
 mkdir /usr/local/genome/bowtie2
 cd /usr/local/genome/bowtie2
-curl -Lo bowtie.zip https://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.3.4.2/bowtie2-2.3.4.2-linux-x86_64.zip/download
+curl -Lo bowtie.zip https://sourceforge.net/projects/bowtie-bio/files/bowtie2/$BT2_VER/bowtie2-${BT2_VER}-linux-x86_64.zip/download
 unzip bowtie.zip
 rm -f bowtie.zip 
-ln -s bowtie2-2.3.4.2-linux-x86_64/ current
+ln -s bowtie2-${BT2_VER}-linux-x86_64/ current
 cd current/
 echo "export PATH=\$PATH:$PWD" > /etc/profile.d/bowtie.sh
+
 
 #cd-hit
 cd /usr/local/genome
@@ -351,6 +355,36 @@ cd prokka
 cd bin
 ./prokka --setupdb
 echo "export PATH=\$PATH:$PWD" > /etc/profile.d/prokka.sh
+
+# Diamond
+# CHECK THE LATEST VERSION HERE
+export DIA_VER=2.0.6
+mkdir -p /usr/local/genome/diamond
+cd /usr/local/genome/diamond
+curl -LO https://github.com/bbuchfink/diamond/releases/download/v$DIA_VER/diamond-linux64.tar.gz
+tar xf diamond-linux64.tar.gz
+rm -f diamond-linux64.tar.gz
+echo "export PATH=\$PATH:$PWD" > /etc/profile.d/diamond.sh
+
+#minimap2
+cd /usr/local/genome
+git clone https://github.com/lh3/minimap2.git
+cd minimap2
+make -j
+echo "export PATH=\$PATH:$PWD" > /etc/profile.d/minimap.sh
+
+# Megahit
+MH_VER=1.2.9
+mkdir -p /usr/local/genome/megahit
+cd /usr/local/genome/megahit
+curl -LO https://github.com/voutcn/megahit/releases/download/v${MH_VER}/MEGAHIT-${MH_VER}-Linux-x86_64-static.tar.gz
+tar xf MEGAHIT-${MH_VER}-Linux-x86_64-static.tar.gz
+ln -s MEGAHIT-${MH_VER}-Linux-x86_64-static current
+cd current/bin
+echo "export PATH=\$PATH:$PWD" > /etc/profile.d/megahit.sh
+
+
+
 
 
 # barrnap
@@ -423,6 +457,64 @@ install.packages(c("rgl", "car", "heplots", "scatterplot3d", "cluster", "candisc
 ## Do THIS AS A USER
 jupyter notebook --generate-config
 perl -i -npe 's/#c.NotebookApp.ip = .*$/c.NotebookApp.ip = "*"/' ~/.jupyter/jupyter_notebook_config.py
+
+
+
+
+##################################################################
+#                                                                #
+#   Install some data                                            #
+#                                                                #
+# NOTE: If you are using AWS in US N. Virginia (us-east-1)       #
+#       you can download the data using AWS. Otherwise you       #
+#       will have to download it from ncbi. Set up vdb-config    #
+#       either way, since it needs to be done!                   #
+#                                                                #
+##################################################################
+
+# Interactive
+vdb-config -i
+
+{keys are: c i a r s <enter> x}
+
+# you can check whether you are using NCBI or Cloud. NCBI will have short path, cloud long path.
+srapath SRR000001
+mkdir -p /data/gut
+cd /data/gut
+for SRR_ID in SRR3466404 SRR3506419 SRR3506420 SRR3546776 SRR3546778 SRR3546779 SRR3546780 SRR3546781 SRR3546782; do fastq-dump --outdir fastq --gzip --skip-technical  --readids --read-filter pass --dumpbase --split-3 --clip -N 5000 -X 255000 $SRR_ID; done
+
+##################################################################
+#                                                                #
+#   Create some user accounts                                    #
+#                                                                #
+# NOTE: The new users text file here is not the one that we      #
+#       really user because it has different passwords. Sorry!   #
+#                                                                #
+##################################################################
+
+set up the newusers.txt file
+
+~/GitHubs/EdwardsLab/bin/create_newusers.py 
+
+then use newusers users.txt
+
+This will add all the users.
+
+
+
+
+edit /etc/ssh/sshd_config
+change PasswordAuthentication yes
+restart sshd: 
+systemctl restart sshd
+
+
+# set up accounts. This assumes you have your keys in /home/ec2-user/.ssh/authorized_keys and you've copied over your .vim stuff!
+
+for USER in $(cut -f 1 -d : newusers.txt); do mkdir -p /home/$USER/.ssh; cp /home/ec2-user/.ssh/authorized_keys /home/$USER/.ssh; cp -r /home/ec2-user/.vim* /home/ec2-user/.bashrc /home/$USER/; chown -R $USER.$USER  /home/$USER/; chmod 600 /home/$USER/.ssh/authorized_keys; chmod 700 /home/$USER/.ssh; done
+
+
+
 
 
 
