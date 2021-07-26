@@ -511,7 +511,7 @@ systemctl restart sshd
 
 # set up accounts. This assumes you have your keys in /home/ec2-user/.ssh/authorized_keys and you've copied over your .vim stuff!
 
-for USER in $(cut -f 1 -d : newusers.txt); do mkdir -p /home/$USER/.ssh; cp /home/ec2-user/.ssh/authorized_keys /home/$USER/.ssh; cp -r /home/ec2-user/.vim* /home/ec2-user/.bashrc /home/$USER/; chown -R $USER.$USER  /home/$USER/; chmod 600 /home/$USER/.ssh/authorized_keys; chmod 700 /home/$USER/.ssh; done
+for USER in $(cut -f 1 -d : newusers.txt); do mkdir -p /home/$USER/.ssh; cp /home/ec2-user/.ssh/authorized_keys /home/$USER/.ssh; cp -r /home/ec2-user/.vim* /home/ec2-user/.bashrc /home/ec2-user/.bash_profile /home/$USER/; chown -R $USER.$USER  /home/$USER/; chmod 600 /home/$USER/.ssh/authorized_keys; chmod 700 /home/$USER/.ssh; done
 
 
 
