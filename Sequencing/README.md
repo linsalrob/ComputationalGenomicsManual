@@ -132,10 +132,10 @@ Q = -10 log<sub>10<sub>(P<sub>e</sub>)
 Where Q is the quality score, and P<sub>e</sub> is the probability of error in the base call. Quality scores range from 0 to 99, although 99 is usually used to mean that you have artificially inserted a sequence at that position (e.g. through manually editing the sequence). The meaning of quality scores are shown in the two tables below.
 
 
-* Phred 10: 1 x 10<sup style="vertical-align: 50%; font-size:60%">1</sup> chance that the base is wrong
-* Phred 20: 1 x 10<sup style="vertical-align: 50%; font-size:60%">2</sup> chance that the base is wrong
-* Phred 30: 1 x 10<sup style="vertical-align: 50%; font-size:60%">3</sup> chance that the base is wrong
-* Phred 40: 1 x 10<sup style="vertical-align: 50%; font-size:60%">4</sup> chance that the base is wrong
+* Phred 10: 1 x 10<sup style="vertical-align: 50%; font-size:60%">1</sup> chance (1:10) that the base is wrong
+* Phred 20: 1 x 10<sup style="vertical-align: 50%; font-size:60%">2</sup> chance (1:100) that the base is wrong
+* Phred 30: 1 x 10<sup style="vertical-align: 50%; font-size:60%">3</sup> chance (1:1,000) that the base is wrong
+* Phred 40: 1 x 10<sup style="vertical-align: 50%; font-size:60%">4</sup> chance (1:10,000) that the base is wrong
 
 Alternatively:
 
