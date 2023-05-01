@@ -80,7 +80,7 @@ This manual is Copyright Robert A. Edwards. 2018.
 
 # Citation
 
-If you wish to cite this manual, please cite: *Edwards, R. 2018. Computational Genomics. https://linsalrob.github.io/ComputationalGenomicsManual/. Accessed [today's date]*
+If you wish to cite this manual, please cite: *Edwards, R. 2018. Computational Genomics. https://linsalrob.github.io/ComputationalGenomicsManual/. Accessed [today's date]* DOI: 10.5281/zenodo.7883375
 
 # References
 
