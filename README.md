@@ -1,4 +1,5 @@
 [![Edwards Lab](https://img.shields.io/badge/Bioinformatics-EdwardsLab-03A9F4)](https://edwards.sdsu.edu/research)
+[![DOI](https://www.zenodo.org/badge/146160006.svg)](https://www.zenodo.org/badge/latestdoi/146160006)
 
 # ComputationalGenomicsManual
 
