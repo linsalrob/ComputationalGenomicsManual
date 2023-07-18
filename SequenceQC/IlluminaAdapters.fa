@@ -1,0 +1,28 @@
+>Nextera_Mate_left [Also Nextera Read 1 and2 Adapter, and AmpliSeq for Illumina Panels]
+CTGTCTCTTATACACATCT
+>Nextera_Mate_right
+AGATGTGTATAAGAGACAG
+>Nextera_Transposase_R1 [Also Nextera Amplisq I5r]
+TCGTCGGCAGCGTCAGATGTGTATAAGAGACAG
+>Nextera_Transposase_R2 [Also Ampliseq I7r]
+GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAG
+>IDT_for_Illumina_Nextera_I7l [Also Nextera PCR I7l, Ampliseq I7l
+CAAGCAGAAGACGGCATACGAGAT
+>IDT_for_Illumina_Nextera_I7r [Also Nextera PCR I7r]
+GTCTCGTGGGCTCGG
+>IDT_for_Illumina_Nextera_I5l [Also Nextera PCR I5l, TruSeq UDI I5l, TruSeq CDI I5l, TruSeq Universal Adapter]
+AATGATACGGCGACCACCGAGATCTACAC
+>IDT_for_Illumina_Nextera_I5r [Also Nextera PCR I5r
+TCGTCGGCAGCGTC
+>TruSeq_R1 [Also TruSeq CDI R1]
+AGATCGGAAGAGCACACGTCTGAACTCCAGTCA
+>TruSeq_R2 [Also TruSeq CDI R2]
+AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT
+>TruSeq_I7l [Also TruSeq UDI I7l, TruSeq CDI I7l]
+GATCGGAAGAGCACACGTCTGAACTCCAGTCAC
+>TruSeq_I7r [Also TruSeq UDI I7r. TruSeq CDI I7r]
+ATCTCGTATGCCGTCTTCTGCTTG
+>TruSeq_I5r [Also TruSeq UDI I5r, TruSeq CDI I5r]
+ACACTCTTTCCCTACACGACGCTCTTCCGATCT
+>TruSeq_Small_RNA
+TGGAATTCTCGGGTGCCAAGG

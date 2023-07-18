@@ -98,6 +98,21 @@ To filter the sequences to remove any sequence with an N, and to generate two fi
 prinseq-lite.pl -verbose -fastq Algae_12.fastq -ns_max_n 0 -out_good seqs_no_ns -out_bad seqs_with_ns
 ```
 
+### fastp
+
+An alternative to `prinseq++` is [fastp](https://github.com/OpenGene/fastp). This is a multi-threaded trimmer/sequence quality filtering program, that is fast, and provides a summary of the data. 
+
+The big advantage of `fastp` is that you can provde a [fasta file](IlluminaAdapters.fa) of adapter sequences. This file has all the current (as of 2023) adapter sequences.
+
+We will also have `fastp` filter out short reads - we'll use a minimum length of 100 bp, and filter _any_ read that has an `N` base in it.
+
+```bash
+fastp -n 1 -l 100 -i $R1 -I $R2 -o fastp/$R1 -O fastp/$R2 --adapter_fasta IlluminaAdapters.fa
+```
+
+
+
+
 ***
 
 <sup><a name="footnote1">1</a></sup> Answer: Garbage in, gargbage out. Withouth doing QC you are working on sequences that are just errors from the machines and are meaningless!
