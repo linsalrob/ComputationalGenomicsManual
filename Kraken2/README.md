@@ -4,7 +4,9 @@ Kraken2 uses _k_-mers to identify the taxonomy of the microbes in your sample. I
 
 There are a wide range of pre-built [kraken databases](https://benlangmead.github.io/aws-indexes/k2) that you can download, so you do not need to go to the effort of building them yourself.
 
+
 When [installing Kraken2](https://github.com/DerrickWood/kraken2/wiki/Manual#installation), I recommend setting the `KRAKEN2_DB_PATH` and `KRAKEN2_DEFAULT_DB` variables, and then you do not need to specify them on the command line.
+
 
 To run Kraken2, use this incantation:
 
@@ -31,3 +33,8 @@ This will output two files:
 
 
 For more information about Kraken2, [see the wiki page](https://github.com/DerrickWood/kraken2/wiki/Manual)
+
+
+If you are using the HPC at Flinders University, the details on [this page](https://fame.flinders.edu.au) will show you how to install and use Kraken2
+
+
