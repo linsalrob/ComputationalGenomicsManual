@@ -144,11 +144,16 @@ rule index_bam:
 ```
 
 
-This modified snakefile adds two additional commands:
+This modified snakefile adds three additional commands:
 
-1. The `rule run_minimap` performs the minimap alignment and creates the bam file
-2. The `rule index_bam` indexes the bam file to make accessing it much faster
+1. In the `rule all` we added the "788707_20180129.bam.bai" file that is the final output of the indexed bam file
+2. The `rule run_minimap` performs the minimap alignment and creates the bam file
+3. The `rule index_bam` indexes the bam file to make accessing it much faster
 
+
+*But note!* In this command, we don't request the creation of the file `788707_20180129.bam`, but because it is required as an input to the command `index_bam`, snakemake knows that it has to make that as an output file. The _only_ way to make that file is to run the rule `run_minimap`, and that requires as input the two `fastq` files in the `fastp` folder, and so that needs the rule `run fastp` to complete! 
+
+That's the beauty of snakemake, now you can always run the same commands.
 
 
 
