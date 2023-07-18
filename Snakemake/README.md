@@ -12,7 +12,7 @@ We can combine all of that into a single `snakemake` file, and it will do all of
 
 ### The dataset
 
-You can use any dataset you like for this step, but for the example, we'll use the CF data](../Datasets/CF)
+You can use any dataset you like for this step, but for the example, we'll use the [CF data](../Datasets/CF)
 
 ## Writing the snakefile
 
