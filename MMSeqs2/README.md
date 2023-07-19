@@ -38,7 +38,6 @@ mmseqs easy-taxonomy sequence.fasta UniRef50/UniRef50 easy-taxonomy/sequence_tax
 
 The results will be in a series of files in the `easy-taxonomy` directory, whose names start with `sequence_taxonomy`:
 
-SAGCFN_22_00809_S34_lca.tsv.gz  SAGCFN_22_00809_S34_report.gz  SAGCFN_22_00809_S34_tophit_aln.gz  SAGCFN_22_00809_S34_tophit_report.gz
 
 - `sequence_taxonomy_lca.tsv.gz`: The lowest common ancestor of the sequences in tab separated text.
 
@@ -53,7 +52,7 @@ Columns are:
 2. the taxonomy ID from [NCBI taxonomy](https://www.ncbi.nlm.nih.gov/datasets/taxonomy/tree). For example, this is [310915](https://www.ncbi.nlm.nih.gov/datasets/taxonomy/310915/)
 3. the taxonomic clade. `Species` in this example
 4. The organism name. `Pangasianodon hypophthalmus`
-5. 
+
 
 
 - `sequence_taxonomy_report.gz` a Kraken2 style output report
@@ -63,6 +62,14 @@ Example output:
 ```
 0.8561  9653    9653    species 310915                                                          Pangasianodon hypophthalmus
 ```
+
+The columns are
+1. The fraction of reads that map at this clade
+2. The number of reads that map at the clade, or lower
+3. The number of reads that map at exactly this clade
+4. The taxonomic level
+5. The taxonomy ID. For example, this is [310915](https://www.ncbi.nlm.nih.gov/datasets/taxonomy/310915/)
+6. The taxonomy name
 
 - `sequence_taxonomy_tophit_aln.gz` the `blast m8` format 
 
