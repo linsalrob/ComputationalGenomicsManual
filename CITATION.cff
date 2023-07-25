@@ -4,6 +4,8 @@ authors:
   - family-names: Edwards
     given-names: Robert
     orcid: https://orcid.org/0000-0001-8383-8949
-title: linsalrob/ComputationalGenomicsManual
+title: "Computational Genomics Manual"
 version: v2
 date-released: 2023-07-24
+doi: 10.5281/zenodo.8178842
+url: "https://github.com/linsalrob/ComputationalGenomicsManual"
