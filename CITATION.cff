@@ -1,0 +1,9 @@
+cff-version: 1.1.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Edwards
+    given-names: Robert
+    orcid: https://orcid.org/0000-0001-8383-8949
+title: linsalrob/ComputationalGenomicsManual
+version: v2
+date-released: 2023-07-24
