@@ -39,14 +39,15 @@ Chapter | Contents  | HTML  | PDF
 15a. | - Metabat | [HTML](CrossAssembly/Metabat.md) | [PDF](CrossAssembly/Metabat.pdf)
 15b. | - CCOM | [HTML](CrossAssembly/CCOM.md) | [PDF](CrossAssembly/CCOM.pdf)
 16\. | 16S sequencing | [HTML](16S/) | [PDF](16S/16S.pdf)
-17\. | FOCUS | [HTML](FOCUS/) | [PDF](FOCUS/FOCUS.pdf)
-18\. | Kraken | [HTML](Kraken2) | [PDF](Kraken2/Kraken2.pdf)
-19\. | SUPER-FOCUS | [HTML](SUPER-FOCUS/) | [PDF](SUPER-FOCUS/SUPER-FOCUS.pdf)
-20\. | GenomePeek | [HTML](GenomePeek/) | [PDF](GenomePeek/GenomePeek.pdf)
-21\. | RTMg | [HTML](RTMg/) | [PDF](RTMg/RTMg.pdf)
-22\. | OrfM and the SEED | [HTML](Metagenomics/AnnotatingOrfMSeed.md) | [PDF](Metagenomics/AnnotatingOrfMSeed.pdf)
-23\. | ANVI'O | [HTML](ANVIO/) | [PDF](ANVIO/ANVIO.pdf)
-24\. | CheckM | [HTML](CheckM/) | [PDF](CheckM/CheckM.pdf)
+17\. | Host removal | [HTML](Deconseq/) | [PDF](Deconseq/Deconseq.pdf)
+18\. | FOCUS | [HTML](FOCUS/) | [PDF](FOCUS/FOCUS.pdf)
+19\. | Kraken | [HTML](Kraken2) | [PDF](Kraken2/Kraken2.pdf)
+20\. | SUPER-FOCUS | [HTML](SUPER-FOCUS/) | [PDF](SUPER-FOCUS/SUPER-FOCUS.pdf)
+21\. | GenomePeek | [HTML](GenomePeek/) | [PDF](GenomePeek/GenomePeek.pdf)
+22\. | RTMg | [HTML](RTMg/) | [PDF](RTMg/RTMg.pdf)
+23\. | OrfM and the SEED | [HTML](Metagenomics/AnnotatingOrfMSeed.md) | [PDF](Metagenomics/AnnotatingOrfMSeed.pdf)
+24\. | ANVI'O | [HTML](ANVIO/) | [PDF](ANVIO/ANVIO.pdf)
+25\. | CheckM | [HTML](CheckM/) | [PDF](CheckM/CheckM.pdf)
 
 
 # Workshops.
