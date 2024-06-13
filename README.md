@@ -1,5 +1,8 @@
-[![Edwards Lab](https://img.shields.io/badge/Bioinformatics-EdwardsLab-03A9F4)](https://edwards.sdsu.edu/research)
+[![Edwards Lab](https://img.shields.io/badge/Bioinformatics-EdwardsLab-03A9F4)](https://edwards.flinders.edu.au)
 [![DOI](https://www.zenodo.org/badge/146160006.svg)](https://www.zenodo.org/badge/latestdoi/146160006)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![GitHub language count](https://img.shields.io/github/languages/count/linsalrob/ComputationalGenomicsManual)
+
 
 # ComputationalGenomicsManual
 
@@ -17,37 +20,38 @@ Companion videos that accompany this class are available on You Tube on [Rob's Y
 
 # Chapter Index
 
-Chapter | Contents  | HTML  | PDF   
---- | --- | --- | ---
-1\. | Linux | [HTML](Linux/) | [PDF](Linux/Linux.pdf)
-2\. | Conda | [HTML](Conda/) | [PDF](Conda/Conda.pdf)
-3\. | Snakemake | [HTML](Snakemake) | [PDF](Snakemake/Snakemake.pdf)
-4\. | Sequencing Overview | [HTML](Sequencing/) | [PDF](Sequencing/Sequencing.pdf)
-5\. | Sequence File Formats | [HTML](SequenceFileFormats/) | [PDF](SequenceFileFormats/SequenceFileFormats.pdf)
-6\. | Sequence Quality Control | [HTML](SequenceQC/) | [PDF](SequenceQC/SequenceQC.pdf)
-7\. | Databases | [HTML](Databases/) | [PDF](Databases/Databases.pdf)
-7a. | - NCBI Edirect | [HTML](Databases/NCBI_Edirect.md) | [PDF](Databases/NCBI_Edirect.pdf)
-7b. | - NCBI SRA | [HTML](Databases/SRA.md) | [PDF](Databases/SRA.pdf)
-8\. | Genome Sequencing Overview | [HTML](GenomeSequencingOverview) | [PDF](GenomeSequencingOverview/GenomeSequencingOverview.pdf)
-9\. | Sequence Assembly | [HTML](SequenceAssembly) | [PDF](SequenceAssembly/SequenceAssembly.pdf)
-10\. | ORF Calling | [HTML](ORFCalling/) | [PDF](ORFCalling/ORFCalling.pdf)
-11\. | tRNA and rRNA identification | [HTML](tRNA_rRNA/) | [PDF](tRNA_rRNA/tRNA_rRNA.pdf)
-12\. | Annotation Pipelines | [HTML](AnnotationPipelines/) | [PDF](AnnotationPipelines/AnnotationPipelines.pdf)
-13\. | Metagenomics | [HTML](Metagenomics/) | [PDF](Metagenomics/Metagenomics.pdf)
-14\. | - Example Data Sets | [HTML](Metagenomics/ExampleDataSets.md) | [PDF](Metagenomics/ExampleDataSets.pdf)
-15\. | Cross Assembly | [HTML](CrossAssembly/) | [PDF](CrossAssembly/CrossAssembly.pdf)
-15a. | - Metabat | [HTML](CrossAssembly/Metabat.md) | [PDF](CrossAssembly/Metabat.pdf)
-15b. | - CCOM | [HTML](CrossAssembly/CCOM.md) | [PDF](CrossAssembly/CCOM.pdf)
-16\. | 16S sequencing | [HTML](16S/) | [PDF](16S/16S.pdf)
-17\. | Host removal | [HTML](Deconseq/) | [PDF](Deconseq/Deconseq.pdf)
-18\. | FOCUS | [HTML](FOCUS/) | [PDF](FOCUS/FOCUS.pdf)
-19\. | Kraken | [HTML](Kraken2) | [PDF](Kraken2/Kraken2.pdf)
-20\. | SUPER-FOCUS | [HTML](SUPER-FOCUS/) | [PDF](SUPER-FOCUS/SUPER-FOCUS.pdf)
-21\. | GenomePeek | [HTML](GenomePeek/) | [PDF](GenomePeek/GenomePeek.pdf)
-22\. | RTMg | [HTML](RTMg/) | [PDF](RTMg/RTMg.pdf)
-23\. | OrfM and the SEED | [HTML](Metagenomics/AnnotatingOrfMSeed.md) | [PDF](Metagenomics/AnnotatingOrfMSeed.pdf)
-24\. | ANVI'O | [HTML](ANVIO/) | [PDF](ANVIO/ANVIO.pdf)
-25\. | CheckM | [HTML](CheckM/) | [PDF](CheckM/CheckM.pdf)
+Chapter | Contents
+--- | --- | 
+1\. | [Linux](Linux/)
+2\. | [Conda](Conda/)
+3\. | [Python](Python/)
+4\. | [Snakemake](Snakemake)
+5\. | [Sequencing Overview](Sequencing/)
+6\. | [Sequence File Formats](SequenceFileFormats/)
+7\. | [Sequence Quality Control](SequenceQC/)
+8\. | [Databases](Databases/)
+8a. | - [NCBI Edirect](Databases/NCBI_Edirect.md)
+8b. | - [NCBI SRA](Databases/SRA.md)
+9\. | [Genome Sequencing Overview](GenomeSequencingOverview)
+10\. | [Sequence Assembly](SequenceAssembly)
+11\. | [ORF Calling](ORFCalling/)
+12\. | [tRNA and rRNA identification](tRNA_rRNA/)
+13\. | [Annotation Pipelines](AnnotationPipelines/)
+14\. | [Metagenomics](Metagenomics/)
+15\. | - [Example Data Sets](Metagenomics/ExampleDataSets.md)
+16\. | [Cross Assembly](CrossAssembly/)
+16a. | - [Metabat](CrossAssembly/Metabat.md)
+16b. | - [CCOM](CrossAssembly/CCOM.md)
+17\. | [16S sequencing](16S/)
+18\. | [Host removal](Deconseq/)
+19\. | [FOCUS](FOCUS/)
+20\. | [Kraken](Kraken2)
+21\. | [SUPER-FOCUS](SUPER-FOCUS/)
+22\. | [GenomePeek](GenomePeek/)
+23\. | [RTMg](RTMg/)
+24\. | [OrfM and the SEED](Metagenomics/AnnotatingOrfMSeed.md)
+25\. | [ANVI'O](ANVIO/)
+26\. | [CheckM](CheckM/)
 
 
 # Workshops.
