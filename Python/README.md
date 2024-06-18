@@ -112,6 +112,13 @@ Or you can jump to a specific lesson. Each of these links opens in Google Colab.
 * [Lesson 12 - Plotting data with Pandas and Seaborn](https://colab.research.google.com/drive/1Qbff17-gZbktQliV6TaFFupDpfUiAnBE)
   * Pandas
   * Seaborn
+  * Plotting the abundance of phage in samples
+  * Violin plots with jitters
+  * Plotting bacterial phyla
+  * Stacked bar charts
+  * Heatmaps
+
+
 
 
 
