@@ -48,7 +48,7 @@ true, and there are many occassions (e.g. running things on cell phones) where y
 optimize your applications!
 
 
-# <a name="LearningPython"> Learning Python for Bioinformatics
+# <a name="LearningPython"></a> Learning Python for Bioinformatics
 
 We have adapted Marc Cohen's Google Colab notebooks that teach Python to be more aligned with bioinformatics. This series of Python notebooks will
 walk you through the Python basics, and introduce you to more advanced concepts as you progress.
