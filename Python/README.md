@@ -1,5 +1,7 @@
 # Introduction to Python
 
+[Jump to Learning Python](#LearningPython)
+
 [Python](https://www.python.org) is one of the most popular programming languages. There are lots of reasons why, 
 here are some of them.
 
@@ -46,7 +48,7 @@ true, and there are many occassions (e.g. running things on cell phones) where y
 optimize your applications!
 
 
-# Learning Python for Bioinformatics
+#<a name="LearningPython"> Learning Python for Bioinformatics
 
 We have adapted Marc Cohen's Google Colab notebooks that teach Python to be more aligned with bioinformatics. This series of Python notebooks will
 walk you through the Python basics, and introduce you to more advanced concepts as you progress.
