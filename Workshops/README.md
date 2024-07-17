@@ -4,3 +4,4 @@ We teach a variety of workshops from one to a few days covering this material. H
 
 * [SAGC 2021](SAGC2021.md)
 * [INRB Kinshasa 2023](INRB2023.md)
+* [COMBINE Workshop 2024 UQ](COMBINE2024.md)
