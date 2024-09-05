@@ -7,6 +7,10 @@ University of Queensland, Queensland, Australia, 2024
 
 Room 3.142 [Institute for Molecular Bioscience](https://imb.uq.edu.au/ ), University of Queensland, St Lucia, QLD.
 
+You can find the room here:
+
+![Room 3.142 is behind this secret door!](images/metagenomics_map_uq_2024.png)
+
 # Workshop Schedule
 
 ## Day 1: Monday September 9<sup>th</sup>
