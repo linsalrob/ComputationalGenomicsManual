@@ -13,6 +13,8 @@ You can find the room here:
 
 # Workshop Schedule
 
+_Please note:_ The workshop schedule is subject to change depending on how quickly or slowly we progress.
+
 ## Day 1: Monday September 9<sup>th</sup>
 
 Time | Topic 
