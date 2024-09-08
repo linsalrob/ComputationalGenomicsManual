@@ -96,7 +96,7 @@ Install `conda`, `fastp`, `minimap2`, `samtools` using [conda](../Conda/)
 We will use all of these programs today.
 
 
-# Step 2.
+# Downloading Data
 
 Download the [CF data](../Datasets/CF) fastq files, or if you want, you can use your own fastq files and see what you find!
 
@@ -113,7 +113,7 @@ wget https://github.com/linsalrob/ComputationalGenomicsManual/raw/master/Dataset
 wget https://github.com/linsalrob/ComputationalGenomicsManual/raw/master/Datasets/CF/788707_20180129_S_R2.fastq.gz
 ```
 
-# Step 3. Use `fastp` to trim bad sequences and remove the adapters.
+# Use `fastp` to trim bad sequences and remove the adapters.
 
 We are going to use the [Illumina Adapters](https://github.com/linsalrob/ComputationalGenomicsManual/raw/master/SequenceQC/IlluminaAdapters.fa), and trim out:
 
@@ -133,7 +133,7 @@ fastp -n 1 -l 100 -i 788707_20180129_S_R1.fastq.gz -I 788707_20180129_S_R2.fastq
 When `fastp` runs, you will get an HTML output file called [fastp.html](fastp_788707_20180129.html). This shows some statistics about the run.
 
 
-# Step 4. Filter out the human and non-human sequences.
+# Filter out the human and non-human sequences.
 
 The [NCBI](http://www.ncbi.nlm.nih.gov/) has several [human genome versions](https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38.p14/GRCh38_major_release_seqs_for_alignment_pipelines/) specifically designed for inclusion in pipelines like this. 
 
