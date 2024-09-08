@@ -4,11 +4,12 @@ We are going to install all our software using conda and bioconda. First, we nee
 
 ## Download conda
 
-Head to the [miniconda download page](https://docs.conda.io/en/latest/miniconda.html) and download the appropriate installer.
+Head to the [miniforge download page](https://github.com/conda-forge/miniforge) and download the appropriate installer.
 
-You want the one from _Latest Miniconda Installer Links_. Get:
+You want :
 
  - **Linux Installer** 
+ - **x86_64**
  - **Python** with the biggest number
  - **Miniconda3 Linux 64-bit**
  
@@ -28,17 +29,6 @@ This will ask you some questions, and you can pretty much accept the default ans
 
 Once the installer has finished the best way to continue is to log out, and then log back in. This will reset your account and you will have conda activated. At the bottom left of your screen you should see it say `(base)` which means that you are in the base conda installation.
 
-### `Conda` is great, but `Mamba` is better! 
-
-[Mamba](https://github.com/mamba-org/mamba) is a drop in replacement for conda, and it is the first thing we will install. 
-
-```bash
-conda install -c conda-forge mamba
-```
-
-This will take a moment to set everything up and figure out what needs to be installed, and then ask you if you are sure.
-
-Type `yes` and press return and `mamba` will be installed. From here on out, forget conda and think mamba!
 
 ## Install your first bioinformatics package
 
@@ -107,7 +97,4 @@ What this means is the _you_ are responsible for ensuring your software is up-to
 ## Environments
 
 If you want to keep different versions of software or run different pipelines you can do that with conda, in what are called `environments`. Each one can have different software. `conda` is clever, because if you have the same software in two different environments you don't need an entire copy of the software. At this stage, you don't need to worry about that, and you can just install everything in the `base` environment. But if you start to run into installation issues, then remember you can separate things into different environments.
-
-
-
 
