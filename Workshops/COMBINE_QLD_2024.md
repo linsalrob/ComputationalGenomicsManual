@@ -71,6 +71,9 @@ IP Addresses:
 5: 
 ```
 
+# Zoom link
+
+Zoom link available [here](https://uqz.zoom.us/j/88963908137)
 
 # Usernames and passwords
 
