@@ -125,6 +125,9 @@ Before you use it, make sure you add this command:
 
 Now run singleM on the CF data:
 
+```
+singlem pipe -1 /storage/data/cf_data/CF_Data_R1.fastq.gz -2 /storage/data/cf_data/CF_Data_R2.fastq.gz -p output_profile.tsv
+```
 
 
 
