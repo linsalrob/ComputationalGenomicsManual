@@ -37,13 +37,13 @@ Time | Topic
 Time | Topic 
 -- | --
 0900-0930 | Recap of Day 1 
-0930-1000 | Introduction to methods for functional analysis 
-1000-1030 | SUPER-FOCUS hands-on 
-1030-1100 | Morning coffee 
-1100-1200 | Viral identification using Hecatomb 
-1200-1230 | Hecatomb hands-on 
-1230-1330 | Lunch 
-1400-1500 | Hands-on data visualisation 
+0930-1030 | Removing the human genome
+1030-1100 | Morning coffee
+1100-1130 | Introduction to methods for functional analysis 
+1130-1200 | SUPER-FOCUS hands-on 
+1200-1300 | Lunch
+1300-1400 | Viral identification using Hecatomb 
+1400-1500 | Hecatomb hands-on 
 1500-1530 | Afternoon tea 
 1530-1645 | Hands-on data visualisation 
 1645-1700 | Wrap up and summary 
@@ -131,25 +131,13 @@ singlem pipe -1 /storage/data/cf_data/CF_Data_R1.fastq.gz -2 /storage/data/cf_da
 
 # BinChicken
 
+
 [Here are the detailed instructions for BinChicken](COMBINE_QLD_2024_binchicken.md)
 
 
 # Downloading Data
 
-Download the [CF data](../Datasets/CF) fastq files, or if you want, you can use your own fastq files and see what you find!
-
-For this example, I will download:
-
-- [R1 file](https://github.com/linsalrob/ComputationalGenomicsManual/raw/master/Datasets/CF/788707_20180129_S_R1.fastq.gz)
-- [R2 file](https://github.com/linsalrob/ComputationalGenomicsManual/raw/master/Datasets/CF/788707_20180129_S_R2.fastq.gz)
-
-If you are using a remote server, you can use `wget` again to download these reads:
-
-
-```
-wget https://github.com/linsalrob/ComputationalGenomicsManual/raw/master/Datasets/CF/788707_20180129_S_R1.fastq.gz
-wget https://github.com/linsalrob/ComputationalGenomicsManual/raw/master/Datasets/CF/788707_20180129_S_R2.fastq.gz
-```
+All the data we are going to use in the workshop is present on the servers in `/storage/data/cf_data`
 
 # Use `fastp` to trim bad sequences and remove the adapters.
 
@@ -218,17 +206,13 @@ GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz, plus:
 
 For this work, we are going to use [GCA_000001405.15_GRCh38_no_alt_plus_hs38d1_analysis_set.fna.gz](https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38.p14/GRCh38_major_release_seqs_for_alignment_pipelines/GCA_000001405.15_GRCh38_no_alt_plus_hs38d1_analysis_set.fna.gz) which contains everything.
 
-If you want to download it, you can use `wget` like we have done before!
-
-```
-wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38.p14/GRCh38_major_release_seqs_for_alignment_pipelines/GCA_000001405.15_GRCh38_no_alt_plus_hs38d1_analysis_set.fna.gz
-```
+We have made this data available for you in `/storage/data/human`
 
 ## Use minimap2 and samtools to filter the human sequences
 
 
 ```
-minimap2 --split-prefix=tmp$$ -a -xsr GCA_000001405.15_GRCh38_no_alt_plus_hs38d1_analysis_set.fna.gz fastp/788707_20180129_S_R1.fastq.gz fastp/788707_20180129_S_R2.fastq.gz | samtools view -bh | samtools sort -o 788707_20180129.bam
+minimap2 --split-prefix=tmp$$ -a -xsr /storage/data/human/GCA_000001405.15_GRCh38_no_alt_plus_hs38d1_analysis_set.fna.gz fastp/788707_20180129_S_R1.fastq.gz fastp/788707_20180129_S_R2.fastq.gz | samtools view -bh | samtools sort -o 788707_20180129.bam
 samtools index 788707_20180129.bam
 ```
 
@@ -262,5 +246,7 @@ We can combine all of that into a single `snakemake` file, and it will do all of
 
 See the [Snakemake](../Snakemake) section for details on how to run these two commands in a single pipeline.
 
+
+# Super Focus
 
 
