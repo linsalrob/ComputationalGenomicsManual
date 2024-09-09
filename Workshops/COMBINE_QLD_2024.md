@@ -64,8 +64,8 @@ There are two machines that you can use, if you don't have access to a server:
 
 ```
 IP Addresses:
-1: 35.184.190.79
-2: 34.138.12.48
+1: 34.138.68.206
+2: 34.44.132.9
 3: 131.217.173.199
 4: 131.217.173.13
 5: 131.217.175.227
