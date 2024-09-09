@@ -86,7 +86,7 @@ First, log into the accounts provided for you and then follow the commands:
 
 Next type `cd PonyLinux` and press `enter` (or on some computers it is called `return`).
 
-Now, type `./PonyLinux.sh` and press `enter` (or `return`).
+Now, type `./Ponylinux.sh` and press `enter` (or `return`).
 
 
 
