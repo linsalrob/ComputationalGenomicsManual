@@ -72,6 +72,10 @@ IP Addresses:
 ```
 
 
+# Usernames and passwords
+
+Access them [here](https://docs.google.com/spreadsheets/d/1RDjBFT1KdO_G_2bJw-GZv5NJDeGVclAy22Cftg_ujyk/edit?usp=sharing)
+
 # Learning BASH
 
 If you need more helo with bash, you can follow the Pony!
