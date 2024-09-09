@@ -81,6 +81,7 @@ Zoom link available [here](https://uqz.zoom.us/j/88963908137)
 
 Access them [here](https://docs.google.com/spreadsheets/d/1RDjBFT1KdO_G_2bJw-GZv5NJDeGVclAy22Cftg_ujyk/edit?usp=sharing)
 
+
 # Learning BASH
 
 If you need more helo with bash, you can follow the Pony!
@@ -103,6 +104,28 @@ Our first excercise is installing software using mamba.
 Install `conda`, `fastp`, `minimap2`, `samtools` using [conda](../Conda/)
 
 We will use all of these programs today.
+
+
+# SingleM
+
+take a [look at the manual](https://wwood.github.io/singlem/) for detailed `singlem` instructions.
+
+
+Install singleM with mamba:
+
+```
+mamba create -n singlem -c bioconda singlem
+mamba activate singlem
+```
+
+Before you use it, make sure you add this command: 
+
+`export SINGLEM_METAPACKAGE_PATH=/storage/data/metapackage`
+
+
+Now run singleM on the CF data:
+
+
 
 
 # Downloading Data
