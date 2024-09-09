@@ -250,3 +250,10 @@ See the [Snakemake](../Snakemake) section for details on how to run these two co
 # Super Focus
 
 
+Note: super-focus requires _uncompressed_ gzip files at the  moment.
+
+```
+superfocus -q not_human/ -dir superfocus -a mmseqs -t 16 -db DB_95  -b /storage/data/superfocus/
+```
+
+
