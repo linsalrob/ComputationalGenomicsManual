@@ -153,7 +153,7 @@ Once you have downloaded the adapters, we can use this command:
 
 ```bash
 mkdir fastp
-fastp -n 1 -l 100 -i 788707_20180129_S_R1.fastq.gz -I 788707_20180129_S_R2.fastq.gz -o fastp/788707_20180129_S_R1.fastq.gz -O fastp/788707_20180129_S_R2.fastq.gz --adapter_fasta IlluminaAdapters.fa
+fastp -n 1 -l 100 -i /storage/data/cf_data/reads/788707_20180129_S_R1.fastq.gz -I /storage/data/cf_data/reads/788707_20180129_S_R2.fastq.gz -o fastp/788707_20180129_S_R1.fastq.gz -O fastp/788707_20180129_S_R2.fastq.gz --adapter_fasta IlluminaAdapters.fa
 ```
 
 When `fastp` runs, you will get an HTML output file called [fastp.html](fastp_788707_20180129.html). This shows some statistics about the run.
