@@ -325,6 +325,8 @@ os.listdir()
 
 ```
 data = pd.read_csv('bigtable.tsv.gz',compression='gzip',header=0,sep='\t')
+# without downloading - copy link address from above
+# data = pd.read_csv('https://github.com/linsalrob/CF_Data_Analysis/raw/main/hecatomb/bigtable.tsv.gz?download=',compression='gzip',header=0,sep='\t')
 metadata = pd.read_csv('CF_Metadata_Table-2023-03-23.tsv.gz',compression='gzip',header=0,sep='\t')
 vmr = pd.read_csv('VMR_MSL39_v1.ascii.tsv.gz', compression='gzip',header=0,sep='\t')
 ```
