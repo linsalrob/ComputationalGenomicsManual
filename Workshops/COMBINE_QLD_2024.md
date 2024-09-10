@@ -208,6 +208,15 @@ For this work, we are going to use [GCA_000001405.15_GRCh38_no_alt_plus_hs38d1_a
 
 We have made this data available for you in `/storage/data/human`
 
+## Install minimap and samtools
+
+This also installs the conda channels for you in the right order!
+```
+conda config --add channels bioconda
+conda config --add channels conda-forge
+mamba create -n minimap2 minimap2 samtools
+```
+
 ## Use minimap2 and samtools to filter the human sequences
 
 
