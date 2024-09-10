@@ -295,9 +295,9 @@ cp -r /storage/data/hecatomb/ .
 _Note: don't forget the last dot_
 
 
-## Start a Goodle Colab Notebook
+## Start a Google Colab Notebook
 
-Connect to [Goolge Colab](https://colab.google.com/)
+Connect to [Google Colab](https://colab.google.com/)
 
 
 ### Load the data into pandas dataframes:
