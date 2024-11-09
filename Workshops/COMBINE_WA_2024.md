@@ -22,8 +22,8 @@ Time | Topic
 1100-1200 | Downloading data and filtering human genomes using minimap2
 1200-1300 | Lunch 
 1300-1330 | Introduction to methods for identifying species GTDB, SingleM 
-1330-1400 | Hands-on with SingleM 
-1400-1500 | Introduction to binning 
+1330-1430 | Hands-on with SingleM 
+1430-1500 | Introduction to binning 
 1500-1530 | Afternoon tea 
 1530-1600 | Microbial binning 
 1600-1700 | Hands on with binning
@@ -56,20 +56,8 @@ If you are using a MS Windows machine, please download and install [MobaXterm](h
 We are going to jump right in with metagenomics, but [here is a brief introduction](https://linsalrob.github.io/ComputationalGenomicsManual/Metagenomics/) if you want to read something while Rob is talking.
 
 
-We have created servers for you with all the software and data that you will need for these excercises. 
+We have created accounts for you on pawsey, and we will share the usernames and passwords with you at the workshop. *These are temporary accounts and will be deleted at the end of the workshop*
 
-Here are some machines that you can use, if you don't have access to a server:
-
-```
-IP Addresses:
-1: 
-2: 
-3: 
-4: 
-5: 
-6: 
-7: 
-```
 
 
 # Learning BASH
@@ -90,15 +78,41 @@ Now, type `./Ponylinux.sh` and press `enter` (or `return`).
 
 Our first excercise is installing software using mamba. 
 
+Before we begin, we are going to make lives slightly easier for ourselves by making an `alias` or `symbolic link`:
+
+```
+ln -s /software/projects/courses01/$USER software
+```
+
+This will create a directory called software.
+
+*Important*: When you install mamba, it will ask you for a location. Use `/home/$USER/software/miniforge3` as the location
 
 Install `conda`, `fastp`, `minimap2`, `samtools` using [conda](../Conda/)
 
 We will use all of these programs today.
 
+You can check that they installed by using the command:
+
+```
+which fastp
+```
+
+If that works, it will tell you!
+
 
 # Downloading Data
 
-All the data we are going to use in the workshop is present on the servers in `/storage/data/cf_data`
+We are going to use the CF data that Rob talked about. To start we are just going to download two files, an R1 and an R2 file to work with:
+
+```
+mkdir fastq
+cd fastq
+curl -LO https://github.com/linsalrob/ComputationalGenomicsManual/raw/refs/heads/master/Datasets/CF/788707_20180129_S_R1.fastq.gz
+curl -LO https://github.com/linsalrob/ComputationalGenomicsManual/raw/refs/heads/master/Datasets/CF/788707_20180129_S_R2.fastq.gz
+cd
+ls
+```
 
 # Use `fastp` to trim bad sequences and remove the adapters.
 
@@ -110,11 +124,23 @@ We are going to use the [Illumina Adapters](https://github.com/linsalrob/Computa
 
 Do you remember how to download the Illumina Adapters? The URL is `https://github.com/linsalrob/ComputationalGenomicsManual/raw/master/SequenceQC/IlluminaAdapters.fa`
 
-Once you have downloaded the adapters, we can use this command:
+Once you have downloaded the adapters, we are going to make a slurm script to run the command on the cluster
+
+Use `nano` (or `vi` or `emacs`) to edit a file, and copy this text:
 
 ```bash
+#!/bin/bash
+#SBATCH --job-name=fastp
+#SBATCH -o fastp-%j.out
+#SBATCH -e fastp-%j.err
+#SBATCH --account=courses01
+#SBATCH --time=1-0
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=8GB
+
 mkdir fastp
-fastp -n 1 -l 100 -i /storage/data/cf_data/reads/788707_20180129_S_R1.fastq.gz -I /storage/data/cf_data/reads/788707_20180129_S_R2.fastq.gz -o fastp/788707_20180129_S_R1.fastq.gz -O fastp/788707_20180129_S_R2.fastq.gz --adapter_fasta IlluminaAdapters.fa
+fastp -n 1 -l 100 -i fastq/788707_20180129_S_R1.fastq.gz -I fastq/788707_20180129_S_R2.fastq.gz -o fastp/788707_20180129_S_R1.fastq.gz -O fastp/788707_20180129_S_R2.fastq.gz --adapter_fasta IlluminaAdapters.fa
 ```
 
 When `fastp` runs, you will get an HTML output file called [fastp.html](fastp_788707_20180129.html). This shows some statistics about the run.
@@ -169,21 +195,32 @@ For this work, we are going to use [GCA_000001405.15_GRCh38_no_alt_plus_hs38d1_a
 
 We have made this data available for you in `/storage/data/human`
 
-## Install minimap and samtools
-
-This also installs the conda channels for you in the right order!
-```
-conda config --add channels bioconda
-conda config --add channels conda-forge
-mamba create -n minimap2 minimap2 samtools
-```
 
 ## Use minimap2 and samtools to filter the human sequences
 
+We are going to make another slurm script, called `mapping.slurm`:
 
 ```
+nano mapping.slurm
+```
+
+And copy and paste these contents:
+
+```
+#!/bin/bash
+#SBATCH --job-name=mapping
+#SBATCH -o mapping-%j.out
+#SBATCH -e mapping-%j.err
+#SBATCH --account=courses01
+#SBATCH --time=1-0
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=64GB
+
+
 mkdir -p bam/
-minimap2 --split-prefix=tmp$$ -a -xsr /storage/data/human/GCA_000001405.15_GRCh38_no_alt_plus_hs38d1_analysis_set.fna.gz fastp/788707_20180129_S_R1.fastq.gz fastp/788707_20180129_S_R2.fastq.gz | samtools view -bh | samtools sort -o bam/788707_20180129.bam
+minimap2 --split-prefix=tmp$$ -t 16 -a -xsr /scratch/courses01/GCA_000001405.15_GRCh38_no_alt_plus_hs38d1_analysis_set.fna.gz fastp/788707_20180129_S_R1.fastq.gz fastp/788707_20180129_S_R2.fastq.gz \
+	| samtools view -bh | samtools sort -o bam/788707_20180129.bam
 samtools index bam/788707_20180129.bam
 ```
 
@@ -191,21 +228,34 @@ Here is the [samtools specification](https://samtools.github.io/hts-specs/SAMv1.
 
 Now, we use `samtools` flags to filter out the human and not human sequences. You can find out what the flags mean using the [samtools flag explainer](https://broadinstitute.github.io/picard/explain-flags.html)
 
-### human only sequences
+
+Again, edit a file, this time called `filtering.slurm`
 
 ```
+nano filtering.slurm
+```
+
+And paste these contents:
+
+```
+#!/bin/bash
+#SBATCH --job-name=filtering
+#SBATCH -o filtering-%j.out
+#SBATCH -e filtering-%j.err
+#SBATCH --account=courses01
+#SBATCH --time=1-0
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=64GB
+
 mkdir human not_human
 samtools fastq -F 3588 -f 65 bam/788707_20180129.bam | gzip -c > human/788707_20180129_S_R1.fastq.gz
-echo "R2 matching human genome:"
 samtools fastq -F 3588 -f 129 bam/788707_20180129.bam | gzip -c > human/788707_20180129_S_R2.fastq.gz
-```
 
-### sequences that are not human
+# sequences that are not human
 
-```
 samtools fastq -F 3584 -f 77 bam/788707_20180129.bam  | gzip -c > not_human/788707_20180129_S_R1.fastq.gz
 samtools fastq -F 3584 -f 141 bam/788707_20180129.bam | gzip -c > not_human/788707_20180129_S_R2.fastq.gz
-samtools fastq -f 4 -F 1 bam/788707_20180129.bam | gzip -c > not_human/788707_20180129_S_Singletons.fastq.gz
 ```
 
 
@@ -219,14 +269,174 @@ We can combine all of that into a single `snakemake` file, and it will do all of
 See the [Snakemake](../Snakemake) section for details on how to run these two commands in a single pipeline.
 
 
+# Read based annotations
+
+In metagenomics, there are two fundemental approaches: read-based annotations and assembly based approaches. We are going to start with read based annotations.
+
+
+
+# Predicting the species that are in the sample
+
+## SingleM
+
+take a [look at the manual](https://wwood.github.io/singlem/) for detailed `singlem` instructions.
+
+
+Install singleM with mamba. _Note:_ Here, we introduce named `mamba` environments. What is the advantage of creating a named environment?
+
+```
+mamba create -n singlem -c bioconda singlem
+mamba activate singlem
+```
+
+After installing singlem, you will get a warning from krona. DO NOT run the `ktUpdate.sh` script. Instead, create a new symlink like so:
+
+```
+rm -rf /software/projects/courses01/$USER/miniforge3/envs/singlem/opt/krona/taxonomy
+ln -s /scratch/courses01/krona/taxonomy /software/projects/courses01/$USER/miniforge3/envs/singlem/opt/krona/taxonomy
+```
+
+Next, before you use singlem, make sure you add this command: 
+
+```
+export SINGLEM_METAPACKAGE_PATH='/scratch/courses01/singlem/S4.3.0.GTDB_r220.metapackage_20240523.smpkg.zb'
+```
+
+
+Now run singleM on the CF data:
+
+```
+#!/bin/bash
+#SBATCH --job-name=singlem
+#SBATCH -o singlem-%j.out
+#SBATCH -e singlem-%j.err
+#SBATCH --account=courses01
+#SBATCH --time=1-0
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=64GB
+
+eval "$(conda shell.bash hook)"
+conda activate singlem
+export SINGLEM_METAPACKAGE_PATH='/scratch/courses01/singlem/S4.3.0.GTDB_r220.metapackage_20240523.smpkg.zb'
+singlem pipe -1 not_human/788707_20180129_S_R1.fastq.gz -2 not_human/788707_20180129_S_R2.fastq.gz -p output_profile.tsv --taxonomic-profile-krona krona.html --threads 16
+```
+
+## Unzip the data
+
+Note: Before we carry on, both `focus` and `super-focus` require that we unzip the data.
+
+```
+cd not_human
+find . -name \*gz -exec gunzip {} \;
+cd ..
+```
+
+
+## Focus
+
+Another way to identify the species present is to use [FOCUS](https://github.com/metageni/FOCUS)
+
+We create a mamba environment just for focus:
+
+```
+mamba create -n focus -c bioconda focus
+```
+
+Now, we need to unpack the database. Here is a trick, since we don't know exactly where the database is:
+
+```
+FOCUS=$(find software/miniforge3/envs/ -name db.zip -printf "%h\n")
+unzip $FOCUS/db.zip -d $FOCUS
+```
+
+This should create the directory `software/miniforge3/envs/focus/lib/python3.13/site-packages/focus_app/db/` with two files inside of it.
+
+Now we can run focus on our data:
+
+```
+#!/bin/bash
+#SBATCH --job-name=focus
+#SBATCH -o focus-%j.out
+#SBATCH -e focus-%j.err
+#SBATCH --account=courses01
+#SBATCH --time=1-0
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=64GB
+
+eval "$(conda shell.bash hook)"
+conda activate focus
+
+focus -q not_human/ -o focus -t 16
+```
+
+
+# SUPER-FOCUS
+
+We are going to assess the functions using [SUPER-FOCUS](https://github.com/metageni/SUPER-FOCUS)
+
+We are going to make _another_ mamba environment for super-focus:
+
+```
+mamba create -n superfocus -c bioconda super-focus mmseqs2
+```
+
+Now we can run super-focus on our data. _Note_: Superfocus creates a _lot_ of data, and you will likely get an error if you just output the results to your home directory. In this command, we put the results somewhere else!
+
+```
+#!/bin/bash
+#SBATCH --job-name=superfocus
+#SBATCH -o superfocus-%j.out
+#SBATCH -e superfocus-%j.err
+#SBATCH --account=courses01
+#SBATCH --time=1-0
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=64GB
+
+eval "$(conda shell.bash hook)"
+conda activate superfocus
+
+export SUPERFOCUS_DB=/scratch/courses01/superfocus/
+superfocus -q not_human/ -dir /scratch/courses01/$USER/superfocus -a mmseqs -t 16 -db DB_95
+```
+
+## Recompressing the files.
+
+Now that we are done with `focus` and `superfocus`, we can recompress the files. _Question:_ Why should we compress the files (or not compress them)?
+
+```
+cd not_human
+find . -type f -exec gzip {} \;
+cd ..
+```
+
 ## Assembling the sequences
 
 *Note:* Assembling _may_ take a while, and for the workshops, Rob has already assembled the sequences. We may, however, assemble some of them depending on computational resources!
 
-We will assemble with megahit:
+We will assemble with megahit.
+
+We need to create a mamba environment for megahit ... how are you going to do that?
+
 
 ```
-megahit -1 not_human/788707_20180129_S_R1.fastq.gz -2 not_human/788707_20180129_S_R2.fastq.gz -o megahit_assembled/788707_20180129_S -t 8
+#!/bin/bash
+#SBATCH --job-name=megahit
+#SBATCH -o megahit-%j.out
+#SBATCH -e megahit-%j.err
+#SBATCH --account=courses01
+#SBATCH --time=1-0
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=64GB
+
+eval "$(conda shell.bash hook)"
+conda activate megahit
+
+mkdir -p megahit_assembled/
+megahit -1 not_human/788707_20180129_S_R1.fastq.gz -2 not_human/788707_20180129_S_R2.fastq.gz -o megahit_assembled/788707_20180129_S -t 16
 ```
 
 This generates a contig file called `final.contigs.fa`.
@@ -297,29 +507,4 @@ We have created an [example Jupyter notebook](Workshop_MAG_demo.ipynb) so you ca
 ## Identifying contigs that belong to the same genome
 
 We are going to move the data to [Google Colab](https://colab.research.google.com/) to analyse the data and identify contigs that co-occur across multiple samples.
-
-# Predicting the species that are in the sample
-
-## SingleM
-
-take a [look at the manual](https://wwood.github.io/singlem/) for detailed `singlem` instructions.
-
-
-Install singleM with mamba:
-
-```
-mamba create -n singlem -c bioconda singlem
-mamba activate singlem
-```
-
-Before you use it, make sure you add this command: 
-
-`export SINGLEM_METAPACKAGE_PATH=/storage/data/metapackage`
-
-
-Now run singleM on the CF data:
-
-```
-singlem pipe -1 /storage/data/cf_data/CF_Data_R1.fastq.gz -2 /storage/data/cf_data/CF_Data_R2.fastq.gz -p output_profile.tsv
-```
 
