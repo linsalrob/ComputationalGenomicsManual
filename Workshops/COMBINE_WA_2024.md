@@ -21,12 +21,11 @@ Time | Topic
 1030-1100 | Morning coffee
 1100-1200 | Downloading data and filtering human genomes using minimap2
 1200-1300 | Lunch 
-1300-1330 | Introduction to methods for identifying species GTDB, SingleM 
-1330-1430 | Hands-on with SingleM 
-1430-1500 | Introduction to binning 
+1300-1330 | Introduction to methods for identifying species focus, SingleM 
+1330-1500 | Hands-on with SingleM and focus
 1500-1530 | Afternoon tea 
-1530-1600 | Microbial binning 
-1600-1700 | Hands on with binning
+1530-1600 | Introduction to methods for functional analysis
+1600-1700 | SUPER-FOCUS hands-on
 
 
 ## Day 2: Tuesday November 12<sup>th</sup>
@@ -34,11 +33,11 @@ Time | Topic
 Time | Topic 
 -- | --
 0900-0930 | Recap of Day 1 
-0930-1000 | Introduction to methods for functional analysis 
-1000-1030 | SUPER-FOCUS hands-on 
+0930-1000 | Introduction to binning
+1000-1030 | Megahit assembly
 1030-1100 | Morning coffee 
-1100-1200 | Viral identification using Hecatomb 
-1200-1230 | Hecatomb hands-on 
+1100-1200 | Binning by hand
+1200-1230 | Viral identification using Hecatomb 
 1230-1330 | Lunch 
 1400-1500 | Hands-on data visualisation 
 1500-1530 | Afternoon tea 
