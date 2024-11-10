@@ -59,19 +59,6 @@ We have created accounts for you on pawsey, and we will share the usernames and 
 
 
 
-# Learning BASH
-
-If you need more helo with bash, you can follow the Pony!
-
-We have installed [PonyLinux](https://github.com/NCGAS/PonyLinux). You only need two commands to get started.
-
-First, log into the accounts provided for you and then follow the commands:
-
-Next type `cd PonyLinux` and press `enter` (or on some computers it is called `return`).
-
-Now, type `./Ponylinux.sh` and press `enter` (or `return`).
-
-
 
 # Installing  software
 
