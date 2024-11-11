@@ -564,11 +564,151 @@ for BAM in $(find bam_contigs -type f -name \*bam -printf "%f\n"); do
 done
 ```
 
-We have created an [example Jupyter notebook](Workshop_MAG_demo.ipynb) so you can see some of the commands
-
-## Identifying contigs that belong to the same genome
+# Identifying contigs that belong to the same genome
 
 We are going to move the data to [Google Colab](https://colab.research.google.com/) to analyse the data and identify contigs that co-occur across multiple samples.
+
+
+You can copy and paste these commands into Google Colab, and run this notebook to identify which contigs might belong together, eg. come from the same genomes
+
+
+## Step 1. Import some libaries
+
+```
+import os
+import sys
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
+```
+
+
+If you have the data file locally, you can upload it to colab. Otherwise, you can connect Google drive and read the file from there!
+
+```
+# df = pd.read_csv('788707_20180129_S_coverage.tsv', sep="\t", index_col=0)
+
+from google.colab import drive
+drive.mount('/content/drive')
+
+df = pd.read_csv('drive/MyDrive/Workshops/788707_20180129_S_coverage.tsv', sep="\t", index_col=0)
+df
+```
+
+
+```
+# read the lengths of the sequences
+
+seqlengths = pd.read_csv('drive/MyDrive/Workshops/final.contigs.lengths.tsv', sep="\t", index_col=0, header=None, names=['contig', 'length'])
+seqlengths
+```
+
+### Filter the reads
+
+In this example, we filter this data set to ensure that the sample `788707_20171213_S` has at least one hit.
+
+```
+dfs = df[df['788707_20171213_S'] > 0]
+dfs
+```
+
+We are going to reshape this data frame so we can plot the samples on the x-axis and the depth on the y-axis.
+
+```
+melted_df = dfs.reset_index().melt(id_vars='contig', var_name='Sample', value_name='Depth')
+melted_df
+```
+
+And now we plot _all_ the raw data.
+
+
+```
+sns.lineplot(data=melted_df, x='Sample', y='Depth', hue='contig', legend=False)
+```
+
+## Calculate the corrrelations
+
+Now that we have the contigs and their average depth across the samples, we calculate a pairwise correlation between all contigs and all other contigs.
+
+We create a matrix of the data
+
+```
+correlation_matrix = dfs.T.corr()
+correlation_matrix
+```
+
+
+## Find the highest correlations
+
+We filter _all_ the correlations to find the highest correlations. I chose the 0.99 cutoff somewhat at random, and adjusting the cutoff may adjust the number of contigs in each correlation.
+
+We just print the first ten correlations so we can see what we have!
+
+
+
+```
+threshold = 0.99
+high_corr = []
+for i in range(len(correlation_matrix)):
+    for j in range(i + 1, len(correlation_matrix)):  # Avoid duplicate pairs
+        if abs(correlation_matrix.iloc[i, j]) > threshold:
+            high_corr.append((correlation_matrix.index[i], correlation_matrix.index[j], correlation_matrix.iloc[i, j]))
+high_corr[0:10]
+```
+
+
+### Find the longest contigs
+
+We find the two longest contigs that are in our correlation matrix so we can plot their data
+
+```
+hc = set()
+for i in high_corr:
+  hc.add(i[0])
+
+seqlengths[seqlengths.index.isin(hc)].sort_values(by='length')
+```
+
+Here, we are going to find the two contigs in hc that have the lowest correlations between them - these should be diverse genomes!
+
+```
+subset_corr = correlation_matrix.loc['k141_12474', list(hc)]
+subset_corr.sort_values(ascending=True)
+```
+
+Now that we have two long contigs, lets get lists of all the things they are correlated
+
+```
+related_contigs = ['k141_12474']
+for i in high_corr:
+  if i[0] == related_contigs[0]:
+    related_contigs.append(i[1])
+
+related_contigs2 = ['k141_13159']
+for i in high_corr:
+  if i[0] == related_contigs2[0]:
+    related_contigs2.append(i[1])
+```
+
+Now, we plot the data just like we did before. Here, I have only ploted the lines, but you can use `hue` to plot the individual lines in the data
+
+```
+dfsubset1 = df[df.index.isin(related_contigs)]
+dfsubset2 = df[df.index.isin(related_contigs2)]
+melted_df1 = dfsubset1.reset_index().melt(id_vars='contig', var_name='Sample', value_name='Depth')
+melted_df2 = dfsubset2.reset_index().melt(id_vars='contig', var_name='Sample', value_name='Depth')
+
+fig, ax = plt.subplots(figsize=(8, 6))
+sns.lineplot(data=melted_df1, x='Sample', y='Depth', c='b', estimator=None, units='contig', alpha=0.5, legend=False, ax=ax)
+sns.lineplot(data=melted_df2, x='Sample', y='Depth', c='r', estimator=None, units='contig', alpha=0.5, legend=False, ax=ax)
+
+```
+
+_Questions:_
+- What other analyses should we do on these contigs?
+- This is only analysing a subset of the reads from _one_ of the patients. What do you think will happen when we try and analyse _all_ the reads from _all_ the patients?
+
 
 
 ---
