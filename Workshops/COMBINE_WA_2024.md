@@ -443,6 +443,30 @@ We can use [countfasta.py](https://raw.githubusercontent.com/linsalrob/Computati
 python countfasta.py -f megahit_assembled/788707_20180129_S/final.contigs.fa
 ```
 
+
+## Making Sankey Plots
+
+We can use the [countfasta.py](https://raw.githubusercontent.com/linsalrob/ComputationalGenomicsManual/refs/heads/master/Python/countfasta.py) and the related [countfastq.py](https://raw.githubusercontent.com/linsalrob/ComputationalGenomicsManual/refs/heads/master/Python/countfastq.py) scripts to make beautiful SanKey plots. 
+
+Open a text file, and by counting the sequences and the contigs, create some data that looks like:
+
+```
+fastq [1176881906] fastp
+fastq [1425302] low quality
+fastp [672903626] human
+fastp [515964090] not human
+not human [429542979] sequence similarity
+not human [86421111] unknown
+sequence similarity [7100783] Eukaryote
+sequence similarity [330717020] Bacteria
+sequence similarity [71361] Archaea
+sequence similarity [1029932] Virus
+sequence similarity [89215792] Multiclass
+```
+
+Then, we use the awesome [sankeymatic](https://sankeymatic.com/build/) to make our SanKey plots!
+
+
 ## Mapping the reads to the contigs
 
 For this patient, we sequenced several different samples. You can click on the links to get each of the samples
