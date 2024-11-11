@@ -459,6 +459,25 @@ Sample | R1 or R2 | Number of sequences | Total length | Shortest | Longest | N5
 [788707_20181126_S](../Datasets/CF/788707_20181126_S_R2.fastq.gz) | R2 | 125,000 | 37,500,000 | 300 | 300 | 300 | 300 | 300
 
 
+## BEFORE WE GO ON!
+
+We are running out of space on `/home`, where we logged in, so now we are going to work on `/scratch`.
+
+Here's the hack to make life easy for you:
+
+```
+ln -s /scratch/courses01/$USER scratch
+```
+
+Now you see a directory called `scratch`. Moving forwards, we are going to do all our work in there.
+
+```
+cd scratch
+```
+
+(Note the difference between `/scratch` and `scratch`)
+
+
 ## Cross-assembly
 
 We are going to run a cross assembly on this data to get more contigs. I've staged the data on `/scratch/courses01/cf_data`.
@@ -466,9 +485,6 @@ We are going to run a cross assembly on this data to get more contigs. I've stag
 Here is the code that we need to run this assembly
 
 ```
-mkdir -p megahit_assembled/
-
-
 ALLR1=""; ALLR2="";
 
 for R1 in $(find /scratch/courses01/cf_data/ -name \*R1\*); do
@@ -480,9 +496,8 @@ done;
 ALLR1=$(echo $ALLR1 | sed -e 's/,$//');
 ALLR2=$(echo $ALLR2 | sed -e 's/,$//');
 
-megahit -1 $ALLR1 -2 $ALLR2 -o /scratch/courses01/$USER/cross_assembly -t 16
+megahit -1 $ALLR1 -2 $ALLR2 -o megahit_assembly -t 16
 
-ln -s /scratch/courses01/$USER/cross_assembly  megahit_assembled/cross_assembly
 ```
 
 **Note:** 
@@ -495,14 +510,16 @@ ln -s /scratch/courses01/$USER/cross_assembly  megahit_assembled/cross_assembly
 We are going to use `minimap`, like we did beore. However, here is a little bit of code that can run `minimap` on all of the samples!
 
 ```
-mkdir -p /scratch/courses01/$USER/bam_contigs
-for R1 in $(find reads/ -name \*R1\* -printf "%f\n"); do 
-	R2=${R1/R1/R2}; 
-	BAM=${R1/_R1.fastq.gz/.contigs.bam}; 
-	minimap2 --split-prefix=tmp$$ -t 8 -a -xsr  megahit_assembled/cross_assembly/final.contigs.fa reads/$R1 reads/$R2 | samtools view -bh | samtools sort -o /scratch/courses01/$USER/bam_contigs/$BAM;
+READDIR=/scratch/courses01/cf_data/
+
+mkdir -p bam_contigs
+for R1 in $(find $READDIR -name \*R1\* -printf "%f\n"); do
+	R2=${R1/R1/R2};
+	BAM=${R1/_R1.fastq.gz/.contigs.bam};
+	minimap2 --split-prefix=tmp$$ -t 8 -a -xsr  megahit_assembled/cross_assembly/final.contigs.fa $READDIR/$R1 $READDIR/$R2 | samtools view -bh | samtools sort -o bam_contigs/$BAM;
 done
-find /scratch/courses01/$USER/bam_contigs -type f -exec samtools index {} \;
-ln -s  /scratch/courses01/$USER/bam_contigs bam_contigs
+
+find bam_contigs -type f -exec samtools index {} \;
 ```
 
 ## Generating a depth profile
@@ -516,6 +533,7 @@ samtools coverage bam_contigs/788707_20171213_S.contigs.bam | less
 Now we iterate over all the files and get the first column, the contig name, and the 7<sup>th</sup> column which has the mean depth for that contig.
 
 ```
+mkdir bam_contigs_tsv
 for BAM in $(find bam_contigs -type f -name \*bam -printf "%f\n"); do 
 	OUT=${BAM/.contigs.bam/.tsv}; 
 	samtools coverage bam_contigs/$BAM | cut -f 1,7 > bam_contigs_tsv/$OUT; 
@@ -528,5 +546,4 @@ We have created an [example Jupyter notebook](Workshop_MAG_demo.ipynb) so you ca
 
 We are going to move the data to [Google Colab](https://colab.research.google.com/) to analyse the data and identify contigs that co-occur across multiple samples.
 
-[You can find the example notebook here](Workshop_MAG_demo.ipynb)
 
