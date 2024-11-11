@@ -458,18 +458,51 @@ Sample | R1 or R2 | Number of sequences | Total length | Shortest | Longest | N5
 [788707_20181126_S](../Datasets/CF/788707_20181126_S_R1.fastq.gz) | R1 | 125,000 | 37,500,000 | 300 | 300 | 300 | 300 | 300
 [788707_20181126_S](../Datasets/CF/788707_20181126_S_R2.fastq.gz) | R2 | 125,000 | 37,500,000 | 300 | 300 | 300 | 300 | 300
 
-Download each of the datasets that we don't already have and put them in the `reads` directory. We are going to map all these reads to the contigs we have just created.
+
+## Cross-assembly
+
+We are going to run a cross assembly on this data to get more contigs. I've staged the data on `/scratch/courses01/cf_data`.
+
+Here is the code that we need to run this assembly
+
+```
+mkdir -p megahit_assembled/
+
+
+ALLR1=""; ALLR2="";
+
+for R1 in $(find /scratch/courses01/cf_data/ -name \*R1\*); do
+        R2=${R1/R1/R2};
+        ALLR1+="$R1,";
+        ALLR2+="$R2,";
+done;
+
+ALLR1=$(echo $ALLR1 | sed -e 's/,$//');
+ALLR2=$(echo $ALLR2 | sed -e 's/,$//');
+
+megahit -1 $ALLR1 -2 $ALLR2 -o /scratch/courses01/$USER/cross_assembly -t 16
+
+ln -s /scratch/courses01/$USER/cross_assembly  megahit_assembled/cross_assembly
+```
+
+**Note:** 
+1. Let's walk through this code and see what it does!
+2. You need some slurm "directives" before you can start that code running.
+
+
+## Map the reads to all the contigs
 
 We are going to use `minimap`, like we did beore. However, here is a little bit of code that can run `minimap` on all of the samples!
 
 ```
-mkdir bam_contigs
+mkdir -p /scratch/courses01/$USER/bam_contigs
 for R1 in $(find reads/ -name \*R1\* -printf "%f\n"); do 
 	R2=${R1/R1/R2}; 
 	BAM=${R1/_R1.fastq.gz/.contigs.bam}; 
-	minimap2 --split-prefix=tmp$$ -t 8 -a -xsr  megahit_assembled/788707_20180129_S/final.contigs.fa reads/$R1 reads/$R2 | samtools view -bh | samtools sort -o bam_contigs/$BAM;
+	minimap2 --split-prefix=tmp$$ -t 8 -a -xsr  megahit_assembled/cross_assembly/final.contigs.fa reads/$R1 reads/$R2 | samtools view -bh | samtools sort -o /scratch/courses01/$USER/bam_contigs/$BAM;
 done
-find bam_contigs -type f -exec samtools index {} \;
+find /scratch/courses01/$USER/bam_contigs -type f -exec samtools index {} \;
+ln -s  /scratch/courses01/$USER/bam_contigs bam_contigs
 ```
 
 ## Generating a depth profile
@@ -494,4 +527,6 @@ We have created an [example Jupyter notebook](Workshop_MAG_demo.ipynb) so you ca
 ## Identifying contigs that belong to the same genome
 
 We are going to move the data to [Google Colab](https://colab.research.google.com/) to analyse the data and identify contigs that co-occur across multiple samples.
+
+[You can find the example notebook here](Workshop_MAG_demo.ipynb)
 
