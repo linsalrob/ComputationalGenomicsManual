@@ -439,7 +439,7 @@ This generates a contig file called `final.contigs.fa`.
 We can use [countfasta.py](../Python/countfasta.py) to count the lengths of the sequences:
 
 ```
-countfasta.py -f megahit_assembled/788707_20180129_S/final.contigs.fa
+python countfasta.py -f megahit_assembled/788707_20180129_S/final.contigs.fa
 ```
 
 ## Mapping the reads to the contigs
