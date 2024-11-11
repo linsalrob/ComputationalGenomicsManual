@@ -436,7 +436,7 @@ This generates a contig file called `final.contigs.fa`.
 
 ### Counting the lengths of the sequences
 
-We can use [countfasta.py](../Python/countfasta.py) to count the lengths of the sequences:
+We can use [countfasta.py](https://raw.githubusercontent.com/linsalrob/ComputationalGenomicsManual/refs/heads/master/Python/countfasta.py) to count the lengths of the sequences:
 
 ```
 python countfasta.py -f megahit_assembled/788707_20180129_S/final.contigs.fa
