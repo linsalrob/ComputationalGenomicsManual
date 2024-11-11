@@ -68,6 +68,7 @@ Before we begin, we are going to make lives slightly easier for ourselves by mak
 
 ```
 ln -s /software/projects/courses01/$USER software
+ln -s /scratch/courses01/$USER/miniforge3 software/miniforge3
 ```
 
 This will create a directory called software.
