@@ -180,7 +180,7 @@ GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.gz, plus:
 
 For this work, we are going to use [GCA_000001405.15_GRCh38_no_alt_plus_hs38d1_analysis_set.fna.gz](https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38.p14/GRCh38_major_release_seqs_for_alignment_pipelines/GCA_000001405.15_GRCh38_no_alt_plus_hs38d1_analysis_set.fna.gz) which contains everything.
 
-We have made this data available for you in `/storage/data/human`
+We have made this data available for you in `/scratch/`
 
 
 ## Use minimap2 and samtools to filter the human sequences
@@ -577,7 +577,7 @@ We are going to move the data to [Google Colab](https://colab.research.google.co
 # Viral Analysis With Hecatomb
 
 
-We have already run the hecatomb pipeline for you, and the data is in `/storage/data/hecatomb`, but you need to download the data to your computer before we can analyse the files.
+We have already run the hecatomb pipeline for you, but you need to download the data to your computer before we can analyse the files.
 
 There are three files:
 
