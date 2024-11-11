@@ -64,22 +64,14 @@ There are two machines that you can use, if you don't have access to a server:
 
 ```
 IP Addresses:
-1: 34.138.68.206
-2: 34.44.132.9
-3: 131.217.173.199
-4: 131.217.173.13
-5: 131.217.175.227
-6: 131.217.173.230
-7: 131.217.174.167
+1:
+2: 
+3: 
+4: 
+5: 
+6: 
+7: 
 ```
-
-# Zoom link
-
-Zoom link available [here](https://uqz.zoom.us/j/88963908137)
-
-# Usernames and passwords
-
-Access them [here](https://docs.google.com/spreadsheets/d/1RDjBFT1KdO_G_2bJw-GZv5NJDeGVclAy22Cftg_ujyk/edit?usp=sharing)
 
 
 # Learning BASH
@@ -295,9 +287,9 @@ cp -r /storage/data/hecatomb/ .
 _Note: don't forget the last dot_
 
 
-## Start a Goodle Colab Notebook
+## Start a Google Colab Notebook
 
-Connect to [Goolge Colab](https://colab.google.com/)
+Connect to [Google Colab](https://colab.google.com/)
 
 
 ### Load the data into pandas dataframes:
@@ -325,6 +317,8 @@ os.listdir()
 
 ```
 data = pd.read_csv('bigtable.tsv.gz',compression='gzip',header=0,sep='\t')
+# without downloading - copy link address from above
+# data = pd.read_csv('https://github.com/linsalrob/CF_Data_Analysis/raw/main/hecatomb/bigtable.tsv.gz?download=',compression='gzip',header=0,sep='\t')
 metadata = pd.read_csv('CF_Metadata_Table-2023-03-23.tsv.gz',compression='gzip',header=0,sep='\t')
 vmr = pd.read_csv('VMR_MSL39_v1.ascii.tsv.gz', compression='gzip',header=0,sep='\t')
 ```
