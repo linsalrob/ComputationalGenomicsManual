@@ -546,6 +546,7 @@ done
 find bam_contigs -type f -exec samtools index {} \;
 ```
 
+
 ## Generating a depth profile
 
 Now we can generate a depth profile for each contig in each of the four samples. Before we do this, take a look at the output from `samtools coverage` from _one_ `.bam` file!
@@ -563,6 +564,19 @@ for BAM in $(find bam_contigs -type f -name \*bam -printf "%f\n"); do
 	samtools coverage bam_contigs/$BAM | cut -f 1,7 > bam_contigs_tsv/$OUT; 
 done
 ```
+
+
+(we might need a join step here! panic!! ... [here is the code to join lists](https://raw.githubusercontent.com/linsalrob/EdwardsLab/refs/heads/master/bin/joinlists.pl))
+
+## Count the lengths of each of the contigs in the assembly.
+
+Later, we are going to use the lengths of the contigs in the assembly. We can use our `countfasta.py` program to do that.
+
+
+```
+python ~/countfasta.py -n -l -f megahit_assembly/final.contigs.fa  > final.contigs.lengths.tsv
+```
+
 
 # Identifying contigs that belong to the same genome
 
