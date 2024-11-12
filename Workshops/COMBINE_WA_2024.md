@@ -623,14 +623,15 @@ seqlengths
 In this example, we filter this data set to ensure that the sample `788707_20171213_S` has at least one hit.
 
 ```
-dfs = df[df['788707_20171213_S'] > 0]
+dfs = df[df['788707_20171213_S.tsv'] > 0]
 dfs
 ```
 
 We are going to reshape this data frame so we can plot the samples on the x-axis and the depth on the y-axis.
 
 ```
-melted_df = dfs.reset_index().melt(id_vars='contig', var_name='Sample', value_name='Depth')
+melted_df = dfs.reset_index().melt(id_vars='index', var_name='Sample', value_name='Depth')
+melted_df = melted_df.rename(columns={'index': 'contig'})
 melted_df
 ```
 
