@@ -642,6 +642,16 @@ And now we plot _all_ the raw data.
 sns.lineplot(data=melted_df, x='Sample', y='Depth', hue='contig', legend=False)
 ```
 
+## Filter for longer contigs
+
+We filter our data frame so that we only consider contigs > 1000 bp. You can change this limit if you wish.
+
+```
+minlength = 1000
+longcontigs = seqlengths[seqlengths['length'] > minlength].index
+dfs = dfs[dfs.index.isin(longcontigs)]
+```
+
 ## Calculate the corrrelations
 
 Now that we have the contigs and their average depth across the samples, we calculate a pairwise correlation between all contigs and all other contigs.
