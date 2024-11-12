@@ -610,10 +610,17 @@ df = pd.read_csv('drive/MyDrive/Workshops/788707_20180129_S_coverage.tsv', sep="
 df
 ```
 
+If Rob forget the part where you change the name of the contigs and remove the `.tsv` from the samples (again), these two lines will help:
 
 ```
-# read the lengths of the sequences
+df.index.name = 'contigs'
+df.columns = df.columns.str.replace('.tsv', '', regex=False)
+```
 
+
+### read the lengths of the sequences
+
+```
 seqlengths = pd.read_csv('drive/MyDrive/Workshops/final.contigs.lengths.tsv', sep="\t", index_col=0, header=None, names=['contig', 'length'])
 seqlengths
 ```
@@ -630,8 +637,7 @@ dfs
 We are going to reshape this data frame so we can plot the samples on the x-axis and the depth on the y-axis.
 
 ```
-melted_df = dfs.reset_index().melt(id_vars='index', var_name='Sample', value_name='Depth')
-melted_df = melted_df.rename(columns={'index': 'contig'})
+melted_df = dfs.reset_index().melt(id_vars='contigs', var_name='Sample', value_name='Depth')
 melted_df
 ```
 
@@ -656,7 +662,7 @@ dfs = dfs[dfs.index.isin(longcontigs)]
 
 Now that we have the contigs and their average depth across the samples, we calculate a pairwise correlation between all contigs and all other contigs.
 
-We create a matrix of the data
+Note that the correlation can be _either_ between `contigs` or between `samples`. Here, we use `.T` to transpose the data frame because we want to correlate contigs.
 
 ```
 correlation_matrix = dfs.T.corr()
@@ -685,7 +691,11 @@ high_corr[0:10]
 
 ### Find the longest contigs
 
-We find the two longest contigs that are in our correlation matrix so we can plot their data
+We find the two longest contigs that are in our correlation matrix so we can plot their data.
+
+The correlation matrix is a list of `tuples` but we want to get a `set` of IDs so that we only have unique IDs to check.
+
+Next, we make an array of those sequence lengths that are in the set, and we sort the set by length, so we can see how long they are.
 
 ```
 hc = set()
@@ -695,32 +705,37 @@ for i in high_corr:
 seqlengths[seqlengths.index.isin(hc)].sort_values(by='length')
 ```
 
-Here, we are going to find the two contigs in hc that have the lowest correlations between them - these should be diverse genomes!
+### Find the contig that strongly _negatively_ correlates with our long contig.
+
+When we calculated the correlations we used the `abs()` function, and so we have _both_ positive and negative correlations. 
+
+- What do negative correlations mean?
+- Are negative correlations ecologically meaningful?
+
+Lets print the list of correlations from lowest to highest:
 
 ```
 subset_corr = correlation_matrix.loc['k141_12474', list(hc)]
 subset_corr.sort_values(ascending=True)
 ```
 
-Now that we have two long contigs, lets get lists of all the things they are correlated
+
+Now that we have two contigs, our long contig of interest and one that it is negatively related to, lets find _their_ friends. In this code, adjust the 0.99 or 0.9 so that both `positively_related` and `negatively_related` have a "few" contigs each.
 
 ```
-related_contigs = ['k141_12474']
-for i in high_corr:
-  if i[0] == related_contigs[0]:
-    related_contigs.append(i[1])
+positively_related = correlation_matrix[correlation_matrix['k141_84018'] > 0.99].index
+print(positively_related)
 
-related_contigs2 = ['k141_13159']
-for i in high_corr:
-  if i[0] == related_contigs2[0]:
-    related_contigs2.append(i[1])
+negatively_related = correlation_matrix[correlation_matrix['k141_37391'] > 0.9].index
+print(negatively_related)
 ```
+
 
 Now, we plot the data just like we did before. Here, I have only ploted the lines, but you can use `hue` to plot the individual lines in the data
 
 ```
-dfsubset1 = df[df.index.isin(related_contigs)]
-dfsubset2 = df[df.index.isin(related_contigs2)]
+dfsubset1 = df[df.index.isin(positively_related)]
+dfsubset2 = df[df.index.isin(negatively_related)]
 melted_df1 = dfsubset1.reset_index().melt(id_vars='contig', var_name='Sample', value_name='Depth')
 melted_df2 = dfsubset2.reset_index().melt(id_vars='contig', var_name='Sample', value_name='Depth')
 
